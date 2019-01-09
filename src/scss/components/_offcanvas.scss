@@ -1,0 +1,40 @@
+aside.offcanvas {
+  position: fixed;
+  top: 0;
+  left: -100px;
+  bottom: 0;
+  background: $black;
+  padding: 80px 20px 10px;
+  width: 100px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.5s;
+  > div {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &.showing {
+    left: 0;
+    width: 100%;
+    ul {
+      opacity: 1;
+      list-style: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+  ul {
+    opacity: 0;
+    transition: all 0.25s;
+    li {
+      a {
+        color: white !important;
+        font-size: 2em;
+        line-height: 2em;
+      }
+    }
+  }
+}
