@@ -7,6 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import 'bulma'
 import '../scss/app.scss'
 import Header from './header'
+import Footer from './footer'
 library.add(fab, fas)
 
 class Layout extends Component {
@@ -43,28 +44,18 @@ class Layout extends Component {
           }
         `}
         render={data => (
-          <>
+          <div className={`is-${this.props.location}`}>
             <Header
               siteTitle={data.site.siteMetadata.title}
               navigation={this.state.siteNav}
               social={this.state.socialMedia}
             />
-            <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: 960,
-                padding: `0px 1.0875rem 1.45rem`,
-                paddingTop: 0,
-              }}
-            >
-              {this.props.children}
-              <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </footer>
-            </div>
-          </>
+            <div className="content">{this.props.children}</div>
+            <Footer
+              navigation={this.state.siteNav}
+              social={this.state.socialMedia}
+            />
+          </div>
         )}
       />
     )
@@ -72,7 +63,12 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
+  location: PropTypes.string,
   children: PropTypes.node.isRequired,
+}
+
+Layout.defaultProps = {
+  location: 'page',
 }
 
 export default Layout

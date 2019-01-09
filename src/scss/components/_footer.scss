@@ -1,0 +1,15 @@
+.footer {
+  background: $black;
+  ul {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    li {
+      margin-top: 0 !important;
+      a {
+        color: white;
+        margin: 0 15px;
+      }
+    }
+  }
+}
