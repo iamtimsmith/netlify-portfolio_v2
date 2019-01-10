@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400|Raleway');
 @import 'variables';
+@import 'mixins';
 @import 'keyframes';
 
 @import 'components/layout';
 @import 'components/header';
 @import 'components/offcanvas';
 @import 'components/footer';
+@import 'components/portfolioitems';
 
 @import 'pages/home';
