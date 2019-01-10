@@ -1,0 +1,107 @@
+.is-home {
+  #navbar {
+    transition: all 0.25s;
+    a {
+      transition: all 0.25s;
+    }
+    &.clear {
+      background: rgba(0, 0, 0, 0);
+      .navbar-brand {
+        visibility: hidden;
+        opacity: 0;
+      }
+      a {
+        color: $black;
+      }
+    }
+  }
+  .hero {
+    color: $black;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    height: 1vh;
+    min-height: 700px;
+    padding: 25rem 2.4rem;
+    animation: fadeIn 0.5s linear 1 forwards;
+    -webkit-animation: fadeIn 0.5s linear 1 forwards;
+    -moz-animation: fadeIn 0.5s linear 1 forwards;
+    -o-animation: fadeIn 0.5s linear 1 forwards;
+    .gatsby-image-wrapper {
+      position: absolute !important;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      min-height: 100%;
+      min-width: 100%;
+      right: 0;
+      z-index: -1;
+    }
+    .is-size-1 {
+      font-family: $serif;
+      font-weight: 700;
+      position: relative;
+      top: 20px;
+      opacity: 0;
+      animation: onLoad 1s linear 0.5s 1 forwards;
+      -webkit-animation: onLoad 1s linear 0.5s 1 forwards;
+      -moz-animation: onLoad 1s linear 0.5s 1 forwards;
+      -o-animation: onLoad 1s linear 0.5s 1 forwards;
+    }
+    .is-size-3 {
+      position: relative;
+      top: 20px;
+      opacity: 0;
+      animation: onLoad 1s linear 1s 1 forwards;
+      -webkit-animation: onLoad 1s linear 1s 1 forwards;
+      -moz-animation: onLoad 1s linear 1s 1 forwards;
+      -o-animation: onLoad 1s linear 1s 1 forwards;
+    }
+    .button {
+      margin-top: 15px;
+      position: relative;
+      color: $black;
+      top: 20px;
+      opacity: 0;
+      font-size: 2rem;
+      animation: onLoad 1s linear 1.75s 1 forwards;
+      -webkit-animation: onLoad 1s linear 1.75s 1 forwards;
+      -moz-animation: onLoad 1s linear 1.75s 1 forwards;
+      -o-animation: onLoad 1s linear 1.75s 1 forwards;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .portfolio-items {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  @for $i from 1 through 100 {
+    .portfolio-item:nth-child(#{$i}) {
+      $delay: $i * 0.5s;
+      position: relative;
+      top: 20px;
+      opacity: 0;
+      animation: onLoad 1s linear $delay 1 forwards;
+      -webkit-animation: onLoad 1s linear $delay 1 forwards;
+      -moz-animation: onLoad 1s linear $delay 1 forwards;
+      -o-animation: onLoad 1s linear $delay 1 forwards;
+    }
+  }
+  @media (max-width: 1087px) {
+    .clear {
+      background: $black !important;
+      .navbar-brand {
+        visibility: visible !important;
+        opacity: 1 !important;
+        a {
+          color: white !important;
+        }
+        &.hidden {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+}

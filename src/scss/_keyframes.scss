@@ -1,0 +1,74 @@
+@keyframes onLoad {
+  0% {
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes onLoad {
+  0% {
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes onLoad {
+  0% {
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@-o-keyframes onLoad {
+  0% {
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes line {
+  from {
+    width: 0px;
+    background: transparent;
+  }
+  to {
+    width: 20%;
+    background: $black;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    top: 5px;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 5px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: initial;
+    opacity: 1;
+  }
+}
