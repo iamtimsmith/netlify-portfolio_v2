@@ -27,7 +27,7 @@ const Offcanvas = ({ nav, social }) => (
 
 Offcanvas.propTypes = {
   nav: PropTypes.array,
-  social: PropTypes.social,
+  social: PropTypes.array,
 }
 
 Offcanvas.defaultProps = {

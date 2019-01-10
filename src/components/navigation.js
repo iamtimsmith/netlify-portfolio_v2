@@ -24,7 +24,7 @@ Navigation.propTypes = {
   nav: PropTypes.array,
 }
 
-Navigation.propTypes = {
+Navigation.defaultProps = {
   navClass: '',
   itemClass: '',
   showHome: true,
