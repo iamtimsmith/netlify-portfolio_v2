@@ -1,0 +1,31 @@
+#blog {
+  margin-top: 65px;
+  min-height: 750px;
+  position: relative;
+  top: 20px;
+  opacity: 0;
+  animation: onLoad 1s linear 0.5s 1 forwards;
+  -webkit-animation: onLoad 1s linear 0.5s 1 forwards;
+  -moz-animation: onLoad 1s linear 0.5s 1 forwards;
+  -o-animation: onLoad 1s linear 0.5s 1 forwards;
+  form {
+    padding: 50px 0;
+    #search-bar {
+      font-size: 1.8rem;
+    }
+  }
+  h1 {
+    font-family: $serif;
+  }
+  .post-card {
+    .card {
+      position: relative;
+      top: 0;
+      transition: all 0.3s;
+      &:hover {
+        top: -5px;
+        box-shadow: 0 0 30px #bbb;
+      }
+    }
+  }
+}
