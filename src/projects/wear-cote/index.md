@@ -6,7 +6,7 @@ tags: '#wordpress #jquery #php #sass'
 priority: '7'
 last: /iamtimsmith
 next: /the-effie-afton
-fullPage: ./frontpage.jpg
+fullPage: ./frontpage.png
 thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
 url: 'http://www.wear-cote.com/'
