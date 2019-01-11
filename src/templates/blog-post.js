@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/layout'
 import Share from '../components/socialshare'
+import SEO from '../components/seo'
 
 class PostTemplate extends Component {
   render() {
@@ -17,6 +18,13 @@ class PostTemplate extends Component {
 
     return (
       <Layout location="blog">
+        <SEO
+          title={post.frontmatter.title}
+          description={post.excerpt}
+          keywords={post.frontmatter.keywords}
+          url={post.fields.slug}
+          image={post.frontmatter.featured_image.childImageSharp.sizes.src}
+        />
         <div id="blog-post">
           <section className="hero is-large">
             <Img
@@ -47,7 +55,7 @@ class PostTemplate extends Component {
               </div>
             </div>
             <Share
-              url={`https://www.iamtimsmith.com/blog/${post.frontmatter.path}`}
+              url={`https://www.iamtimsmith.com/${post.fields.slug}`}
               image={`https://www.iamtimsmith.com/${
                 post.frontmatter.featured_image.childImageSharp.sizes.src
               }`}
@@ -66,13 +74,14 @@ export const query = graphql`
   query BlogQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       fields {
         slug
       }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        path
+        keywords
         featured_image {
           childImageSharp {
             sizes(maxWidth: 1200) {
