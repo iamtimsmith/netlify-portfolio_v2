@@ -4,8 +4,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import 'bulma'
-import '../scss/app.scss'
 import Header from './header'
 import Footer from './footer'
 library.add(fab, fas)
