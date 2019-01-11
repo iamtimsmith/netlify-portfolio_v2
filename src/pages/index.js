@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Item from '../components/portfolioitems'
 
 const IndexPage = ({ data }) => (
   <Layout location="home">
@@ -23,12 +24,17 @@ const IndexPage = ({ data }) => (
       </div>
     </section>
 
-    <section className="section" style={{ background: 'white', zIndex: 3 }} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-
-    <Link to="/page-2/">Go to page 2</Link>
+    <section className="portfolio-items columns is-multiline">
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <Item
+          key={node.frontmatter.title}
+          name={node.frontmatter.title}
+          tags={node.frontmatter.tags}
+          url={node.fields.slug}
+          img={node.frontmatter.thumbOne.childImageSharp.sizes}
+        />
+      ))}
+    </section>
   </Layout>
 )
 
@@ -40,6 +46,30 @@ export const pageQuery = graphql`
       childImageSharp {
         sizes(maxWidth: 1920) {
           ...GatsbyImageSharpSizes
+        }
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___priority], order: ASC }
+      filter: { fields: { type: { eq: "projects" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            path
+            tags
+            thumbOne {
+              childImageSharp {
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
         }
       }
     }

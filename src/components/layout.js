@@ -31,6 +31,21 @@ class Layout extends Component {
       ],
     }
   }
+
+  componentDidMount() {
+    window.onscroll = () => {
+      var top = window.pageYOffset
+      var navbar = document.querySelector('.is-home .navbar')
+      if (this.props.location === 'home') {
+        if (top < 550) {
+          navbar.classList.add('clear')
+        } else {
+          navbar.classList.remove('clear')
+        }
+      }
+    }
+  }
+
   render() {
     return (
       <StaticQuery
