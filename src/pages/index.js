@@ -50,7 +50,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___priority], order: ASC }
+      sort: { fields: [frontmatter___date], order: ASC }
       filter: { fields: { type: { eq: "projects" } } }
     ) {
       edges {
@@ -60,7 +60,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            path
             tags
             thumbOne {
               childImageSharp {
