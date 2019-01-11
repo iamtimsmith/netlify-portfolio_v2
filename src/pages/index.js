@@ -5,6 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Item from '../components/portfolioitems'
+import Contact from '../components/contactform'
 
 const IndexPage = ({ data }) => (
   <Layout location="home">
@@ -34,6 +35,13 @@ const IndexPage = ({ data }) => (
           img={node.frontmatter.thumbOne.childImageSharp.sizes}
         />
       ))}
+    </section>
+    <section className="section">
+      <div className="columns is-centered">
+        <div className="column is-6">
+          <Contact buttonText="Hire Me!" />
+        </div>
+      </div>
     </section>
   </Layout>
 )
