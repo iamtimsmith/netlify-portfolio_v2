@@ -64,7 +64,7 @@ export const pageQuery = graphql`
             tags
             thumbOne {
               childImageSharp {
-                sizes(maxWidth: 630) {
+                sizes(maxWidth: 1200) {
                   ...GatsbyImageSharpSizes
                 }
               }
