@@ -3,7 +3,7 @@ title: 'React: How to Create a Component'
 date: '2018-08-13'
 path: how-to-create-a-component
 tags: '#reactjs #javascript'
-image: /assets/pexels-photo-1148496.jpeg
+featured_image: ./featured_image.jpg
 keywords: 'react, component, javascript'
 ---
 
@@ -120,10 +120,11 @@ Okay, so we have props being passed into our component, now what? I said before 
 The code above will render "Hello World" in a p tag. Easy peezy, right?
 
 #### Complete Code
+
 ```
 // First we create our class
 class Greeting extends React.Component {
-	
+
 	// Then we add our constructor which receives our props
 	constructor(props) {
 		super(props);
@@ -135,7 +136,7 @@ class Greeting extends React.Component {
 		// To use the 'this' keyword, we need to bind it to our function
 		this.onChange = this.onChange.bind(this);
 	}
-	
+
 	// A custom function to change the name in our state to match the user input
 	onChange(e) {
 		this.setState({
