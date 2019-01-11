@@ -4,6 +4,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import Helmet from 'react-helmet'
+import icon32 from '../images/favicon-32x32.png'
 import Header from './header'
 import Footer from './footer'
 library.add(fab, fas)
@@ -58,6 +60,11 @@ class Layout extends Component {
         `}
         render={data => (
           <div className={`is-${this.props.location}`}>
+            <Helmet
+              link={[
+                { rel: 'shortcut icon', type: 'image/png', href: `${icon32}` },
+              ]}
+            />
             <Header
               siteTitle={data.site.siteMetadata.title}
               navigation={this.state.siteNav}
