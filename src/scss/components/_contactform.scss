@@ -1,0 +1,50 @@
+iframe.is-hidden {
+  display: none;
+}
+#contact {
+  padding-bottom: 75px;
+  #formResponse {
+    color: green;
+    opacity: 0;
+    transition: opacity 0.25s;
+    text-align: center;
+  }
+  input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 7.5px;
+    border: 1px solid $black;
+    border-radius: 0;
+    font: inherit;
+    &:focus {
+      outline: none !important;
+    }
+  }
+  input[type='submit'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid $black;
+    background: white;
+    cursor: pointer;
+    transition: all 0.25s;
+    &:hover {
+      background: $black;
+      color: white;
+    }
+  }
+  textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 7.5px;
+    height: 150px;
+    border: 1px solid $black;
+    font: inherit;
+    &:focus {
+      outline: none !important;
+    }
+  }
+}
