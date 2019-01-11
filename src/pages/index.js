@@ -52,6 +52,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: ASC }
       filter: { fields: { type: { eq: "projects" } } }
+      limit: 6
     ) {
       edges {
         node {

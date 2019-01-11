@@ -27,7 +27,7 @@ Navigation.propTypes = {
 Navigation.defaultProps = {
   navClass: '',
   itemClass: '',
-  showHome: true,
+  showHome: false,
   nav: [],
 }
 
