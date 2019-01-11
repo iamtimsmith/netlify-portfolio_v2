@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/layout'

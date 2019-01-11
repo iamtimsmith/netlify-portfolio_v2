@@ -87,7 +87,9 @@ class SocialShare extends Component {
             <a
               key={link.website}
               className={`column button is-${link.website}`}
-              onClick={() => this.openWindow(link.url)}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={[link.type, link.website]} size="2x" />
             </a>

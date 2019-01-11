@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = props => (
   <div>
-    <iframe name="hide" className="is-hidden" />
+    <iframe name="hide" title="hidden" className="is-hidden" />
     <form
       name="contact"
       target="hide"
