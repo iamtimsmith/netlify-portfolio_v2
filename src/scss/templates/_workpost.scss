@@ -1,0 +1,154 @@
+#portfolioPage {
+  margin-top: 64px;
+  padding-top: 50px;
+  opacity: 0;
+  min-height: 1000px;
+  animation: fadeIn 1s linear 0.5s 1 forwards;
+  -webkit-animation: fadeIn 1s linear 0.5s 1 forwards;
+  -moz-animation: fadeIn 1s linear 0.5s 1 forwards;
+  -o-animation: fadeIn 1s linear 0.5s 1 forwards;
+  #portContent {
+    padding: 0 50px;
+    a {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+  .post-header {
+    font-family: $serif;
+    font-weight: normal;
+  }
+  .line {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding-bottom: 1px;
+    height: 0;
+    animation: line 1.5s linear 0.5s 1 forwards;
+    -webkit-animation: line 1.5s linear 0.5s 1 forwards;
+    -moz-animation: line 1.5s linear 0.5s 1 forwards;
+    -o-animation: line 1.5s linear 0.5s 1 forwards;
+  }
+  .post-tags {
+    margin: 20px auto 80px;
+    color: $grey;
+    text-transform: uppercase;
+  }
+  #last {
+    position: absolute;
+    left: 0px;
+    top: 210px;
+    border-bottom: 1px solid transparent;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    font-family: $serif;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    color: $grey;
+    &:hover {
+      color: $black;
+      border-color: $black;
+    }
+  }
+  #next {
+    position: absolute;
+    right: 0px;
+    top: 200px;
+    border-bottom: 1px solid transparent;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    font-family: $serif;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    color: $grey;
+    &:hover {
+      color: $black;
+      border-color: $black;
+    }
+  }
+  .mouse {
+    position: relative;
+    display: block;
+    margin: 50px auto;
+    border: 2px solid $black;
+    height: 30px;
+    width: 17.5px;
+    border-radius: 17.5px;
+    transition: all 0.5s;
+    opacity: 1;
+    .divide {
+      position: absolute;
+      left: 6px;
+      width: 2px;
+      height: 15px;
+      background: $black;
+    }
+    .wheel {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      border: 2px solid $black;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background: $black;
+      top: 5px;
+      animation: scroll 1s infinite 3s linear;
+      -webkit-animation: scroll 1s infinite 3s linear;
+      -moz-animation: scroll 1s infinite 3s linear;
+      -o-animation: scroll 1s infinite 3s linear;
+    }
+  }
+  .section {
+    #img1 {
+      height: 200px;
+      position: relative;
+      left: -20px;
+      opacity: 0;
+      transition: all 1s;
+    }
+    #img2 {
+      height: 200px;
+      position: relative;
+      right: -20px;
+      opacity: 0;
+      transition: all 1s;
+    }
+    .button {
+      margin: 50px;
+      display: none;
+      opacity: 0;
+      transition: all 1s;
+    }
+    &.display {
+      #mouse {
+        opacity: 0;
+      }
+      #img1 {
+        height: auto;
+        opacity: 1;
+        left: 0;
+      }
+      #img2 {
+        height: auto;
+        opacity: 1;
+        right: 0;
+      }
+      .button {
+        display: flex;
+        opacity: 1;
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

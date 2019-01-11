@@ -13,7 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
           edges {
             node {
               fields {
@@ -42,7 +42,10 @@ exports.createPages = ({ graphql, actions }) => {
           component: blogPost,
           context: {
             slug: post.node.fields.slug,
-            previous,
+            previous:
+              previous !== null && previous.fields.slug.includes('/blog/')
+                ? previous
+                : null,
             next,
           },
         })
@@ -52,7 +55,10 @@ exports.createPages = ({ graphql, actions }) => {
           component: workPost,
           context: {
             slug: post.node.fields.slug,
-            previous,
+            previous:
+              previous !== null && previous.fields.slug.includes('/work/')
+                ? previous
+                : null,
             next,
           },
         })
@@ -67,6 +73,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const type = getNode(node.parent).sourceInstanceName
     let value
+
     if (type == 'posts') {
       value = '/blog' + createFilePath({ node, getNode })
     } else if (type == 'projects') {

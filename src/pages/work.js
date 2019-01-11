@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Item from '../components/portfolioitems'
 
@@ -21,7 +22,7 @@ export default ({ data }) => (
 export const workQuery = () => graphql`
   query workQuery {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___priority], order: ASC }
+      sort: { fields: [frontmatter___date], order: ASC }
       filter: { fields: { type: { eq: "projects" } } }
     ) {
       edges {

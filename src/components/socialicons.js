@@ -6,7 +6,12 @@ const SocialIcons = ({ social, size }) => (
   <ul className="social">
     {social.map(icon => (
       <li key={icon.icon}>
-        <a href={icon.href} style={{ fontSize: `${size}rem` }}>
+        <a
+          href={icon.href}
+          style={{ fontSize: `${size}rem` }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={['fab', icon.icon]} />
         </a>
       </li>
