@@ -3,7 +3,7 @@ title: 'React: Class Components vs. Stateless Functional Components'
 date: '2018-08-22'
 path: class-components-vs-stateless-functional-components
 tags: '#reactjs #javascript'
-image: /assets/pexels-photo-574070.jpeg
+featured_image: ./featured_image.jpg
 keywords: 'react, component, javascript'
 ---
 

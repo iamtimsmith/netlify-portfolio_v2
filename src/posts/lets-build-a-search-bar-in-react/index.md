@@ -3,17 +3,18 @@ title: Let's build a search bar in React!
 date: '2018-09-11'
 path: lets-build-a-search-bar-in-react
 tags: reactjs javascript
-image: /assets/lets-build-a-searchbar-in-react.jpeg
+featured_image: ./featured_image.jpg
 keywords: 'react, javascript, search'
 ---
+
 I know, I know...another task app...
 
 Hear me out though! We are going to build a task app that also filters the list based on a search query in real time. Sound complicated? It's not as complicated as you may think, so let's dig in!
 
 > **A quick note before we begin:**
 > I'm going to be using Parcel as a bundler. It's pretty awesome and SUPER
-> easy to set up. I have another article about setting up a project with parcel 
-> that will give you more information about the setup, so if I run through it too 
+> easy to set up. I have another article about setting up a project with parcel
+> that will give you more information about the setup, so if I run through it too
 > fast here, I'd recommend checking that out [here](https://www.iamtimsmith.com/blog/parcel-js-who-says-bundling-needs-to-be-difficult).
 
 ### Set up our files
@@ -74,12 +75,12 @@ yarn add react react-dom parcel babel-preset-env babel-preset-react bulma
 
 NPM and Yarn are package managers that allow you to add prewritten code into your project. This can speed up development time astronomically. Below you'll find a quick description of what each of these packages do.
 
-* React: A library to speed up development (seems obvious for a React tutorial, right?) [Link](https://reactjs.org/)
-* React-DOM: A library which allows React to interact with the DOM in a browser.[Link](https://reactjs.org/docs/react-dom.html)
-* Parcel: A bundling library which requires no config. [Link](https://parceljs.org/)
-* Babel-preset-env: A library which tells Parcel how to transform ES6 to work with many different browsers. [Link](https://babeljs.io/docs/en/babel-preset-env.html)
-* Babel-preset-react: A library which tells Parcel how to handle JSX. [Link](https://babeljs.io/docs/en/babel-preset-react)
-* Bulma: A CSS framework that uses flexbox and is easy to use. [Link](https://bulma.io/)
+- React: A library to speed up development (seems obvious for a React tutorial, right?) [Link](https://reactjs.org/)
+- React-DOM: A library which allows React to interact with the DOM in a browser.[Link](https://reactjs.org/docs/react-dom.html)
+- Parcel: A bundling library which requires no config. [Link](https://parceljs.org/)
+- Babel-preset-env: A library which tells Parcel how to transform ES6 to work with many different browsers. [Link](https://babeljs.io/docs/en/babel-preset-env.html)
+- Babel-preset-react: A library which tells Parcel how to handle JSX. [Link](https://babeljs.io/docs/en/babel-preset-react)
+- Bulma: A CSS framework that uses flexbox and is easy to use. [Link](https://bulma.io/)
 
 ### Set up package.json and .babelrc
 
@@ -168,7 +169,7 @@ class App extends Component {
 
 #### What is the code above doing?
 
-We need to render our list. To do this, we are using a few Bulma classes to help give things a bit of room to breathe. The important part is happening with the `<ul>`. First we create the `<ul>` in which we want to display our list. Then we're going to escape the JSX by using curly braces and use a javascript function called `.map()`. We get the list we made in state with `this.state.list` and add `.map()` to the end of it. We then pass a callback function (in this case we're using an arrow function) to return the JSX we want to show. 
+We need to render our list. To do this, we are using a few Bulma classes to help give things a bit of room to breathe. The important part is happening with the `<ul>`. First we create the `<ul>` in which we want to display our list. Then we're going to escape the JSX by using curly braces and use a javascript function called `.map()`. We get the list we made in state with `this.state.list` and add `.map()` to the end of it. We then pass a callback function (in this case we're using an arrow function) to return the JSX we want to show.
 
 A `.map()` function works similarly to a `foreach` because it loops through each item in the array. The argument we pass into the callback function (in this case `item`) will represent the item in each iteration of the loop. Inside of the return we will create an `<li>` and the text it will display will be `item`, or the text in the current index of our list array.
 
@@ -419,7 +420,7 @@ componentWillReceiveProps(nextProps) {
 }
 ```
 
-Now if we change the `.map()` function we're using for our list to map over the `filtered` list instead of the `items` list being passed in through props, we should see the same thing on the front end. 
+Now if we change the `.map()` function we're using for our list to map over the `filtered` list instead of the `items` list being passed in through props, we should see the same thing on the front end.
 
 <img src="https://media1.tenor.com/images/0abd7b24a1f28196cbde3c081aae20dd/tenor.gif" alt="Whoop-dee-doo"/>
 
@@ -456,12 +457,12 @@ handleChange(e) {
     let currentList = [];
 		// Variable to hold the filtered list before putting into state
     let newList = [];
-		
+
 		// If the search bar isn't empty
     if (e.target.value !== "") {
 			// Assign the original list to currentList
       currentList = this.props.items;
-			
+
 			// Use .filter() to determine which items should be displayed
 			// based on the search terms
       newList = currentList.filter(item => {

@@ -1,0 +1,45 @@
+#blog-post {
+  margin-top: 55px;
+  margin-bottom: 55px;
+  .hero {
+    max-height: 600px;
+  }
+  h1.is-size-1,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $serif;
+  }
+
+  #post-content {
+    margin-bottom: 50px;
+    h3 {
+      &:before {
+        content: '#';
+        font-family: $serif;
+        color: $grey;
+        font-weight: 700;
+        font-size: 4.5rem;
+        margin-right: 5px;
+        position: relative;
+        top: 5px;
+      }
+    }
+    h4 {
+      margin-top: 40px;
+      color: $grey;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    pre {
+      margin: 35px 0;
+      background: $black;
+      color: white;
+    }
+  }
+}

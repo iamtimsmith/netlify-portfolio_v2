@@ -46,7 +46,10 @@ exports.createPages = ({ graphql, actions }) => {
               previous !== null && previous.fields.slug.includes('/blog/')
                 ? previous
                 : null,
-            next,
+            next:
+              next !== null && next.fields.slug.includes('/blog/')
+                ? next
+                : null,
           },
         })
       } else if (post.node.fields.type == 'projects') {
@@ -59,7 +62,10 @@ exports.createPages = ({ graphql, actions }) => {
               previous !== null && previous.fields.slug.includes('/work/')
                 ? previous
                 : null,
-            next,
+            next:
+              next !== null && next.fields.slug.includes('/work/')
+                ? next
+                : null,
           },
         })
       }
