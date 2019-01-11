@@ -1,0 +1,47 @@
+#about {
+  margin-top: 65px;
+  .headshot {
+    display: block;
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    animation: onLoad 1s linear 0.5s 1 forwards;
+    -webkit-animation: onLoad 1s linear 0.5s 1 forwards;
+    -moz-animation: onLoad 1s linear 0.5s 1 forwards;
+    -o-animation: onLoad 1s linear 0.5s 1 forwards;
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+  .info {
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    line-height: 1.6;
+    animation: onLoad 1s linear 1s 1 forwards;
+    -webkit-animation: onLoad 1s linear 1s 1 forwards;
+    -moz-animation: onLoad 1s linear 1s 1 forwards;
+    -o-animation: onLoad 1s linear 1s 1 forwards;
+    .button {
+      margin-top: 20px;
+    }
+  }
+  #contact {
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    animation: onLoad 1s linear 1.5s 1 forwards;
+    -webkit-animation: onLoad 1s linear 1.5s 1 forwards;
+    -moz-animation: onLoad 1s linear 1.5s 1 forwards;
+    -o-animation: onLoad 1s linear 1.5s 1 forwards;
+  }
+  .footer {
+    margin-top: 100px;
+  }
+}
