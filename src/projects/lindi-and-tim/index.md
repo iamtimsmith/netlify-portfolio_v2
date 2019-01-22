@@ -1,6 +1,6 @@
 ---
 path: /lindi-and-tim
-date: '2018-07-07'
+date: '2017-11-25'
 title: Lindi & Tim
 tags: '#html #css #jQuery #responsive'
 priority: '4'

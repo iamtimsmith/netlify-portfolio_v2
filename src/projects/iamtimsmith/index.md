@@ -1,11 +1,8 @@
 ---
 path: /iamtimsmith
-date: '2018-07-07'
+date: '2019-01-01'
 title: Tim Smith
-tags: '#react #sass #gatsbyjs #webpack'
-priority: '6'
-last: /scffld
-next: /wear-cote
+tags: '#react #sass #gatsbyjs #graphql'
 fullPage: ./frontpage.jpg
 thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
