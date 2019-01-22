@@ -1,6 +1,6 @@
 ---
 path: /barley-and-rye
-date: '2018-07-07'
+date: '2016-08-20'
 title: Barley & Rye
 tags: '#html #css #jQuery #responsive'
 priority: '3'

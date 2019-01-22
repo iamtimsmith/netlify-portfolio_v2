@@ -1,6 +1,6 @@
 ---
 path: /the-effie-afton
-date: '2018-07-07'
+date: '2015-03-02'
 title: The Effie Afton
 tags: '#html #css #tumblr #responsive'
 priority: '1'
