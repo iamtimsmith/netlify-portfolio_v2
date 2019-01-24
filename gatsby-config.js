@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Tim Smith`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: ``,
     author: `@iam_timsmith`,
   },
   plugins: [
@@ -49,6 +49,20 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+            options: {
+              className: 'pre-title',
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              // If setting this to true, the parser won't handle and highlight inline
+              // code used in markdown i.e. single backtick code like `this`.
+              noInlineHighlight: true,
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
