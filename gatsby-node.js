@@ -13,7 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               fields {
@@ -33,8 +33,23 @@ exports.createPages = ({ graphql, actions }) => {
     // Blog Posts
     const posts = result.data.allMarkdownRemark.edges
     posts.forEach((post, index) => {
-      const next = index === posts.length - 1 ? null : posts[index + 1].node
-      const previous = index === 0 ? null : posts[index - 1].node
+      let work = []
+      let blog = []
+      posts.forEach(post => {
+        if (post.node.fields.type === 'posts') {
+          blog.push(post)
+        } else if (post.node.fields.type === 'projects') {
+          work.push(post)
+        }
+      })
+
+      let current
+
+      if (post.node.fields.type === 'posts') {
+        current = blog.indexOf(post)
+      } else if (post.node.fields.type === 'projects') {
+        current = work.indexOf(post)
+      }
 
       if (post.node.fields.type == 'posts') {
         createPage({
@@ -42,14 +57,8 @@ exports.createPages = ({ graphql, actions }) => {
           component: blogPost,
           context: {
             slug: post.node.fields.slug,
-            previous:
-              previous !== null && previous.fields.slug.includes('/blog/')
-                ? previous
-                : null,
-            next:
-              next !== null && next.fields.slug.includes('/blog/')
-                ? next
-                : null,
+            previous: current === 0 ? null : blog[current - 1].node,
+            next: current === blog.length - 1 ? null : blog[current + 1].node,
           },
         })
       } else if (post.node.fields.type == 'projects') {
@@ -58,14 +67,8 @@ exports.createPages = ({ graphql, actions }) => {
           component: workPost,
           context: {
             slug: post.node.fields.slug,
-            previous:
-              previous !== null && previous.fields.slug.includes('/work/')
-                ? previous
-                : null,
-            next:
-              next !== null && next.fields.slug.includes('/work/')
-                ? next
-                : null,
+            previous: current === 0 ? null : work[current - 1].node,
+            next: current === work.length - 1 ? null : work[current + 1].node,
           },
         })
       }
