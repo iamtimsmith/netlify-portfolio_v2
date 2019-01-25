@@ -10,9 +10,6 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
-        const ogImage = `http://localhost:8000${image}` || ''
-        const ogUrl =
-          `https://www.iamtimsmith.com${url}` || 'https://www.iamtimsmith.com'
 
         return (
           <Helmet
@@ -41,10 +38,6 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
               {
                 property: `og:url`,
                 content: url,
-              },
-              {
-                property: `og:image`,
-                content: ogImage,
               },
               {
                 name: `twitter:card`,
@@ -78,7 +71,6 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: '',
-  image: '',
   url: 'https://www.iamtimsmith.com',
 }
 
@@ -88,7 +80,6 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.string,
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
   url: PropTypes.string,
 }
 

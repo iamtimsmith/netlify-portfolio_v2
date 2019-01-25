@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Summary from '../components/postsummary'
+import SEO from '../components/seo'
 
 export default class Blog extends React.Component {
   constructor(props) {
@@ -51,6 +52,11 @@ export default class Blog extends React.Component {
   render() {
     return (
       <Layout>
+        <SEO
+          title="Blog"
+          keywords={this.props.data.site.siteMetadata.keywords}
+          description={this.props.data.site.siteMetadata.description}
+        />
         <div className="container" id="blog">
           <section className="section">
             <h1 className="is-size-2">Blog</h1>
@@ -90,6 +96,12 @@ export default class Blog extends React.Component {
 
 export const query = graphql`
   query blogQuery {
+    site {
+      siteMetadata {
+        description
+        keywords
+      }
+    }
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___date] }
       filter: { fields: { type: { eq: "posts" } } }

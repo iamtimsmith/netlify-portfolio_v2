@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Tim Smith`,
-    description: ``,
+    description: `Hi, I'm a freelance front-end developer from the Quad Cities that you can trust. To hire me, just drop me a line!`,
     author: `@iam_timsmith`,
+    keywords: `freelance, web developer, full stack web developer, react developer, wordpress developer`,
   },
   plugins: [
     {
