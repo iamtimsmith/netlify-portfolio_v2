@@ -9,7 +9,11 @@ import Contact from '../components/contactform'
 
 const IndexPage = ({ data }) => (
   <Layout location="home">
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Home"
+      keywords={data.site.siteMetadata.keywords}
+      description={data.site.siteMetadata.description}
+    />
     <section className="section hero is-large has-text-centered">
       <Img sizes={data.heroImg.childImageSharp.sizes} />
       <div className="text">
@@ -55,6 +59,12 @@ export const pageQuery = graphql`
         sizes(maxWidth: 1920) {
           ...GatsbyImageSharpSizes
         }
+      }
+    }
+    site {
+      siteMetadata {
+        description
+        keywords
       }
     }
     allMarkdownRemark(

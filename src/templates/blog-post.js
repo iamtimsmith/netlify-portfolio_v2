@@ -23,7 +23,6 @@ class PostTemplate extends Component {
           description={post.excerpt}
           keywords={post.frontmatter.keywords}
           url={post.fields.slug}
-          image={post.frontmatter.featured_image.childImageSharp.sizes.src}
         />
         <div id="blog-post">
           <section className="hero is-large">
