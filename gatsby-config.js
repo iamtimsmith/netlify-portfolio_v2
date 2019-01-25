@@ -6,6 +6,18 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-85334980-1',
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ['/dashboard/**'],
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'iamtimsmith.com',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
