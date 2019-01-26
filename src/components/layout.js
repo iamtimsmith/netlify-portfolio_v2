@@ -54,17 +54,24 @@ class Layout extends Component {
             site {
               siteMetadata {
                 title
+                siteUrl
               }
             }
           }
         `}
         render={data => (
           <div className={`is-${this.props.location}`}>
-            <Helmet
-              link={[
-                { rel: 'shortcut icon', type: 'image/png', href: `${icon32}` },
-              ]}
-            />
+            <Helmet title={data.site.siteMetadata.title}>
+              <link rel="shortcut icon" type="image/png" href={icon32} />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta
+                name="twitter:image"
+                content={`${data.site.siteMetadata.siteUrl}${
+                  this.props.slug
+                }twitter-card.jpg`}
+              />
+            </Helmet>
+
             <Header
               siteTitle={data.site.siteMetadata.title}
               navigation={this.state.siteNav}

@@ -17,7 +17,7 @@ class PostTemplate extends Component {
     }
 
     return (
-      <Layout location="blog">
+      <Layout location="blog" slug={post.fields.slug}>
         <SEO
           title={post.frontmatter.title}
           description={post.excerpt}
