@@ -103,7 +103,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___date] }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { type: { eq: "posts" } } }
     ) {
       edges {

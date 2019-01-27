@@ -1,6 +1,6 @@
 ---
 title: 'What is the MERN stack and how do I use it?'
-date: '2018-01-23'
+date: '2019-01-23'
 tags: '#reactjs #nodejs #expressjs #mongodb'
 featured_image: ./featured_image.jpeg
 keywords: 'reactjs, nodejs, expressjs, mongodb, mern, mern stack, how does mern work'
