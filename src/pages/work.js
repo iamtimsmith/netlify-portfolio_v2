@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 export default ({ data }) => (
   <Layout>
     <SEO
-      title="Blog"
+      title="Work"
       keywords={data.site.siteMetadata.keywords}
       description={data.site.siteMetadata.description}
     />

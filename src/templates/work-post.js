@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 class WorkPost extends Component {
   constructor(props) {
@@ -58,6 +59,12 @@ class WorkPost extends Component {
 
     return (
       <Layout>
+        <SEO
+          title={post.frontmatter.title}
+          description={post.html}
+          keywords={post.frontmatter.keywords}
+          url={post.fields.slug}
+        />
         <div
           className="container"
           id="portfolioPage"
