@@ -18,6 +18,9 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            link={[
+              { rel: 'canonical', href: `https://www.iamtimsmith.com${url}` },
+            ]}
             meta={[
               {
                 name: `description`,
