@@ -1,6 +1,6 @@
 ---
 title: 'this.state - How to Use State in React'
-date: '2019-02-06'
+date: '2019-01-31'
 tags: '#reactjs'
 featured_image: './featured_image.png'
 keywords: 'react.js tutorial, react state, react.js state management, react.js state vs props'
