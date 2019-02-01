@@ -4,7 +4,7 @@ date: '2018-09-11'
 path: lets-build-a-search-bar-in-react
 tags: reactjs javascript
 featured_image: ./featured_image.jpg
-keywords: 'react, javascript, search'
+keywords: 'react.js, react.js tutorial, javascript, search'
 ---
 
 I know, I know...another task app...

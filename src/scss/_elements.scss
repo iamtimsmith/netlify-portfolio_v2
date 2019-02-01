@@ -19,10 +19,11 @@ pre {
   .tag {
     background: none;
     font-size: 1.5rem;
-    margin: 0 0.5rem;
+    margin: 0.075rem 0 0;
     padding: 0;
     line-height: 1rem;
     vertical-align: unset;
+    display: inline;
   }
 }
 
@@ -38,4 +39,11 @@ blockquote {
 
 .message {
   font-size: 1.9rem;
+}
+
+pre {
+  margin: 5rem !important;
+  border: 1px solid $dark !important;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem $grey;
 }
