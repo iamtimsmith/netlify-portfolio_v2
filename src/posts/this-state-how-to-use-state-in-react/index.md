@@ -14,7 +14,7 @@ If you're anything like me, react state was a somewhat confusing concept. Props 
 
 Props and state both have their place within react. There are instances where each one is appropriate and I can't imagine trying to build things in react without both. Before we go further, here's the skinny: Props are pieces of data passed into a child component from the parent while state is data controlled within a component. The example below demonstrates how we pass a prop into a component:
 
-```javascript
+```jsx
 <App prop="Some data for a prop" />
 ```
 
@@ -30,7 +30,7 @@ If you aren't sure how to create a component, you can [learn about that here](ht
 
 The code below shows how to set up an empty constuctor. This should not be something we're putting into code as we only want to use constructors if they are doing something.
 
-```javascript
+```jsx
 import React, { Component } from 'react'
 
 class Example extends Component {
@@ -48,7 +48,7 @@ class Example extends Component {
 
 Adding our state object is easy enough. Inside the constructor, after `super(props);`, just add `this.state` and set it equal to an empty object. Once we have created the empty object, we can fill it with data of whatever name and value we'd like. The example below has 3 different pieces of data, a boolean, a string, and a number.
 
-```javascript
+```jsx
 import React, { Component } from 'react'
 
 class Pizza extends Component {
@@ -83,7 +83,7 @@ Using state inside of our render method is pretty easy. Like _SUPER_ easy. Can y
 
 Let's say we just want to output the topping for our pizza. We could do that in a paragraph tag like so:
 
-```javascript
+```jsx
 <p>{this.state.topping}</p>
 ```
 
@@ -99,13 +99,13 @@ The code above would be output in the browser like this:
 
 Okay, so we have our state and we can output it. It's basically the same as props but more work, right? Wrong. This next section is the part that really makes it different from props. That difference is the ability to change the state. Below is some code that explains how to do this:
 
-```javascript
+```jsx
 this.setState({ item: 'newValue' })
 ```
 
 How about we add a function to our Pizza component where we subtract a slice from our total slices. Below is the code to do this, which could then be triggered by a button click or other action.
 
-```javascript
+```jsx
 import React, { Component } from 'react'
 
 class Pizza extends Component {
@@ -174,7 +174,7 @@ Before we drop in our component, we need to write the `buySlice` function. The c
 
 Here is the code for the function `buySlice`:
 
-```javascript
+```jsx
 ...
 buySlice() {
   const totalSlices = this.state.slices + 1;
