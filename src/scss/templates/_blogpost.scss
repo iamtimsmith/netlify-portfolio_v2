@@ -16,7 +16,8 @@
 
   #post-content {
     margin-bottom: 50px;
-    h3 {
+    h2 {
+      font-size: 3.2rem !important;
       &:before {
         content: '#';
         font-family: $serif;
@@ -28,9 +29,15 @@
         top: 5px;
       }
     }
+    h3 {
+      margin-top: 40px;
+      color: $grey;
+      font-size: 2.4rem !important;
+    }
     h4 {
       margin-top: 40px;
       color: $grey;
+      font-size: 2rem !important;
     }
     img {
       display: block;

@@ -10,7 +10,7 @@ If you're anything like me, react state was a somewhat confusing concept. Props 
 
 > Props are pieces of data passed into a child component from the parent while state is data controlled within a component
 
-### React.js State vs Props
+## React.js State vs Props
 
 Props and state both have their place within react. There are instances where each one is appropriate and I can't imagine trying to build things in react without both. Before we go further, here's the skinny: Props are pieces of data passed into a child component from the parent while state is data controlled within a component. The example below demonstrates how we pass a prop into a component:
 

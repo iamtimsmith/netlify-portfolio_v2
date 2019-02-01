@@ -24,15 +24,18 @@ class PostTemplate extends Component {
           keywords={post.frontmatter.keywords}
           url={post.fields.slug}
         />
-        <div id="blog-post">
+        <div id="blog-post" itemscope itemtype="http://schema.org/TechArticle">
           <section className="hero is-large">
             <Img
               sizes={post.frontmatter.featured_image.childImageSharp.sizes}
+              alt={post.frontmatter.title}
             />
           </section>
           <section className="section">
             <div className="container">
-              <h1 className="is-size-1">{post.frontmatter.title}</h1>
+              <h1 className="is-size-1" itemprop="title">
+                {post.frontmatter.title}
+              </h1>
               <div className="columns">
                 <div className="column is-narrow">
                   <p className="is-size-5">{post.frontmatter.date}</p>
@@ -73,7 +76,7 @@ export const query = graphql`
   query BlogQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      excerpt
+      excerpt(pruneLength: 180)
       fields {
         slug
       }
