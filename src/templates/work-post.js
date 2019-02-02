@@ -134,6 +134,7 @@ export const query = graphql`
   query WorkPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt(pruneLength: 155)
       fields {
         slug
       }
