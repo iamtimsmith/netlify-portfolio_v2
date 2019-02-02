@@ -2,7 +2,7 @@
 title: Let's build a search bar in React!
 date: '2018-09-11'
 path: lets-build-a-search-bar-in-react
-tags: reactjs javascript
+tags: '#reactjs #javascript'
 featured_image: ./featured_image.jpg
 keywords: 'react.js, react.js tutorial, javascript, search'
 ---
