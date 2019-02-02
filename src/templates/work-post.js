@@ -95,11 +95,20 @@ class WorkPost extends Component {
 
             <div className="columns">
               <div className="column" id="img1">
-                <Img sizes={post.frontmatter.fullPage.childImageSharp.sizes} />
+                <Img
+                  sizes={post.frontmatter.fullPage.childImageSharp.sizes}
+                  alt={`${post.frontmatter.title} frontpage`}
+                />
               </div>
               <div className="column" id="img2">
-                <Img sizes={post.frontmatter.thumbOne.childImageSharp.sizes} />
-                <Img sizes={post.frontmatter.thumbTwo.childImageSharp.sizes} />
+                <Img
+                  sizes={post.frontmatter.thumbOne.childImageSharp.sizes}
+                  alt={`${post.frontmatter.title} mockup one`}
+                />
+                <Img
+                  sizes={post.frontmatter.thumbTwo.childImageSharp.sizes}
+                  alt={`${post.frontmatter.title} mockup two`}
+                />
               </div>
             </div>
             <div className="columns is-centered">

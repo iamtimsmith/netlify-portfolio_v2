@@ -110,6 +110,9 @@
     }
   }
   .section {
+    img {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
     #img1 {
       height: 200px;
       position: relative;
