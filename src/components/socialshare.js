@@ -66,7 +66,6 @@ class SocialShare extends Component {
       const socialComments =
         document.querySelector('#post-comments').offsetTop - 150
       const socialShare = document.querySelector('#socialShare')
-      console.log(socialContent)
       if (top > socialContent && top < socialComments) {
         socialShare.classList.add('is-shareable')
       } else {
