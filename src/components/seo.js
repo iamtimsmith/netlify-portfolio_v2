@@ -10,7 +10,8 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
-        const imgUrl = `https://www.iamtimsmith.com${image}`
+        const imgUrl = data.site.siteMetadata.siteUrl + image
+        const link = data.site.siteMetadata.siteUrl + url
         return (
           <Helmet
             htmlAttributes={{
@@ -18,9 +19,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            link={[
-              { rel: 'canonical', href: `https://www.iamtimsmith.com${url}` },
-            ]}
+            link={[{ rel: 'canonical', href: link }]}
             meta={[
               {
                 name: `description`,
@@ -103,6 +102,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        siteUrl
       }
     }
   }
