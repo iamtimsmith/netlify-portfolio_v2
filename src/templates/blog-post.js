@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/layout'
 import Share from '../components/socialshare'
 import SEO from '../components/seo'
@@ -9,13 +8,6 @@ import SEO from '../components/seo'
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.markdownRemark
-    const disqusShortname = 'iamtimsmith'
-    const disqusConfig = {
-      url: `https://www.iamtimsmith.com${post.fields.slug}`,
-      identifier: post.fields.slug,
-      title: post.frontmatter.title,
-    }
-
     return (
       <Layout location="blog" slug={post.fields.slug}>
         <SEO
@@ -49,13 +41,6 @@ class PostTemplate extends Component {
                 id="post-content"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
-              <br />
-              <div id="post-comments">
-                <DiscussionEmbed
-                  shortname={disqusShortname}
-                  config={disqusConfig}
-                />
-              </div>
             </div>
             <Share
               url={`https://www.iamtimsmith.com/${post.fields.slug}`}
