@@ -10,6 +10,7 @@ fullPage: ./frontpage.jpg
 thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
 url: http://theeffieafton.iamtimsmith.com
+keywords: 'html, css, tumblr, responsive'
 ---
 
 The Effie Afton is an indie rock band from the midwest. They were looking for a minimalist website to showcase their music.

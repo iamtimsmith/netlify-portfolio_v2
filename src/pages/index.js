@@ -9,11 +9,7 @@ import Contact from '../components/contactform'
 
 const IndexPage = ({ data }) => (
   <Layout location="home">
-    <SEO
-      title="Home"
-      keywords={data.site.siteMetadata.keywords}
-      description={data.site.siteMetadata.description}
-    />
+    <SEO title="Home" />
     <section className="section hero is-large has-text-centered">
       <Img sizes={data.heroImg.childImageSharp.sizes} />
       <div className="text">

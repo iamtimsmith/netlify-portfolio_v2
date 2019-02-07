@@ -2,16 +2,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import icon32 from '../images/favicon-32x32.png'
 
 function SEO({ description, lang, meta, keywords, title, url, image }) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description
-        const imgUrl = data.site.siteMetadata.siteUrl + image
-        const link = data.site.siteMetadata.siteUrl + url
+        /* Assign Variables with default values */
+        const metaDescription = description
+          ? description
+          : data.site.siteMetadata.description
+        const imgUrl = image
+          ? data.site.siteMetadata.siteUrl + image
+          : data.site.siteMetadata.siteUrl + data.file.childImageSharp.sizes.src
+        const link = url
+          ? data.site.siteMetadata.siteUrl + url
+          : data.site.siteMetadata.siteUrl
+        const keywordList = keywords
+          ? keywords
+          : data.site.siteMetadata.keywords
+        const newTitle = title === 'Home' ? data.site.siteMetadata.title : title
+
+        /* Create Elements */
         return (
           <Helmet
             htmlAttributes={{
@@ -19,7 +32,10 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            link={[{ rel: 'canonical', href: link }]}
+            link={[
+              { rel: 'canonical', href: link },
+              { rel: 'shortcut icon', href: icon32 },
+            ]}
             meta={[
               {
                 name: `description`,
@@ -27,7 +43,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
               },
               {
                 property: `og:title`,
-                content: title,
+                content: newTitle,
               },
               {
                 property: `og:description`,
@@ -59,7 +75,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
               },
               {
                 name: `twitter:image:alt`,
-                content: title,
+                content: newTitle,
               },
               {
                 name: `twitter:description`,
@@ -71,7 +87,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
               },
               {
                 name: `keywords`,
-                content: keywords,
+                content: keywordList,
               },
             ].concat(meta)}
           />
@@ -84,8 +100,10 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: '',
-  url: '',
+  keywords: false,
+  url: false,
+  image: false,
+  description: false,
 }
 
 SEO.propTypes = {
@@ -101,12 +119,20 @@ export default SEO
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
+    file(relativePath: { eq: "mountain.jpeg" }) {
+      childImageSharp {
+        sizes(maxWidth: 1920) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
     site {
       siteMetadata {
         title
         description
         author
         siteUrl
+        keywords
       }
     }
   }
