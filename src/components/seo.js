@@ -43,7 +43,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
               },
               {
                 property: `og:url`,
-                content: url,
+                content: link,
               },
               {
                 name: `twitter:card`,
