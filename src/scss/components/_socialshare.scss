@@ -3,7 +3,7 @@
   transition: all 0.3s;
   display: none;
   &.is-shareable {
-    display: initial;
+    display: initial !important;
   }
   .columns {
     flex-direction: row;
