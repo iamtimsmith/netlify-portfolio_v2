@@ -2,7 +2,7 @@
   position: fixed;
   transition: all 0.3s;
   &.is-shareable {
-    visibility: visible;
+    visibility: visible !important;
   }
   .columns {
     flex-direction: row;
