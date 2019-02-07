@@ -3,20 +3,20 @@ title: 'What is the MERN stack and how do I use it?'
 date: '2019-01-23'
 tags: '#reactjs #nodejs #expressjs #mongodb'
 featured_image: ./featured_image.jpeg
-keywords: 'reactjs, nodejs, expressjs, mongodb, mern, mern stack, how does mern work'
+keywords: 'mern stack, mern stack tutorial, react js, express js, express js node tutorial'
 ---
 
 <div class="message is-dark">
   <div class="message-body">
 
-Note: The code for this project can be found [here](https://github.com/iamtimsmith/simple-mern-app).
+Note: The code for this tutorial can be found [here](https://github.com/iamtimsmith/simple-mern-app).
 
   </div>
 </div>
 
 If you've been around in the developer world for a while now, you've probably come across comments or articles which mention "stacks" such as MEAN, LAMP, or XAMPP.
 
-Today we will be diving into the MERN stack which is similar to the aforementioned MEAN stack. I will explain what it is and how to use it when building a web application or website. Let's dive in!
+In this tutorial we will be diving into the MERN stack which is similar to the aforementioned MEAN stack. I will explain what it is and how to use it when building a web application or website. Let's dive in!
 
 ### What's a "stack"?
 
@@ -27,11 +27,11 @@ Perhaps the first item to discuss is the idea of a "stack". There are many diffe
 Although there are many different stacks out there to consider, some have become more common than others. One of these popular stacks is called the MEAN stack which consists of:
 
 - **M**ongoDb
-- **E**xpress.js
-- **A**ngular.js
-- **N**ode.js
+- **E**xpress js
+- **A**ngular js
+- **N**ode js
 
-Today we will be looking at the MERN stack which is almost the same as MEAN except we will replace Angular.js with React.js. This will allow us to use MongoDB for our database, Node.js and Express.js for our server and routes, and React.js to create a front-end for the user to interact with.
+Today we will be looking at the MERN stack which is almost the same as MEAN except we will replace Angular js with React js. This will allow us to use MongoDB for our database, Nodejs and Express js for our server and routes, and React js to create a front-end for the user to interact with.
 
 ![How do we build with it?](https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.gif)
 
@@ -61,13 +61,13 @@ While I'm not going to get into how to build it step by step in this article (th
 
 ![Give me the details on MERN Stack](https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.gif)
 
-Once we create our `app.js` file, we will have to install some packages. Here are some common packages I've used in my Express.js projects before which might be helpful to you.
+Once we create our `app.js` file, we will have to install some packages. Here are some common packages I've used in my Express js projects before which might be helpful to you.
 
-- **Express.js** - A web application framework with built in functionality for a lot of things including routing.
-- **Mongoose** - An ODM to allow interactions between our express.js application and MongoDB.
-- **BodyParser** - A library which allows our express.js application to read the body (or content) of the incoming requests.
+- **Express js** - A web application framework with built in functionality for a lot of things including routing.
+- **Mongoose** - An ODM to allow interactions between our express js application and MongoDB.
+- **BodyParser** - A library which allows our express js application to read the body (or content) of the incoming requests.
 - **DotENV** - Allows us to use a .env file for sensitive data.
-- **Passport.js** - Authentication for our app with several different options for authentication methods.
+- **Passport js** - Authentication for our app with several different options for authentication methods.
 - **Validator** - Simple validation on many types of data.
 - **bCrypt** - Encryption for sensitive data such as passwords
 - **Nodemon** - "Hot Reloading" for our node server when things change so we don't have to stop and start the server every time we make a change
@@ -149,7 +149,7 @@ app.post('/api/posts/:id', (req, res) => {
 app.listen(3333, () => console.log('Server is running on port 3333'))
 ```
 
-So here is our simple API server. As you can see, it has some basic CRUD (Create-Read-Update-Delete) functionality to it but nothing super complicated. If we look closely, we can see that we are using `res.json()` to provide the output data at a specific URL rather than outputting HTML or another template. This is how we build our APIs to make data available to React.
+So here is our simple API server. As you can see, it has some basic CRUD (Create-Read-Update-Delete) functionality to it but nothing super complicated. If we look closely, we can see that we are using `res.json()` to provide the output data at a specific URL rather than outputting HTML or another template. This is how we build our APIs to make data available to React js.
 
 You may also notice that I have just pointed mongoose toward my own mongodb server on my machine. For this to work properly, MongoDB needs to be installed on your computer and running. If it is not running, simply pop open a terminal window and type this command:
 
@@ -173,7 +173,7 @@ After the server starts up and tells us that it's running on port 3333 and Mongo
 
 ### The Front-End
 
-Now that we have our server up-and-running, we can start working on the client (or front-end) that our users will interact with. This will be built with React and can be done a few different ways.
+Now that we have our server up-and-running, we can start working on the client (or front-end) that our users will interact with. This will be built with React js and can be done a few different ways.
 
 The first way is to just add the front-end libraries necessary (react, react-dom, react-router, etc) into the same `package.json` file as the back-end ones. While I did do that for this project, it should be noted that I don't think this is best practice. I feel that as our project grows, our codebase will get messier and harder to work with if this method is used. I decided to go this route for this particular application because I know that it isn't going to grow or really change. The application I'm referencing here is simply for demonstration purposes.
 
@@ -188,9 +188,9 @@ Adding the `client` folder to the `.gitignore` file will ensure that it is not b
 How your app is designed will be totally up to you, I just feel that things can stay a bit more organized by maintaining separate repos for front and back ends.
 ![Organizing](https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy-downsized-large.gif)
 
-#### React
+#### React js
 
-Now that we've gone over project organization, let's talk about our actual Front-end code. Below is my `app.js` file for the React app and rather than putting the code to each component in this post, I'll just drop a link to the repo [here](https://github.com/iamtimsmith/simple-mern-app) and explain what each of the components is doing.
+Now that we've gone over project organization, let's talk about our actual Front-end code. Below is my `app.js` file for the React js app and rather than putting the code to each component in this post, I'll just drop a link to the repo [here](https://github.com/iamtimsmith/simple-mern-app) and explain what each of the components is doing.
 
 ```jsx:title=client/app.js
 import React, { Component } from 'react'
@@ -225,7 +225,7 @@ And here's a screenshot of our app homepage:
 
 </div>
 
-As you can see, the `app.js` isn't anything complicated. It has a `<Router>` which allows us to set up routes in React which render different components based on the url. Here are the other components being used in our React application:
+As you can see, the `app.js` isn't anything complicated. It has a `<Router>` which allows us to set up routes in React js which render different components based on the url. Here are the other components being used in our React js application:
 
 - **Header** - A navigation bar at the top of the screen
 - **Index** - Lists all of the available blog posts
@@ -233,7 +233,7 @@ As you can see, the `app.js` isn't anything complicated. It has a `<Router>` whi
 - **Single** - Displays a single blog post based on the id
 - **Edit** - Form which allows user to update blog post based on id
 
-We are using Axios to make our http calls to our API endpoints and then using React to display the data how we'd like. I will put the Index.js code in this post so we can examine how that is working together.
+We are using Axios to make our http calls to our API endpoints and then using React js to display the data how we'd like. I will put the Index.js code in this post so we can examine how that is working together.
 
 ```jsx:title=client/components/index.js
 import React, { Component } from 'react'
@@ -280,14 +280,14 @@ In the code above, we are using a class component which allows us to use state a
 
 #### Rendering
 
-Before wrapping up, I would like to talk a bit about rendering. If we run our application and go to a particular blog post directly, there may be some issues with the content not showing up. This can cause a poor viewing experience for the user and it makes it difficult for Search Engine crawlers to index the site. To get around this, I recommend using something like [Gatsby.js](https://www.gatsbyjs.org/) or [Next.js](https://nextjs.org/). These two solutions are different from one another, but can both be useful depending on your needs.
+Before wrapping up, I would like to talk a bit about rendering. If we run our application and go to a particular blog post directly, there may be some issues with the content not showing up. This can cause a poor viewing experience for the user and it makes it difficult for Search Engine crawlers to index the site. To get around this, I recommend using something like [Gatsby js](https://www.gatsbyjs.org/) or [Next js](https://nextjs.org/). These two solutions are different from one another, but can both be useful depending on your needs.
 
-[Gatsby.js](https://www.gatsbyjs.org/) is a static site generator which allows you to build a site with React and then Gatsby turns it into static files at build time and makes the site super fast. There's lots of plugins that are helpful and make Gatsby really versatile. In fact, [my site](https://www.iamtimsmith.com) is a Gatsby.js site! Since the static files are being created at build time, each time source content is changed the site will need to be rebuilt.
+[Gatsby js](https://www.gatsbyjs.org/) is a static site generator which allows you to build a site with React js and then Gatsby turns it into static files at build time and makes the site super fast. There's lots of plugins that are helpful and make Gatsby really versatile. In fact, [my site](https://www.iamtimsmith.com) is a Gatsby js site! Since the static files are being created at build time, each time source content is changed the site will need to be rebuilt.
 
-[Next.js](https://nextjs.org/), on the other hand, is server-side-rendering for React sites. It comes with a lot of functionality baked in such as routing, code-splitting, styled components, and more. Server side rendering means that the data will update automatically as it does on the server, but it will be rendered before the browser tries to display it. This means that there won't be any display issues with data for the user and Search Engine crawlers can do their job no problem.
+[Next js](https://nextjs.org/), on the other hand, is server-side-rendering for React js sites. It comes with a lot of functionality baked in such as routing, code-splitting, styled components, and more. Server side rendering means that the data will update automatically as it does on the server, but it will be rendered before the browser tries to display it. This means that there won't be any display issues with data for the user and Search Engine crawlers can do their job no problem.
 
 There are plenty of other solutions out there, but these are the two that I have heard about most and the two that I have used to solve this issue. Both have awesome documentation and are easy to get up and running with too.
 
 ### Conclusion
 
-I hope that this article has helped to clear up some confusion about how the MERN stack works. It is simply using MongoDB, Express.js, and Node.js to create a server which provides API endpoints that our React application can make calls to for data. Now that you have a better understanding, go build awesome things and post your links below so we can admire them!
+I hope that this article has helped to clear up some confusion about how the MERN stack works. It is simply using MongoDB, Express js, and Node js to create a server which provides API endpoints that our React js application can make calls to for data. Now that you have a better understanding, go build awesome things and post your links below so we can admire them!
