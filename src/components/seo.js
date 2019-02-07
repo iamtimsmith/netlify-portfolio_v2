@@ -31,9 +31,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${
-              data.site.siteMetadata.title
-            }  | Full-Stack Developer`}
+            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             link={[
               { rel: 'canonical', href: link },
               { rel: 'shortcut icon', href: icon32 },
