@@ -77,7 +77,7 @@ export const query = graphql`
   query BlogQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      excerpt(pruneLength: 155)
+      excerpt(pruneLength: 200)
       fields {
         slug
       }
