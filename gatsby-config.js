@@ -9,7 +9,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
   siteMetadata: {
-    title: `Tim Smith | Full-Stack Developer`,
+    title: `Tim Smith`,
     siteUrl: 'https://www.iamtimsmith.com',
     description: `Tim Smith is a full-stack developer and web designer focused on making the web a more enjoyable place to be`,
     author: `@iam_timsmith`,
