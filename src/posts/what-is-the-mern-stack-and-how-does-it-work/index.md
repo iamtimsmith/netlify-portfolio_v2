@@ -4,7 +4,7 @@ date: '2019-01-23'
 tags: '#reactjs #nodejs #expressjs #mongodb'
 featured_image: ./featured_image.jpeg
 keywords: 'mern stack, mern stack tutorial, react js, express js, express js node tutorial'
-description: 'In this MERN stack tutorial, we will build a blog using React js, Node js, Express js, and Mongodb so you can get started on your journey to being a Full-Stack Developer'
+description: 'In this MERN stack tutorial, we will build a simple blog using React js, Node js, Express js, and Mongodb to add to our Full-Stack Developer toolkit.'
 ---
 
 <div class="message is-dark">
