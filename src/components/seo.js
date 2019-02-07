@@ -49,7 +49,10 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
                 name: `twitter:card`,
                 content: `summary_large_image`,
               },
-
+              {
+                name: `twitter:image`,
+                content: imgUrl,
+              },
               {
                 name: `keywords`,
                 content: keywords,
@@ -66,7 +69,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: '',
-  url: 'https://www.iamtimsmith.com',
+  url: '',
 }
 
 SEO.propTypes = {
