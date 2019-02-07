@@ -46,12 +46,28 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
                 content: link,
               },
               {
+                property: `og:site_name`,
+                content: data.site.siteMetadata.title,
+              },
+              {
                 name: `twitter:card`,
                 content: `summary_large_image`,
               },
               {
                 name: `twitter:image`,
                 content: imgUrl,
+              },
+              {
+                name: `twitter:image:alt`,
+                content: title,
+              },
+              {
+                name: `twitter:description`,
+                content: metaDescription,
+              },
+              {
+                name: `twitter:site`,
+                content: author,
               },
               {
                 name: `keywords`,
