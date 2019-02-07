@@ -1,7 +1,10 @@
 #socialShare {
   position: fixed;
   transition: all 0.3s;
-  display: flex !important;
+  display: none;
+  &.is-shareable {
+    display: flex !important;
+  }
   .columns {
     flex-direction: row;
     .column {
