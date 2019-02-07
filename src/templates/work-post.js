@@ -61,9 +61,10 @@ class WorkPost extends Component {
       <Layout>
         <SEO
           title={post.frontmatter.title}
-          description={post.html}
+          description={post.excerpt}
           keywords={post.frontmatter.keywords}
           url={post.fields.slug}
+          image={post.frontmatter.thumbOne.childImageSharp.sizes.src}
         />
         <div
           className="container"
@@ -134,7 +135,7 @@ export const query = graphql`
   query WorkPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      excerpt(pruneLength: 155)
+      excerpt(pruneLength: 160)
       fields {
         slug
       }
@@ -142,6 +143,7 @@ export const query = graphql`
         title
         tags
         url
+        keywords
         thumbOne {
           childImageSharp {
             sizes(maxWidth: 530) {

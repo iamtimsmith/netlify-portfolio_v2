@@ -1,0 +1,19 @@
+.is-404 {
+  margin-top: 65px;
+  min-height: 750px;
+
+  h1 {
+    font-family: $serif;
+  }
+  .post-card {
+    .card {
+      position: relative;
+      top: 0;
+      transition: all 0.3s;
+      &:hover {
+        top: -5px;
+        box-shadow: 0 0 30px #bbb;
+      }
+    }
+  }
+}

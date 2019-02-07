@@ -7,12 +7,7 @@ import Contact from '../components/contactform'
 
 const AboutPage = ({ data }) => (
   <Layout>
-    <SEO
-      title="About"
-      description={data.site.siteMetadata.description}
-      keywords={data.site.siteMetadata.keywords}
-      url="https://www.iamtimsmith.com/about"
-    />
+    <SEO title="About" url="/about" />
     <div className="container" id="about">
       <section className="section">
         <div className="headshot" id="animate-img">
@@ -43,12 +38,6 @@ export default AboutPage
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        description
-        keywords
-      }
-    }
     markdownRemark(frontmatter: { title: { eq: "About" } }) {
       frontmatter {
         title

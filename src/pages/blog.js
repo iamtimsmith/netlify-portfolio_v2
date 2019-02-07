@@ -52,11 +52,7 @@ export default class Blog extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO
-          title="Blog"
-          keywords={this.props.data.site.siteMetadata.keywords}
-          description={this.props.data.site.siteMetadata.description}
-        />
+        <SEO title="Blog" url="/blog" />
         <div className="container" id="blog">
           <section className="section">
             <h1 className="is-size-2">Blog</h1>
@@ -96,12 +92,6 @@ export default class Blog extends React.Component {
 
 export const query = graphql`
   query blogQuery {
-    site {
-      siteMetadata {
-        description
-        keywords
-      }
-    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { type: { eq: "posts" } } }

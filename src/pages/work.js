@@ -6,11 +6,7 @@ import SEO from '../components/seo'
 
 export default ({ data }) => (
   <Layout>
-    <SEO
-      title="Work"
-      keywords={data.site.siteMetadata.keywords}
-      description={data.site.siteMetadata.description}
-    />
+    <SEO title="Work" url="/work" />
     <section className="portfolio-items has-margin-top columns is-multiline">
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Item
@@ -27,12 +23,6 @@ export default ({ data }) => (
 
 export const workQuery = () => graphql`
   query workQuery {
-    site {
-      siteMetadata {
-        keywords
-        description
-      }
-    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { type: { eq: "projects" } } }
