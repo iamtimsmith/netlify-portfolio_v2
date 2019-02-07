@@ -20,7 +20,7 @@ class PostTemplate extends Component {
       <Layout location="blog" slug={post.fields.slug}>
         <SEO
           title={post.frontmatter.title}
-          description={post.excerpt}
+          description={post.frontmatter.description}
           keywords={post.frontmatter.keywords}
           url={post.fields.slug}
           image={post.frontmatter.featured_image.childImageSharp.sizes.src}
@@ -85,6 +85,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         keywords
+        description
         featured_image {
           childImageSharp {
             sizes(maxWidth: 1920) {
