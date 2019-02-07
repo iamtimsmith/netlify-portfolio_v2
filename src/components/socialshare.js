@@ -81,7 +81,7 @@ class SocialShare extends Component {
 
   render() {
     return (
-      <div id="socialShare" style={{ display: 'none' }}>
+      <div id="socialShare" style={{ visibility: 'hidden' }}>
         <div className="columns is-mobile">
           {this.state.shareLinks.map(link => (
             <a
