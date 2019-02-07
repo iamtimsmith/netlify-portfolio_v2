@@ -23,8 +23,9 @@ class PostTemplate extends Component {
           description={post.excerpt}
           keywords={post.frontmatter.keywords}
           url={post.fields.slug}
+          image={post.frontmatter.featured_image.childImageSharp.sizes.src}
         />
-        <div id="blog-post" itemscope itemtype="http://schema.org/TechArticle">
+        <div id="blog-post" itemScope itemType="http://schema.org/TechArticle">
           <section className="hero is-large">
             <Img
               sizes={post.frontmatter.featured_image.childImageSharp.sizes}
@@ -33,7 +34,7 @@ class PostTemplate extends Component {
           </section>
           <section className="section">
             <div className="container">
-              <h1 className="is-size-1" itemprop="title">
+              <h1 className="is-size-1" itemProp="title">
                 {post.frontmatter.title}
               </h1>
               <div className="columns">

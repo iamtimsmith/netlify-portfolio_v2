@@ -10,7 +10,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
-
+        const imgUrl = `https://www.iamtimsmith.com${image}`
         return (
           <Helmet
             htmlAttributes={{
@@ -35,6 +35,10 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
                 content: metaDescription,
               },
               {
+                property: `og:image`,
+                content: imgUrl,
+              },
+              {
                 property: `og:type`,
                 content: `website`,
               },
@@ -48,7 +52,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
               },
               {
                 name: `twitter:image`,
-                content: image,
+                content: imgUrl,
               },
               {
                 name: `twitter:creator`,
