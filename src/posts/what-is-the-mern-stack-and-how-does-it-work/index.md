@@ -75,98 +75,19 @@ Of course there are many more packages out there, but these are several of the c
 
 Now that we have gone over some commonly used packages, let's take a look at some code. First, our server:
 
-```jsx:title=server.js
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const app = express()
-
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
-// Import Model
-const Post = require('./models/Post')
-
-// Connect to MongoDB
-mongoose.connect(
-  'mongodb://localhost:27017/simple-mern',
-  () => console.log('MongoDB is connected')
-)
-
-// Enable CORS
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  )
-  next()
-})
-
-// Get all of our posts
-app.get('/api/posts', (req, res) => {
-  Post.find({}).then(posts => {
-    res.json(posts)
-  })
-})
-
-// Get One of Our posts
-app.get('/api/posts/:id', (req, res) => {
-  Post.findOne({ _id: req.params.id }).then(post => {
-    res.json(post)
-  })
-})
-
-// Create and Update post
-app.post('/api/posts', (req, res) => {
-  const data = {
-    title: req.body.title,
-    content: req.body.content,
-  }
-  Post.findOne({ _id: req.body.id }, (err, post) => {
-    if (post) {
-      Post.findByIdAndUpdate(req.body.id, data, { upsert: false }).then(
-        updated => {
-          res.json(updated)
-        }
-      )
-    } else {
-      Post.create(data).then(created => {
-        res.json(created)
-      })
-    }
-  })
-})
-
-// Delete selected post
-app.post('/api/posts/:id', (req, res) => {
-  Post.findByIdAndDelete(req.params.id).then(post => {
-    res.json({ message: 'Your post was deleted!' })
-  })
-})
-
-app.listen(3333, () => console.log('Server is running on port 3333'))
-```
+![server.js](./code1.png)
 
 So here is our simple API server. As you can see, it has some basic CRUD (Create-Read-Update-Delete) functionality to it but nothing super complicated. If we look closely, we can see that we are using `res.json()` to provide the output data at a specific URL rather than outputting HTML or another template. This is how we build our APIs to make data available to React js.
 
 You may also notice that I have just pointed mongoose toward my own mongodb server on my machine. For this to work properly, MongoDB needs to be installed on your computer and running. If it is not running, simply pop open a terminal window and type this command:
 
-```bash
-mongod
-```
+![Type mongod to start MongDB server locally](./code2.png)
 
 This will start up the MongoDB server on your local machine. Because this is just being done locally, you won't be able to see my posts if you run the code in the repo. You will have to create new content. If you are looking for some dummy content, my current favorite generator is [Fillerama.io](http://fillerama.io/) which spits out text from some of my favorite movies and shows.
 
 If we're interested in testing out the server by itself, we can run the following command to start up the server:
 
-```bash
-npm run server
-
-or
-
-yarn server
-```
+![Start server locally](./code3.png)
 
 After the server starts up and tells us that it's running on port 3333 and MongoDB is connected, we can open up [Postman](https://www.getpostman.com/) and test out our routes there. For GET routes, we can simply put in the route and hit "Send". For the post routes, we will need to select "Body" and create/enter title and content fields.
 
@@ -178,9 +99,7 @@ The first way is to just add the front-end libraries necessary (react, react-dom
 
 The second and more optimal way (in my opinion) would be to create a repo for the back-end and a separate repo for the front-end. We can still clone the front-end repo into our project directory without any problems as long as we make sure to include the front-end in the `.gitignore` file. For instance, our file structure for this app includes a directory called `client` for all of our front-end code. We could have put that in a separate repo altogether and then just put the following into the `.gitignore` file for our back-end repo:
 
-```js
-client
-```
+![Add client folder to .gitignore file](./code4.png)
 
 Adding the `client` folder to the `.gitignore` file will ensure that it is not being seen as a second repo in the project. In addition, doing things this way makes it simple to redesign and swap out front-ends without having to touch the back-end.
 
@@ -191,38 +110,11 @@ How your app is designed will be totally up to you, I just feel that things can 
 
 Now that we've gone over project organization, let's talk about our actual Front-end code. Below is my `app.js` file for the React js app and rather than putting the code to each component in this post, I'll just drop a link to the repo [here](https://github.com/iamtimsmith/simple-mern-app) and explain what each of the components is doing.
 
-```jsx:title=client/app.js
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Header from './components/header'
-import Index from './components/index'
-import Single from './components/single'
-import New from './components/new'
-import Edit from './components/edit'
-
-const App = () => (
-  <Router>
-    <div>
-      <Header />
-      <Route path="/" exact component={Index} />
-      <Route path="/new" exact component={New} />
-      <Route path="/post/:id" exact component={Single} />
-      <Route path="/edit/:id" exact component={Edit} />
-    </div>
-  </Router>
-)
-
-ReactDOM.render(<App />, document.getElementById('app'))
-```
+![Set up our react js app.js file](./code5.png)
 
 And here's a screenshot of our app homepage:
 
-<div style="background:#fafafa; padding:10px; margin-bottom:30px;">
-
 ![Homepage for MERN app with CRUD functionality](homepage.png)
-
-</div>
 
 As you can see, the `app.js` isn't anything complicated. It has a `<Router>` which allows us to set up routes in React js which render different components based on the url. Here are the other components being used in our React js application:
 
@@ -234,46 +126,7 @@ As you can see, the `app.js` isn't anything complicated. It has a `<Router>` whi
 
 We are using Axios to make our http calls to our API endpoints and then using React js to display the data how we'd like. I will put the Index.js code in this post so we can examine how that is working together.
 
-```jsx:title=client/components/index.js
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-
-class Index extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      posts: [],
-    }
-  }
-
-  componentDidMount() {
-    axios.get('http://localhost:3333/api/posts').then(posts => {
-      this.setState({
-        posts: posts.data,
-      })
-    })
-  }
-
-  render() {
-    return (
-      <div className="m-8">
-        <ul className="index">
-          {this.state.posts.map(post => (
-            <li key={post.title}>
-              <h2>
-                <Link to={`/post/${post._id}`}>{post.title}</Link>
-              </h2>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
-}
-
-export default Index
-```
+![Setting up an index file for our MERN stack blog](./code6.png)
 
 In the code above, we are using a class component which allows us to use state and lifecycle methods. This is necessary because Axios calls should be made in a `componentDidMount()` lifecycle method. It should be noted that I was getting a CORS error when I was trying to make calls to my local API. To solve this I added some headers into the `server.js` file in the Express server to make this work. That code is noted in comments within the `server.js` file.
 
