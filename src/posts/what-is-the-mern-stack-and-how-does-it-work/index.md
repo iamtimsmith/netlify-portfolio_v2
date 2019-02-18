@@ -32,7 +32,7 @@ Although there are many different stacks out there to consider, some have become
 
 Today we will be looking at the MERN stack which is almost the same as MEAN except we will replace Angular js with React js. This will allow us to use MongoDB for our database, Nodejs and Express js for our server and routes, and React js to create a front-end for the user to interact with.
 
-<video autoplay="autoplay" loop="loop">
+<video autoplay="autoplay" loop="loop" muted>
   <source src="https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.mp4" type="video/mp4" />
 </video>
 
@@ -60,7 +60,7 @@ Hopefully that cleared things up a little and if it didn't, forget I ever mentio
 
 While I'm not going to get into how to build it step by step in this article (that will be a separate article), I would like to go over different pieces that can be/are commonly used in this stack. I went through several tutorials which explained how to set up a server but not necessarily why those libraries are used to do so.
 
-<video autoplay="autoplay" loop="loop">
+<video autoplay="autoplay" loop="loop" muted>
   <source src="https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.mp4" type="video/mp4" />
 </video>
 
@@ -109,7 +109,7 @@ Adding the `client` folder to the `.gitignore` file will ensure that it is not b
 
 How your full stack app is designed will be totally up to you, I just feel that things can stay a bit more organized by maintaining separate repos for front and back ends.
 
-<video autoplay="autoplay" loop="loop" width="300">
+<video autoplay="autoplay" loop="loop" width="300" muted>
   <source src="https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy.mp4" type="video/mp4" />
 </video>
 
