@@ -10,12 +10,12 @@ description: 'In this MERN stack tutorial, we will build a simple blog using Rea
 <div class="message is-dark">
   <div class="message-body">
 
-Note: The code for this MERN stack tutorial can be found [here](https://github.com/iamtimsmith/simple-mern-app).
+Note: The code for this tutorial can be found [here](https://github.com/iamtimsmith/simple-mern-app).
 
   </div>
 </div>
 
-In this tutorial we will be diving into the MERN stack which is similar to the MEAN stack. I will explain what it is and how to use it when building a web application or website. Let's dive in!
+In this MERN stack tutorial, we will build a simple blog using React js, Node js, Express js, and Mongodb to add to our Full-Stack Developer toolkit.
 
 ### What's a "stack"?
 
@@ -58,7 +58,7 @@ Hopefully that cleared things up a little and if it didn't, forget I ever mentio
 
 While I'm not going to get into how to build it step by step in this article (that will be a separate article), I would like to go over different pieces that can be/are commonly used in this stack. I went through several tutorials which explained how to set up a server but not necessarily why those libraries are used to do so.
 
-![Give me the details on MERN Stack](https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.gif)
+![Give me the details!](https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.gif)
 
 Once we create our `app.js` file, we will have to install some packages. Here are some common packages I've used in my Express js projects before which might be helpful to you.
 
@@ -126,7 +126,7 @@ As you can see, the `app.js` isn't anything complicated. It has a `<Router>` whi
 
 We are using Axios to make our http calls to our API endpoints and then using React js to display the data how we'd like. I will put the Index.js code in this post so we can examine how that is working together.
 
-![Setting up an index file for our MERN stack blog](./code6.png)
+![Setting up an index file for our blog](./code6.png)
 
 In the code above, we are using a class component which allows us to use state and lifecycle methods. This is necessary because Axios calls should be made in a `componentDidMount()` lifecycle method. It should be noted that I was getting a CORS error when I was trying to make calls to my local API. To solve this I added some headers into the `server.js` file in the Express server to make this work. That code is noted in comments within the `server.js` file.
 
@@ -142,4 +142,4 @@ There are plenty of other solutions out there, but these are the two that I have
 
 ### Final Thoughts On MERN Stack
 
-I hope that this article has helped to clear up some confusion about how the MERN stack works. It is simply using MongoDB, Express js, and Node js to create a server which provides API endpoints that our React js application can make calls to for data. Now that you have a better understanding, go build awesome things and post your links below so we can admire them!
+I hope that this article has helped to clear up some confusion about how this stack works. It is simply using MongoDB, Express js, and Node js to create a server which provides API endpoints that our React js application can make calls to for data. Now that you have a better understanding, go build awesome things and post your links below so we can admire them!
