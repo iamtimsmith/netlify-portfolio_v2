@@ -124,7 +124,7 @@ The code below will be used for our completed `PostView` component. Take a look 
 
 ## Last Steps for Our ReactJS Blog
 
-We are pretty much set now with our blog. There are just a few more small things we need to do to get our application working how we want. First, it's expected that a logo or site title links back to the homepage. Since we're using `react-router` in our project, we can even do this without a page refresh. To do this, we can open the `client/components/header.js` file and modify it to look like this:
+We are pretty much set now with our blog. There are just a few more small things we need to do to get our application working how we want. First, it's expected that a logo or site title links back to the homepage. Since we're using `react-router` in our project, we can even do this without a page refresh. To do this, we can open the `components/header.js` file and modify it to look like this:
 
 ![Our modified code for the Header component](./code14.png)
 
