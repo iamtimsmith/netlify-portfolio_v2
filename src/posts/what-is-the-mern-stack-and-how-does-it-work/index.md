@@ -19,7 +19,7 @@ In this MERN stack tutorial, we will build a simple blog using React js, Node js
 
 ### What's a "stack"?
 
-Perhaps the first item to discuss is the idea of a "stack". There are many different stacks out there, but they are all just different ways to do the same thing: Create a front-end (website or app) that allows people to interact with the server and database behind the scenes in a simple and manageable way. A stack is simply the different technologies being used to accomplish that goal.
+Perhaps the first item to discuss is the idea of a "stack". There are many different stacks out there, but they are all just different ways to do the same thing: Create a full stack app which consists of a front-end that allows people to interact with the server and database behind the scenes in a simple and manageable way. A stack is simply the different technologies being used to accomplish that goal.
 
 > "A stack is simply the different technologies being used to accomplish that goal."
 
@@ -103,12 +103,12 @@ The second and more optimal way (in my opinion) would be to create a repo for th
 
 Adding the `client` folder to the `.gitignore` file will ensure that it is not being seen as a second repo in the project. In addition, doing things this way makes it simple to redesign and swap out front-ends without having to touch the back-end.
 
-How your app is designed will be totally up to you, I just feel that things can stay a bit more organized by maintaining separate repos for front and back ends.
+How your full stack app is designed will be totally up to you, I just feel that things can stay a bit more organized by maintaining separate repos for front and back ends.
 ![Organizing](https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy-downsized-large.gif)
 
 #### Creating Our React js Front-End
 
-Now that we've gone over project organization, let's talk about our actual Front-end code. Below is my `app.js` file for the React js app and rather than putting the code to each component in this post, I'll just drop a link to the repo [here](https://github.com/iamtimsmith/simple-mern-app) and explain what each of the components is doing.
+Now that we've gone over project organization, let's talk about our actual Front-end code. Below is my `app.js` file for the React js app and rather than putting the code to each component in this post, I'll just drop a link to the repo [here](https://github.com/iamtimsmith/simple-mern-app) and explain what each of the react components is doing.
 
 ![Set up our react js app.js file](./code5.png)
 
@@ -128,7 +128,7 @@ We are using Axios to make our http calls to our API endpoints and then using Re
 
 ![Setting up an index file for our blog](./code6.png)
 
-In the code above, we are using a class component which allows us to use state and lifecycle methods. This is necessary because Axios calls should be made in a `componentDidMount()` lifecycle method. It should be noted that I was getting a CORS error when I was trying to make calls to my local API. To solve this I added some headers into the `server.js` file in the Express server to make this work. That code is noted in comments within the `server.js` file.
+In the code above, we are [using a class component](https://www.iamtimsmith.com/blog/class-components-vs-stateless-functional-components/) which allows us to [use state](https://www.iamtimsmith.com/blog/this-state-how-to-use-state-in-react/) and lifecycle methods. This is necessary because Axios calls should be made in a `componentDidMount()` lifecycle method. It should be noted that I was getting a CORS error when I was trying to make calls to my local API. To solve this I added some headers into the `server.js` file in the Express server to make this work. That code is noted in comments within the `server.js` file.
 
 #### Making Sure Crawlers Can Read Our React js Application
 
@@ -142,4 +142,4 @@ There are plenty of other solutions out there, but these are the two that I have
 
 ### Final Thoughts On MERN Stack
 
-I hope that this article has helped to clear up some confusion about how this stack works. It is simply using MongoDB, Express js, and Node js to create a server which provides API endpoints that our React js application can make calls to for data. Now that you have a better understanding, go build awesome things and post your links below so we can admire them!
+I hope that this article has helped to clear up some confusion about how this stack works. It is simply using MongoDB, Express js, and Node js to create a server which provides API endpoints that our React js application can make calls to for data. Now that you have a better understanding, go build awesome things!
