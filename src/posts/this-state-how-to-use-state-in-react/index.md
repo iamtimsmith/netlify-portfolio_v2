@@ -1,9 +1,9 @@
 ---
-title: 'this.state - How to Use State in React'
+title: 'this.state - How to Use State in React js'
 date: '2019-01-31'
 tags: '#reactjs'
 featured_image: './featured_image.png'
-keywords: 'react.js tutorial, react state, react.js state management, react.js state vs props'
+keywords: 'react js, react, react tutorial, prop, react state'
 ---
 
 If you're anything like me, react state was a somewhat confusing concept at first. Props were easy enough to grasp, but state was a harder piece to get my head around. How is it set? Why use that if props can handle data? In this react.js tutorial, we're going to answer those questions and more.

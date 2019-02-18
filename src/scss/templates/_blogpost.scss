@@ -39,6 +39,16 @@
       color: $grey;
       font-size: 2rem !important;
     }
+    a.gatsby-resp-image-link {
+      max-width: 750px;
+      margin: 3rem auto;
+      border-radius: 0.5rem;
+      box-shadow: 0.5rem 0.5rem 1rem $grey;
+      overflow: hidden;
+      img {
+        height: calc(100% + 5px) !important;
+      }
+    }
     img {
       display: block;
       margin: 0 auto;
