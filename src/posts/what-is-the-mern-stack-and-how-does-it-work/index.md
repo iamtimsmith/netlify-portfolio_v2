@@ -34,7 +34,6 @@ Today we will be looking at the MERN stack which is almost the same as MEAN exce
 
 <video autoplay="autoplay" loop="loop">
   <source src="https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.mp4" type="video/mp4" />
-  <img src="https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.gif" alt="How do we build with it?" />
 </video>
 
 ## How do we build with it?
@@ -63,7 +62,6 @@ While I'm not going to get into how to build it step by step in this article (th
 
 <video autoplay="autoplay" loop="loop">
   <source src="https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.mp4" type="video/mp4" />
-  <img src="https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.gif" alt="Give me the details!" />
 </video>
 
 Once we create our `app.js` file, we will have to install some packages. Here are some common packages I've used in my Express js projects before which might be helpful to you.
@@ -113,7 +111,6 @@ How your full stack app is designed will be totally up to you, I just feel that 
 
 <video autoplay="autoplay" loop="loop" width="300">
   <source src="https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy.mp4" type="video/mp4" />
-  <img src="https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy-downsized-large.gif" alt="Organizing" />
 </video>
 
 ### Creating Our React js Front-End
