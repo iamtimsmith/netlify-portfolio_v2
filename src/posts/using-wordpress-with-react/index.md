@@ -27,7 +27,7 @@ First, it can create sites that aren't particularly performant. While PHP is a v
 
 Wordpress exposes a REST api that allows access to the data created by the site. We can leverage this technology with a library like Axios to consume the data from our Wordpress site and pull it in to our React.js project. This means that we can have the best of both words: the ease of using Wordpress to manage content and the joy of building with React js.
 
-## Wordpress
+## Using Wordpress as Our Back-end
 
 Lets take a look at a Wordpress site so you can see exactly what I'm talking about. You can use any Wordpress site for this, even a site being hosted at a subdomain. For this article I will be looking at the [TechCrunch](https://techcrunch.com/) website.
 
@@ -136,7 +136,7 @@ You may notice some issues with load speed or a _glitchy_ sort of feeling where 
 
 ![Gatsby js](https://media.giphy.com/media/g9582DNuQppxC/giphy-downsized-large.gif)
 
-### Gatsby.js
+### Gatsby.js, a Static Site Generator
 
 [Gatsby js](https://www.gatsbyjs.org/) is one of my favorite tools to build with in the react js ecosystem. It allows us to build a site or app using React, React-router, and Graphql right out of the box! Then, when we actually build the application, Gatsby js creates static files which make our applications stupid fast.
 
@@ -144,7 +144,7 @@ Because the files for our application are being served statically, they can be v
 
 ![Thank U, Next](https://media.giphy.com/media/1gUWdf8Z8HCxpM8cUR/giphy.gif)
 
-### Next.js
+### Next.js, Server-Side Rendered React js
 
 Another popular solution to handle these issues is called [Next js](https://nextjs.org/), which provides server-side rendering for react js applications. Rather than using `componentDidMount` to fetch our data after our component has mounted, Next js exposes a new method called `getIntialProps` which allows us to fetch data before the component is rendered.
 
