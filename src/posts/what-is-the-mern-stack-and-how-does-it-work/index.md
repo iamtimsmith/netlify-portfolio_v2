@@ -32,7 +32,10 @@ Although there are many different stacks out there to consider, some have become
 
 Today we will be looking at the MERN stack which is almost the same as MEAN except we will replace Angular js with React js. This will allow us to use MongoDB for our database, Nodejs and Express js for our server and routes, and React js to create a front-end for the user to interact with.
 
-![How do we build with it?](https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.gif)
+<video autoplay="autoplay" loop="loop">
+  <source src="https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.mp4" type="video/mp4" />
+  <img src="https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.gif" alt="How do we build with it?" />
+</video>
 
 ## How do we build with it?
 
@@ -58,7 +61,10 @@ Hopefully that cleared things up a little and if it didn't, forget I ever mentio
 
 While I'm not going to get into how to build it step by step in this article (that will be a separate article), I would like to go over different pieces that can be/are commonly used in this stack. I went through several tutorials which explained how to set up a server but not necessarily why those libraries are used to do so.
 
-![Give me the details!](https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.gif)
+<video autoplay="autoplay" loop="loop">
+  <source src="https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.mp4" type="video/mp4" />
+  <img src="https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.gif" alt="Give me the details!" />
+</video>
 
 Once we create our `app.js` file, we will have to install some packages. Here are some common packages I've used in my Express js projects before which might be helpful to you.
 
@@ -104,7 +110,11 @@ The second and more optimal way (in my opinion) would be to create a repo for th
 Adding the `client` folder to the `.gitignore` file will ensure that it is not being seen as a second repo in the project. In addition, doing things this way makes it simple to redesign and swap out front-ends without having to touch the back-end.
 
 How your full stack app is designed will be totally up to you, I just feel that things can stay a bit more organized by maintaining separate repos for front and back ends.
-![Organizing](https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy-downsized-large.gif)
+
+<video autoplay="autoplay" loop="loop" width="300">
+  <source src="https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy.mp4" type="video/mp4" />
+  <img src="https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy-downsized-large.gif" alt="Organizing" />
+</video>
 
 ### Creating Our React js Front-End
 

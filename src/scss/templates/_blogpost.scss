@@ -49,9 +49,11 @@
         height: calc(100% + 5px) !important;
       }
     }
+    video,
     img {
       display: block;
-      margin: 0 auto;
+      max-width: 750px;
+      margin: 3rem auto;
     }
   }
 }
