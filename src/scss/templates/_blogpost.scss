@@ -52,7 +52,8 @@
     video,
     img {
       display: block;
-      max-width: 750px;
+      width: 750px;
+      max-width: 100%;
       margin: 3rem auto;
     }
   }
