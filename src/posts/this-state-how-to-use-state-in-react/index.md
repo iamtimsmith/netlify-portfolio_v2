@@ -14,9 +14,7 @@ If you're anything like me, react state was a somewhat confusing concept at firs
 
 Props and state both have their place within react. There are instances where each one is appropriate and I can't imagine trying to build things in react without both. Before we get too far into it, I'll explain so here's the skinny: Props are pieces of data passed into a child component from the parent while state is data controlled within a component. The example below demonstrates how we pass a prop into a component:
 
-```jsx
-<App prop="Some data for a prop" />
-```
+![An example of react props](./code1.png)
 
 Many times state will be used to pass data into a child component via props. There are even ways to manipulate a parent component's state from a child component. By the end of this post, you'll know how to do both.
 
@@ -30,44 +28,11 @@ If you aren't sure how to create a component, you can [learn about that here](ht
 
 The code below shows how to set up an empty constuctor. This should not be something we're putting into production code as we only want to use constructors if they are actually doing something. A constructor isn't needed for a class component to receive props, so unless you have state or have to bind a function you probably won't need it.
 
-```jsx
-import React, { Component } from 'react'
-
-class Example extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      ...
-    )
-  }
-}
-```
+![Creating a constructor in a class component](./code2.png)
 
 Adding our state object is easy enough. Inside the constructor, after `super(props);`, just add `this.state` and set it equal to an empty object. Once we have created the empty object, we can fill it with data of whatever key and value pair we'd like. The example below has 3 different pieces of data: a boolean, a string, and a number.
 
-```jsx
-import React, { Component } from 'react'
-
-class Pizza extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isHungry: true,
-      topping: "Pepperoni",
-      slices: 8
-    }
-  }
-
-  render() {
-    return (
-      ...
-    )
-  }
-}
-```
+![Adding state to our react js component](./code3.png)
 
 In the Pizza component above, you can see that we have a state which includes a boolean value of true for `isHungry`, a string value of "Pepperoni" for the `topping`, and the integer 8 for the number of `slices`. We can actually use any data type within state such as bool, integer, string, array, or object.
 
@@ -83,15 +48,11 @@ Using state inside of our render method is pretty easy. Like _SUPER_ easy. Can y
 
 Did you get it? I'll go over it anyway just in case. Let's say we just want to output the topping for our pizza. We could do that in a paragraph tag like so:
 
-```jsx
-<p>{this.state.topping}</p>
-```
+![Rendering our state as data](./code4.png)
 
 The code above would be output in the browser like this:
 
-```html
-<p>Pepperoni</p>
-```
+![How our state will look when it is rendered](./code5.png)
 
 ![Awesome!](https://media.giphy.com/media/d2Z9QYzA2aidiWn6/giphy.gif)
 
@@ -99,42 +60,13 @@ The code above would be output in the browser like this:
 
 Okay, so we have our state and we can output it. It's basically the same as props but more work, right? Wrong. This next section is the part that really makes state different from props. That difference is the ability to change the state within a component. Below is some code that explains how to do this:
 
-```jsx
-this.setState({ item: 'newValue' })
-```
+![Setting state in a react js component](./code6.png)
 
 The code above calls a `this.setState` function and passes in an object with key-value pairs. If the key matches one we already have in state, it updates the value in state to the new value provided. If the key doesn't exist in state, it will be created with the given value.
 
 How about we add a function to our Pizza component where we subtract a slice from our total slices. Below is the code to do this, which could then be triggered by a button click or other action.
 
-```jsx
-import React, { Component } from 'react'
-
-class Pizza extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isHungry: true,
-      topping: "Pepperoni",
-      slices: 8
-    };
-    this.eatSlice = this.eatSlice.bind(this);
-  }
-
-  eatSlice() {
-    const totalSlices = this.state.slices - 1;
-    this.setState({
-      slices: totalSlices
-    })
-  }
-
-  render() {
-    return (
-      ...
-    )
-  }
-}
-```
+![Creating a function to update state](./code7.png)
 
 If we assume this function will be fired when a button is clicked, then each time the user clicks that button our slices in state will go down by one (even into negatives because we have not created logic to prevent that). Each time the state changes from the button click, our component will re-render with the new data.
 
@@ -150,25 +82,11 @@ Our new `Button` component will not have any state of it's own and will not use 
 
 Here is the code for our newly created `Button` component:
 
-```jsx
-const Button = ({ action, label }) => (
-  <button onClick={() => action()}>{label}</button>
-)
-```
+![Creating a button component](./code8.png)
 
 Pretty simple, right? We will use our `action` prop to pass in a function, and our `label` prop to pass in a string which will set the text on the button. Since we're passing in a function prop, we can just use the function we already wrote to eat a slice of pizza. I'll show you how this will work within the render function:
 
-```jsx
-...
-render() {
-  return (
-    <div>
-      <Button action={this.eatSlice} label="Eat a slice" />
-    </div>
-  )
-}
-...
-```
+![Passing function as props in react js](./code9.png)
 
 What fun is it to run out of pizza? How about we add another button to buy another slice so we don't ever have to run out? Since we created a button component which can already take a function and label, we can simply reuse the component and pass in new values for those props.
 
@@ -176,73 +94,17 @@ Before we drop in our component, we need to write the `buySlice` function. The c
 
 Here is the code for the function `buySlice`:
 
-```jsx
-...
-buySlice() {
-  const totalSlices = this.state.slices + 1;
-  this.setState({
-    slices: totalSlices
-  });
-}
-...
-```
+![Creating a buySlice function](./code10.png)
 
 We need to remember to bind `this` to our function in the constructor as well. Right now our Pizza component should look like this:
 
-```jsx
-class Pizza extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isHungry: true,
-      topping: 'Pepperoni',
-      slices: 8,
-    }
-    this.eatSlice = this.eatSlice.bind(this)
-    this.buySlice = this.buySlice.bind(this)
-  }
-
-  eatSlice() {
-    const totalSlices = this.state.slices - 1
-    this.setState({
-      slices: totalSlices,
-    })
-  }
-
-  buySlice() {
-    const totalSlices = this.state.slices + 1
-    this.setState({
-      slices: totalSlices,
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <Button action={this.eatSlice} label="Eat a slice" />
-      </div>
-    )
-  }
-}
-```
+![After binding function to this](./code11.png)
 
 Since we have our function to control the state in the parent component and we have bound `this` to the function, we are ready to pass it into the child component and let the child component call the `buySlice` function.
 
 Let's create a new button to buy a slice of pizza. Modify your render method in the Pizza component to look like this:
 
-```jsx
-...
-render() {
-  return (
-    <div>
-      <p>Slices Left: {this.state.slices}</p>
-      <Button action={this.eatSlice} label="Eat a slice" />
-      <Button action={this.buySlice} label="Buy a slice" />
-    </div>
-  )
-}
-...
-```
+![Add buttons to component](./code12.png)
 
 Just to make it a bit easier to see what's going on, I have added some text which will show you the current number of slices available. We can now click our "Eat a slice" button to reduce the number of slices by one and we can click the "Buy a slice" button to increase the number of slices by one.
 
@@ -257,3 +119,10 @@ In this post, we talked about what state is, how to create state, how to change 
   See the Pen <a href='https://codepen.io/iamtimsmith/pen/xMqdjV/'>xMqdjV</a> by Tim Smith
   (<a href='https://codepen.io/iamtimsmith'>@iamtimsmith</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+<p className="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="iamtimsmith" data-slug-hash="xMqdjV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="What is React State?">
+  <span>See the Pen <a href="https://codepen.io/iamtimsmith/pen/xMqdjV/">
+  What is React State?</a> by Tim Smith (<a href="https://codepen.io/iamtimsmith">@iamtimsmith</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
