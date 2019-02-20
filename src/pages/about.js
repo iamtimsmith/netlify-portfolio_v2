@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Contact from '../components/contactform'
+import Resume from './about/Resume.pdf'
 
 const AboutPage = ({ data }) => (
   <Layout>
@@ -21,10 +22,14 @@ const AboutPage = ({ data }) => (
       </section>
       <section className="section">
         <div className="columns">
-          <div
-            className="column info"
-            dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-          />
+          <div className="column info">
+            <div
+              dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+            />
+            <a href={Resume} target="_blank" rel="noopener noreferrer">
+              My Resume
+            </a>
+          </div>
           <div className="column">
             <Contact buttonText="Hire Me!" />
           </div>
