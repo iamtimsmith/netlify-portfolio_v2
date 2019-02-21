@@ -2,15 +2,18 @@
 title: 'this.state - How to Use State in React js'
 date: '2019-01-31'
 tags: '#reactjs'
-featured_image: './featured_image.png'
+featured_image: ./featured_image.png
 keywords: 'react js, react, react tutorial, prop, react state'
+description: "If you're anything like me, the concept of state was confusing at first. In this tutorial, we'll learn how to use state and props in a react js application."
 ---
 
-If you're anything like me, react state was a somewhat confusing concept at first. Props were easy enough to grasp, but state was a harder piece to get my head around. How is it set? Why use that if props can handle data? In this react.js tutorial, we're going to answer those questions and more.
+If you're anything like me, the concept of state was confusing at first. In this tutorial, we'll learn how to use state and props in a react js application.
+
+How is state set? Why use that if props can handle data? In this post, we're going to answer those questions and more.
 
 > Props are pieces of data passed into a child component from the parent while state is data controlled within a component
 
-### React.js State vs Props
+### State vs Props in React js
 
 Props and state both have their place within react. There are instances where each one is appropriate and I can't imagine trying to build things in react without both. Before we get too far into it, I'll explain so here's the skinny: Props are pieces of data passed into a child component from the parent while state is data controlled within a component. The example below demonstrates how we pass a prop into a component:
 
@@ -18,7 +21,7 @@ Props and state both have their place within react. There are instances where ea
 
 Many times state will be used to pass data into a child component via props. There are even ways to manipulate a parent component's state from a child component. By the end of this post, you'll know how to do both.
 
-## State Management in React
+## State Management in a React js Component
 
 Before we can get into the details about creating a state within our component, it's important to note that state can only be [created in a class component](https://www.iamtimsmith.com/blog/class-components-vs-stateless-functional-components/). The reason for this is the fact that our state will be housed in a class constructor.
 
@@ -38,11 +41,13 @@ In the Pizza component above, you can see that we have a state which includes a 
 
 I know what you're thinking. _Super Cool, Tim. Now what?_
 
-![Now what?](https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy-downsized.gif)
+<video autoplay="autoplay" loop="loop" muted width="300">
+  <source src="https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy.mp4" type="video/mp4" />
+</video>
 
 I'm glad you asked. That brings us to the next section:
 
-## Accessing React State from the render method
+## Accessing State from the Render Method
 
 Using state inside of our render method is pretty easy. Like _SUPER_ easy. Can you guess how to do it without me telling you? I'll give you a few minutes.
 
@@ -54,7 +59,9 @@ The code above would be output in the browser like this:
 
 ![How our state will look when it is rendered](./code5.png)
 
-![Awesome!](https://media.giphy.com/media/d2Z9QYzA2aidiWn6/giphy.gif)
+<video autoplay="autoplay" loop="loop" muted>
+  <source src="https://media.giphy.com/media/d2Z9QYzA2aidiWn6/giphy.mp4" type="video/mp4" />
+</video>
 
 ## How do we change the state?
 
@@ -72,7 +79,9 @@ If we assume this function will be fired when a button is clicked, then each tim
 
 This allows users to modify data on a page in real time, which is awesome. We can also pass our state into a child component as props. This brings us to our next topic which is changing parent state from a child component.
 
-![Changing Parent State from a Child Component](https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.gif)
+<video autoplay="autoplay" loop="loop" muted>
+  <source src="https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.mp4" type="video/mp4" />
+</video>
 
 ## Changing Parent State from Child Component
 
@@ -110,7 +119,7 @@ Just to make it a bit easier to see what's going on, I have added some text whic
 
 ## Conclusion
 
-Working with state is an essential skill to have in react. It makes our lives as developers easier and more managable without overcomplicating things. It also makes it possible to have extremely dynamic and fluid user experiences quickly.
+Working with state is an essential skill to have in react js. It makes our lives as developers easier and more managable without overcomplicating things. It also makes it possible to have extremely dynamic and fluid user experiences quickly.
 
 In this post, we talked about what state is, how to create state, how to change state, and how to manipulate state from a child component. This should be enough information for us to control the data within our components in most cases. Now go forth and build cool stuff!
 
@@ -119,10 +128,3 @@ In this post, we talked about what state is, how to create state, how to change 
   See the Pen <a href='https://codepen.io/iamtimsmith/pen/xMqdjV/'>xMqdjV</a> by Tim Smith
   (<a href='https://codepen.io/iamtimsmith'>@iamtimsmith</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-
-<p className="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="iamtimsmith" data-slug-hash="xMqdjV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="What is React State?">
-  <span>See the Pen <a href="https://codepen.io/iamtimsmith/pen/xMqdjV/">
-  What is React State?</a> by Tim Smith (<a href="https://codepen.io/iamtimsmith">@iamtimsmith</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
