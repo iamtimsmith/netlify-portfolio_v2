@@ -39,6 +39,12 @@
       color: $grey;
       font-size: 2rem !important;
     }
+    video,
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 3rem auto;
+    }
     a.gatsby-resp-image-link {
       max-width: 750px;
       margin: 3rem auto;
@@ -48,13 +54,6 @@
       img {
         height: calc(100% + 5px) !important;
       }
-    }
-    video,
-    img {
-      display: block;
-      width: 750px;
-      max-width: 100%;
-      margin: 3rem auto;
     }
   }
 }

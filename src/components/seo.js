@@ -100,10 +100,6 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: false,
-  url: false,
-  image: false,
-  description: false,
 }
 
 SEO.propTypes = {

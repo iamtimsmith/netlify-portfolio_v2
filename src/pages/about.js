@@ -8,7 +8,7 @@ import Resume from './about/Resume.pdf'
 
 const AboutPage = ({ data }) => (
   <Layout>
-    <SEO title="About" url="/about" />
+    <SEO title="About" url="/about" description={data.markdownRemark.frontmatter.description} keywords={data.markdownRemark.frontmatter.keywords} />
     <div className="container" id="about">
       <section className="section">
         <div className="headshot" id="animate-img">
@@ -26,7 +26,7 @@ const AboutPage = ({ data }) => (
             <div
               dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
             />
-            <a href={Resume} target="_blank" rel="noopener noreferrer">
+            <a href={Resume} className="button" target="_blank" rel="noopener noreferrer">
               My Resume
             </a>
           </div>
@@ -46,6 +46,8 @@ export const query = graphql`
     markdownRemark(frontmatter: { title: { eq: "About" } }) {
       frontmatter {
         title
+        description
+        keywords
         profile_pic {
           childImageSharp {
             sizes(maxWidth: 600) {

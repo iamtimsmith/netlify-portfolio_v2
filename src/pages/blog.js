@@ -52,7 +52,12 @@ export default class Blog extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Blog" url="/blog" />
+        <SEO
+          title="Blog" 
+          url="/blog" 
+          description="A blog to teach new developers about MERN, Node js, React js, Express js, and Wordpress in a simple and understandable way." 
+          keywords="mern stack, react js, node js, wordpress" 
+        />
         <div className="container" id="blog">
           <section className="section">
             <h1 className="is-size-2">Blog</h1>

@@ -28,8 +28,9 @@
     -webkit-animation: onLoad 1s linear 1s 1 forwards;
     -moz-animation: onLoad 1s linear 1s 1 forwards;
     -o-animation: onLoad 1s linear 1s 1 forwards;
-    h3 {
+    h1 {
       font-family: $serif;
+      font-size: 4rem !important;
     }
     .button {
       margin-top: 20px;
