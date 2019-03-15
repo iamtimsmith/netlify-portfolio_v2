@@ -146,21 +146,21 @@ export const query = graphql`
         keywords
         thumbOne {
           childImageSharp {
-            sizes(maxWidth: 530) {
+            sizes(maxWidth: 1000) {
               ...GatsbyImageSharpSizes
             }
           }
         }
         thumbTwo {
           childImageSharp {
-            sizes(maxWidth: 530) {
+            sizes(maxWidth: 1000) {
               ...GatsbyImageSharpSizes
             }
           }
         }
         fullPage {
           childImageSharp {
-            sizes(maxWidth: 530) {
+            sizes(maxWidth: 1000) {
               ...GatsbyImageSharpSizes
             }
           }
