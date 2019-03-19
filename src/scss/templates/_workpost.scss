@@ -9,10 +9,6 @@
   -o-animation: fadeIn 1s linear 0.5s 1 forwards;
   #portContent {
     padding: 0 50px;
-    a {
-      color: $black;
-      text-decoration: underline;
-    }
   }
   .post-header {
     font-family: $serif;
@@ -45,6 +41,7 @@
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     font-family: $serif;
+    text-decoration: none;
     transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -66,6 +63,7 @@
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     font-family: $serif;
+    text-decoration: none;
     transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;

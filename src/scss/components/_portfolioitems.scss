@@ -11,6 +11,7 @@
     overflow: hidden;
     color: #fff;
     font-family: $serif;
+    text-decoration: none;
     background: #000;
     &:after {
       @include responsive;
