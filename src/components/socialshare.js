@@ -53,15 +53,17 @@ class SocialShare extends Component {
 
   socialScroll(e) {
     const top = window.pageYOffset
+    const bottom = top + window.innerHeight
     const socialEl = document.querySelector('#post-content')
 
     if (document.body.contains(socialEl)) {
       const socialContent =
         document.querySelector('#post-content').offsetTop + 550
-      const footer = document.querySelector('footer.footer').offsetTop - 550
+      const footer = document.querySelector('footer.footer').offsetTop - 200
       const socialShare = document.querySelector('#socialShare')
-      console.log(footer)
-      if (top > socialContent && top < footer) {
+      console.log(`Bottom: ${bottom}, Footer: ${footer}`)
+
+      if (top > socialContent && bottom < footer) {
         socialShare.classList.add('is-shareable')
       } else {
         socialShare.classList.remove('is-shareable')

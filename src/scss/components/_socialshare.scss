@@ -1,4 +1,5 @@
 #socialShare {
+  z-index: 2;
   position: fixed;
   transition: all 0.3s;
   &.is-shareable {
