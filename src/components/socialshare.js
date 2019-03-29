@@ -17,11 +17,6 @@ class SocialShare extends Component {
           website: 'twitter',
         },
         {
-          url: `https://plus.google.com/share?url=${this.props.url}`,
-          type: 'fab',
-          website: 'google-plus',
-        },
-        {
           url: `https://www.linkedin.com/shareArticle?mini=true&url=${
             this.props.url
           }`,
