@@ -7,6 +7,12 @@ keywords: 'react js, reactjs, javascript, wordpress, wordpress plugins, gatsbyjs
 description: 'Ever wondered how to use Gatsby js with WordPress? This post will cover everything you need to know about getting WordPress ready for a Gatsby site.'
 ---
 
+<article class="message">
+  <div class="message-body">
+    Note: This is part one in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-2">Part Two here</a>.
+  </div>
+</article>
+
 Ever wondered how to use Gatsby js with WordPress? This post will cover everything you need to know about getting WordPress ready for a Gatsby site.
 
 In a [previous post](/blog/using-wordpress-with-react/), we spoke about using React js to build a front-end for a WordPress site. We talked about a simple setup to do this, but also mentioned some drawbacks to doing this.
@@ -106,3 +112,5 @@ That being said, if we are creating custom content types for our blog we will ne
 <br /><br />
 
 If you have any questions, you can hit me up on twitter at [@iam_timsmith](https://twitter.com/iam_timsmith)!
+
+See you in [How To Build A Blog with Wordpress and Gatsby.js - Part 2](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-2)!

@@ -50,7 +50,16 @@ blockquote {
 }
 
 .message {
+  margin: 5rem !important;
+  border: 1px solid $light !important;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem $grey;
+  background-color: white !important;
+  font-family: $serif;
   font-size: 1.9rem;
+  &-body {
+    border: none;
+  }
 }
 
 @media (max-width: 600px) {
