@@ -161,4 +161,6 @@ We're about half-way done with the actual Gatsby js build. In this post we cover
   <source src="https://media.giphy.com/media/14cDsqOkks6O8U/giphy.mp4">
 </video>
 
+The code for this tutorial can be found [here](https://github.com/iamtimsmith/building-a-blog-with-wordpress-and-gatsby)
+
 <!-- See you in [How To Build A Blog with Wordpress and Gatsby.js - Part 3](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3)! -->
