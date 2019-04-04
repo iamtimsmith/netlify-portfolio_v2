@@ -9,7 +9,7 @@ description: 'In the last post, we covered setting up WordPress for use with Gat
 
 <article class="message">
   <div class="message-body">
-    Note: This is part two in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1">Part One here</a>.
+    Note: This is part two in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1">Part One here</a>, and <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3">Part Three here</a>.
   </div>
 </article>
 
@@ -80,7 +80,7 @@ The site provides a navbar with a link going back to the homepage. There is also
 
 ## Adding Gatsby js Plugins
 
-Now that we know what's already installed and what it looks like to start, we can add the stuff we need to use WordPress with our site. Fortunately for us, Gatsby has a page on their site where you can [see what plugins are available](https://www.gatsbyjs.org/plugins/). We will be adding the following plugins to our site: [Gatsby-Source-WordPress](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/), [Gatsby-Plugin-Sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/), and [Gatsby-Plugin-Sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/).
+Now that we know what's already installed and what it looks like to start, we can add the stuff we need to use WordPress with our site. Fortunately for us, Gatsby has a page on their site where you can [see what plugins are available](https://www.gatsbyjs.org/plugins/). We will be adding the following plugins to our site: [Gatsby-Source-WordPress](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/) and [Gatsby-Plugin-Sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/).
 
 To do this, we can use this code in the terminal:
 ![Adding packages for WordPress](./code5.png)
@@ -163,4 +163,4 @@ We're about half-way done with the actual Gatsby js build. In this post we cover
 
 The code for this tutorial can be found [here](https://github.com/iamtimsmith/building-a-blog-with-wordpress-and-gatsby)
 
-<!-- See you in [How To Build A Blog with Wordpress and Gatsby.js - Part 3](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3)! -->
+See you in [How To Build A Blog with Wordpress and Gatsby.js - Part 3](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3)!
