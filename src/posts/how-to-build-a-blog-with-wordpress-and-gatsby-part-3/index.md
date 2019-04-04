@@ -10,9 +10,6 @@ description: 'In the third part of this series about WordPress and Gatsby js, we
 <article class="message">
   <div class="message-body">
     Note: This is part three in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1">Part One here</a>, and <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-2">Part Two here</a>.
-
-    The code for this post can be found <a href="https://github.com/iamtimsmith/building-a-blog-with-wordpress-and-gatsby">here</a>.
-
   </div>
 </article>
 
@@ -137,5 +134,7 @@ That's a good looking component! Let's see what it looks like when we visit the 
 ## Wrapping up
 
 Well done! We now have a functioning blog using WordPress and Gatsby js. There are more things we can do to add custom functionality such as custom post types, galleries, and more, but this is enough to get us started for now. As we've seen, it's pretty simple to get up and running with this stack. It's the best of both worlds since clients and users get the awesome experience of content creating with WordPress and as developers we can leverage the awesome capabilities of Gatsby js. As usual, go forth and make the internet a better place to be!
+
+The code for this post can be found on [Github](https://github.com/iamtimsmith/building-a-blog-with-wordpress-and-gatsby).
 
 If you have any thoughts or questions, you can find me on twitter at [@iam_timsmith](https://twitter.com/iam_timsmith)!
