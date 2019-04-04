@@ -10,9 +10,6 @@ description: 'In the last post, we covered setting up WordPress for use with Gat
 <article class="message">
   <div class="message-body">
     Note: This is part two in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1">Part One here</a>, and <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3">Part Three here</a>.
-
-    The code for this post can be found <a href="https://github.com/iamtimsmith/building-a-blog-with-wordpress-and-gatsby">here</a>.
-
   </div>
 </article>
 
