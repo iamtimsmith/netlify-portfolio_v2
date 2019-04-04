@@ -9,7 +9,7 @@ description: 'Ever wondered how to use Gatsby js with WordPress? This post will 
 
 <article class="message">
   <div class="message-body">
-    Note: This is part one in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-2">Part Two here</a>.
+    Note: This is part one in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-2">Part Two here</a>, and <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3">Part Three here</a>.
   </div>
 </article>
 
