@@ -1,6 +1,6 @@
 ---
 title: 'How To Build A Blog with Wordpress and Gatsby.js - Part 3'
-date: '2019-04-02'
+date: '2019-04-30'
 tags: '#reactjs #wordpress'
 featured_image: ./featured_image.jpg
 keywords: 'react js, reactjs, javascript, wordpress, wordpress plugins, gatsbyjs, gatsby js'
