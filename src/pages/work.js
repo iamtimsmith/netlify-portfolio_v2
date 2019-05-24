@@ -25,7 +25,10 @@ export const workQuery = () => graphql`
   query workQuery {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { type: { eq: "projects" } } }
+      filter: {
+        fields: { type: { eq: "projects" } }
+        frontmatter: { published: { eq: true } }
+      }
     ) {
       edges {
         node {
