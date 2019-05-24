@@ -4,6 +4,7 @@ date: '2017-06-07'
 tags: '#misc'
 featured_image: ./featured_image.jpeg
 keywords: 'web designer, web developer, freelancer, how do I build a website'
+published: false
 ---
 
 Building a website, especially for the first time, can be a pretty overwhelming task. A lot of terms are thrown around including Web Designer, Web Developer, and Website builder.

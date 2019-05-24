@@ -4,6 +4,7 @@ date: '2018-08-22'
 tags: '#reactjs #javascript'
 featured_image: ./featured_image.jpg
 keywords: 'react.js, react.js tutorial, react.js component, javascript'
+published: true
 ---
 
 When I first began to learn React, I didn't even realize there was a difference between class components and stateless functional components. I thought they were just different ways to write the same thing.

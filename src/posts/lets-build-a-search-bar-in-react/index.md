@@ -5,6 +5,7 @@ path: lets-build-a-search-bar-in-react
 tags: '#reactjs #javascript'
 featured_image: ./featured_image.jpg
 keywords: 'react.js, react.js tutorial, javascript, search'
+published: true
 ---
 
 I know, I know...another task app...

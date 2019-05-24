@@ -5,6 +5,7 @@ tags: '#reactjs #wordpress'
 featured_image: ./featured_image.png
 keywords: 'react js, reactjs, javascript, wordpress, wordpress api, headless wordpress, headless cms'
 description: 'In this article, we will cover how to use WordPress as a headless CMS by leveraging the WordPress API and React js when building a project.'
+published: true
 ---
 
 In this article, we will cover how to use WordPress as a headless CMS by leveraging the WordPress API and React js when building a project.
