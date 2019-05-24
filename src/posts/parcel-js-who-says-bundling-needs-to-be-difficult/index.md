@@ -5,6 +5,7 @@ path: parcel-js-who-says-bundling-needs-to-be-difficult
 tags: '#reactjs #javascript'
 featured_image: ./featured_image.png
 keywords: 'parcel, javascript, how to set up a project'
+published: true
 ---
 
 If you're using React, you've likely come across build tools such as [Webpack](https://webpack.js.org/), [Grunt](https://gruntjs.com/), or [Gulp](https://gulpjs.com/).

@@ -53,10 +53,10 @@ export default class Blog extends React.Component {
     return (
       <Layout>
         <SEO
-          title="Blog" 
-          url="/blog" 
-          description="A blog to teach new developers about MERN, Node js, React js, Express js, and Wordpress in a simple and understandable way." 
-          keywords="mern stack, react js, node js, wordpress" 
+          title="Blog"
+          url="/blog"
+          description="A blog to teach new developers about MERN, Node js, React js, Express js, and Wordpress in a simple and understandable way."
+          keywords="mern stack, react js, node js, wordpress"
         />
         <div className="container" id="blog">
           <section className="section">
@@ -99,7 +99,10 @@ export const query = graphql`
   query blogQuery {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { type: { eq: "posts" } } }
+      filter: {
+        fields: { type: { eq: "posts" } }
+        frontmatter: { published: { eq: true } }
+      }
     ) {
       edges {
         node {

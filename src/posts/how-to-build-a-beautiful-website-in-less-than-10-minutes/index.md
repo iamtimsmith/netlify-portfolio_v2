@@ -4,6 +4,7 @@ date: '2017-06-16'
 tags: '#wordpress #cms'
 featured_image: ./featured_image.jpeg
 keywords: 'wordpress, how to build a wordpress site, how to make a website'
+published: true
 ---
 
 I remember when I decided to set up my first website. It was for my band, The Effie Afton and I was completely lost. I asked a web designer how much it would be to have him build a site and he quoted me \$1000. Are you kidding me?! A starving musician can’t afford that! It was at this time that I discovered an amazing tool called Wordpress. In this article, I will teach you how to build a website in less than 10 minutes.

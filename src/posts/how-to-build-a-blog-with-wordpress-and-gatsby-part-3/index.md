@@ -5,6 +5,7 @@ tags: '#reactjs #wordpress'
 featured_image: ./featured_image.jpg
 keywords: 'react js, reactjs, javascript, wordpress, wordpress plugins, gatsbyjs, gatsby js'
 description: 'In the third part of this series about WordPress and Gatsby js, we will be creating pages using templates and components using data from WordPress.'
+published: true
 ---
 
 <article class="message">

@@ -5,6 +5,7 @@ tags: '#reactjs'
 featured_image: ./featured_image.png
 keywords: 'react js, react, react tutorial, prop, react state'
 description: "If you're anything like me, the concept of state was confusing at first. In this tutorial, we'll learn how to use state and props in a react js application."
+published: true
 ---
 
 If you're anything like me, the concept of state was confusing at first. In this tutorial, we'll learn how to use state and props in a react js application.

@@ -5,6 +5,7 @@ path: how-to-create-a-component
 tags: '#reactjs #javascript'
 featured_image: ./featured_image.jpg
 keywords: 'react.js, react.js tutorial, react.js component, javascript'
+published: true
 ---
 
 Components are an essential part of any React application. In this post, we'll be learning how to create components to do whatever we want.

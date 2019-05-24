@@ -11,6 +11,7 @@ thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
 url: https://iamtimsmith.github.io/SCFFLD
 keywords: 'html, css, responsive'
+published: true
 ---
 
 SCFFLD is a mobile first responsive framework I built. It is designed to be quick and easy to learn and implement. The github repository can be found [here](https://github.com/iamtimsmith/SCFFLD).
