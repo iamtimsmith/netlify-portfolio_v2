@@ -55,5 +55,10 @@
         height: calc(100% + 5px) !important;
       }
     }
+    .images-side-by-side {
+      .gatsby-resp-image-wrapper {
+        max-height: 400px !important;
+      }
+    }
   }
 }
