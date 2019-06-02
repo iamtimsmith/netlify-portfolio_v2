@@ -5,6 +5,7 @@ tags: '#misc'
 featured_image: ./featured_image.png
 keywords: 'drupal, drupalcon, tech conference, first tech conference'
 description: 'I recently attended my first tech conference. In this article I will talk about what I learned, what to expect, and how to prepare to have a great time!'
+published: true
 ---
 
 I recently attended my first tech conference. In this article I'll talk about what I learned, what to expect, and how to prepare to have a great time!
