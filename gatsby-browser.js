@@ -5,7 +5,7 @@
  */
 
 exports.onClientEntry = () => {
-  require('bulma')
+  // require('bulma')
   require('prismjs/themes/prism-tomorrow.css')
-  require('./src/scss/app.scss')
+  // require('./src/scss/app.scss')
 }

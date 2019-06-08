@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import SocialIcons from './socialicons'
+import OffCanvas from '../styles/components/Offcanvas'
 
-const Offcanvas = ({ nav, social }) => (
-  <aside className="card offcanvas">
+const Offcanvas = ({ nav, social, open }) => (
+  <OffCanvas open={open}>
     <div>
       <ul>
         <li>
@@ -22,7 +23,7 @@ const Offcanvas = ({ nav, social }) => (
       </ul>
       <SocialIcons social={social} size="4" />
     </div>
-  </aside>
+  </OffCanvas>
 )
 
 Offcanvas.propTypes = {
@@ -38,6 +39,6 @@ Offcanvas.defaultProps = {
 export default Offcanvas
 
 const closeOffCanvas = () => {
-  document.querySelector('.offcanvas-toggle').classList.remove('active')
-  document.querySelector('.offcanvas').classList.remove('showing')
+  // document.querySelector('.offcanvas-toggle').classList.remove('active')
+  // document.querySelector('.offcanvas').classList.remove('showing')
 }

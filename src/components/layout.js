@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+import { ThemeProvider } from 'styled-components'
+import Theme from '../styles/helpers/Theme'
+import GlobalStyles from '../styles/helpers/Global'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -27,20 +30,15 @@ class Layout extends Component {
         { icon: 'github', href: 'https://github.com/iamtimsmith' },
         { icon: 'dev', href: 'https://dev.to/iam_timsmith' },
       ],
+      scrollPosition: 0
     }
   }
 
   componentDidMount() {
     window.onscroll = () => {
-      var top = window.pageYOffset
-      var navbar = document.querySelector('.is-home .navbar')
-      if (this.props.location === 'home') {
-        if (top < 550) {
-          navbar.classList.add('clear')
-        } else {
-          navbar.classList.remove('clear')
-        }
-      }
+      this.setState({
+        scrollPosition: window.pageYOffset
+      })
     }
   }
 
@@ -57,18 +55,23 @@ class Layout extends Component {
           }
         `}
         render={data => (
-          <div className={`is-${this.props.location}`}>
-            <Header
-              siteTitle={data.site.siteMetadata.title}
-              navigation={this.state.siteNav}
-              social={this.state.socialMedia}
-            />
-            <div className="content">{this.props.children}</div>
-            <Footer
-              navigation={this.state.siteNav}
-              social={this.state.socialMedia}
-            />
-          </div>
+          <ThemeProvider theme={Theme}>
+            <div>
+              <Header
+                siteTitle={data.site.siteMetadata.title}
+                navigation={this.state.siteNav}
+                social={this.state.socialMedia}
+                scrollPosition={this.state.scrollPosition}
+                page={this.props.location}
+              />
+              <div className="content">{this.props.children}</div>
+              <Footer
+                navigation={this.state.siteNav}
+                social={this.state.socialMedia}
+              />
+              <GlobalStyles />
+            </div>
+          </ThemeProvider>
         )}
       />
     )

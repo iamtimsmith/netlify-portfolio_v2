@@ -6,26 +6,31 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Item from '../components/portfolioitems'
 import Contact from '../components/contactform'
+import Theme from '../styles/helpers/Theme'
+import Button from '../styles/elements/Button'
+import { HeroSection, WorkSection, ContactSection } from '../styles/components/HomePage';
 
 const IndexPage = ({ data }) => (
   <Layout location="home">
     <SEO title="Home" />
-    <section className="section hero is-large has-text-centered">
+    <HeroSection>
       <Img sizes={data.heroImg.childImageSharp.sizes} />
-      <div className="text">
-        <h1 className="is-size-1">Freelance Web Developer.</h1>
-        <p className="is-size-3">Person.</p>
+      <div>
+        <h1>Freelance Web Developer.</h1>
+        <p>Person.</p>
         <AnchorLink
           href="#contact"
-          className="button is-medium scroll"
+          className="scroll"
           data-speed="1000"
         >
-          Hire Me!
+          <Button color={Theme.Primary} hollow>
+            Hire Me!
+          </Button>
         </AnchorLink>
       </div>
-    </section>
+    </HeroSection>
 
-    <section className="portfolio-items columns is-multiline">
+    <WorkSection>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Item
           key={node.frontmatter.title}
@@ -35,14 +40,14 @@ const IndexPage = ({ data }) => (
           img={node.frontmatter.thumbOne.childImageSharp.sizes}
         />
       ))}
-    </section>
-    <section className="section">
+    </WorkSection>
+    <ContactSection>
       <div className="columns is-centered">
         <div className="column is-6">
           <Contact buttonText="Hire Me!" />
         </div>
       </div>
-    </section>
+    </ContactSection>
   </Layout>
 )
 

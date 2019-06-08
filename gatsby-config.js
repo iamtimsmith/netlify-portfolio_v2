@@ -151,6 +151,21 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Playfair Display`,
+            variants: [`400`]
+          },
+          {
+            family: `Raleway`,
+            variants: [`300`, `700`]
+          },
+        ],
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
