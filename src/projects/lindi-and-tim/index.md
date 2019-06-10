@@ -9,7 +9,7 @@ next: /away-from-dice
 fullPage: ./frontpage.jpg
 thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
-url: http://linditim.iamtimsmith.com
+url: http://lindiandtim.iamtimsmith.com
 keywords: 'html, css, jQuery, responsive'
 published: true
 ---

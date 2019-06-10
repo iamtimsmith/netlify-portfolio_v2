@@ -5,7 +5,7 @@ tags: '#wordpress #jquery #sass #bootstrap'
 fullPage: ./frontpage.png
 thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
-url: http://acme-cbd.iamtimsmith.com
+url: http://acmecbd.iamtimsmith.com/
 keywords: 'wordpress, jquery, sass, bootstrap'
 published: true
 ---
