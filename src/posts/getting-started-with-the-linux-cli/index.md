@@ -9,3 +9,19 @@ published: true
 ---
 
 By learning a few commands can open a new world of functionality as a developer. Today I'm going to cover some of those basic commands to get you going.
+
+## What is the Command Line Interface?
+
+## How do you access the Command Line Interface?
+
+## Common commands
+
+- pwd
+- cd
+- mkdir
+- touch
+- grep
+- rm
+- cp
+- mv
+- ls
