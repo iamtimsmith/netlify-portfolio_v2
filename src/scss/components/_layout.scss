@@ -36,6 +36,10 @@ html {
     .is-size-6 {
       font-size: 1.6rem !important;
     }
+    p {
+      font-size: 1.9rem;
+      font-family: $sans;
+    }
     button,
     .button {
       border: 2px solid $black;

@@ -151,6 +151,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://iamtimsmith.us16.list-manage.com/subscribe/post?u=a07cf4738b9ea78d4718b8f8a&amp;id=845beac7c2',
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
