@@ -61,7 +61,6 @@ class SocialShare extends Component {
         document.querySelector('#post-content').offsetTop + 550
       const footer = document.querySelector('footer.footer').offsetTop - 200
       const socialShare = document.querySelector('#socialShare')
-      console.log(`Bottom: ${bottom}, Footer: ${footer}`)
 
       if (top > socialContent && bottom < footer) {
         socialShare.classList.add('is-shareable')

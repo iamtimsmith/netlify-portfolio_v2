@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import Share from '../components/socialshare'
 import SEO from '../components/seo'
+import MailChimp from '../components/mailchimp'
 
 class PostTemplate extends Component {
   render() {
@@ -46,11 +47,12 @@ class PostTemplate extends Component {
               url={`https://www.iamtimsmith.com/${post.fields.slug}`}
               image={`https://www.iamtimsmith.com/${
                 post.frontmatter.featured_image.childImageSharp.sizes.src
-              }`}
+                }`}
               title={post.frontmatter.title}
             />
           </section>
         </div>
+        <MailChimp />
       </Layout>
     )
   }
