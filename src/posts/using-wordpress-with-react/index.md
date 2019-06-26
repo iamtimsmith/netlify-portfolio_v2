@@ -139,7 +139,7 @@ You may notice some issues with load speed or a _glitchy_ sort of feeling where 
 
 ### Gatsby.js, a Static Site Generator
 
-[Gatsby js](https://www.gatsbyjs.org/) is one of my favorite tools to build with in the react js ecosystem. It allows us to build a site or app using React, React-router, and Graphql right out of the box! Then, when we actually build the application, Gatsby js creates static files which make our applications stupid fast.
+[Gatsby js is one of my favorite tools](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1) to build with in the react js ecosystem. It allows us to build a site or app using React, React-router, and Graphql right out of the box! Then, when we actually build the application, Gatsby js creates static files which make our applications stupid fast.
 
 Because the files for our application are being served statically, they can be very fast as the content is all created beforehand rather than as the page is rendering. This can be a bit tricky since we have to figure out a way to trigger a build when we update the content. [Netlify](https://www.netlify.com/) is my go-to service for this as it's very easy to use and when you push to a certain git branch it will rebuild the Gatsby js project.
 
