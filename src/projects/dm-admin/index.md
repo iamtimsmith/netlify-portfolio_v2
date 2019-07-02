@@ -7,7 +7,7 @@ priority: '6'
 fullPage: ./frontpage.png
 thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
-url: 'https://dm-admin.iamtimsmith.com/'
+url: 'http://dm-admin.iamtimsmith.com/'
 keywords: 'laravel, vuejs, mysql, php'
 published: true
 ---
