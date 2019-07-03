@@ -6,6 +6,7 @@ import Share from '../components/socialshare'
 import SEO from '../components/seo'
 import MailChimp from '../components/mailchimp'
 import Popup from '../components/mailchimppopup'
+import 'prismjs/themes/prism-tomorrow.css'
 
 class PostTemplate extends Component {
   render() {
