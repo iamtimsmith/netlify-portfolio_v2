@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Summary from '../components/postsummary'
 import SEO from '../components/seo'
+import Mailchimp from '../components/mailchimp'
+import Popup from '../components/mailchimppopup'
 
 export default class Blog extends React.Component {
   constructor(props) {
@@ -51,7 +53,7 @@ export default class Blog extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Layout location="blog">
         <SEO
           title="Blog"
           url="/blog"
@@ -90,6 +92,8 @@ export default class Blog extends React.Component {
             </div>
           </section>
         </div>
+        <Popup />
+        <Mailchimp />
       </Layout>
     )
   }
