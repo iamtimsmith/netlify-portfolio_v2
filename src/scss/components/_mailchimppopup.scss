@@ -1,0 +1,33 @@
+.is-mailchimp-popup {
+  .box {
+    padding:30px;
+    form {
+      padding:0 !important;
+      .field {
+        .control {
+          margin:10px;
+          input[type="text"],
+          input[type="email"] {
+            font-size:1.8rem !important;
+            margin-right:10px;
+          }
+          .button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid $black;
+            background: $clear;
+            cursor: pointer;
+            transition: all 0.25s;
+            &:hover {
+              background: $black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
