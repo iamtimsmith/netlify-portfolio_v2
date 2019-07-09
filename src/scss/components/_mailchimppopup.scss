@@ -1,6 +1,17 @@
 .is-mailchimp-popup {
+  background:$black;
+  opacity:0;
+  display:block;
+  visibility:hidden;
+  transition:opacity .5s;
+  &.is-active {
+    visibility:visible;
+    opacity:1;
+  }
   .box {
     padding:30px;
+    background:none;
+    color:white;
     form {
       padding:0 !important;
       .field {
@@ -15,16 +26,25 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            font-size:2rem;
             display: block;
             margin: 0 auto;
-            border: 2px solid $black;
+            border: 2px solid white;
             background: $clear;
+            color:white;
             cursor: pointer;
             transition: all 0.25s;
             &:hover {
-              background: $black;
-              color: white;
+              background: white;
+              color: $black;
             }
+          }
+          .opt-out {
+            margin-top:30px;
+            font-size:1.6rem;
+            color:rgba(white, 0.5);
+            text-decoration:underline;
+            cursor:pointer;
           }
         }
       }

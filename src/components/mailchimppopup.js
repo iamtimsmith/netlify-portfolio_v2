@@ -38,6 +38,11 @@ class MailchimpPopup extends Component {
   closeModal(e) {
     e.preventDefault();
     document.querySelector('html').classList.remove('is-clipped');
+    let date = new Date();
+    let expire = new Date();
+    expire.setDate(date.getDate() + 30);
+    document.cookie = `signedup=yep; expires=${expire}; path=/`;
+    document.querySelector('html').classList.remove('is-clipped');
     this.setState({
       showing: false
     })
@@ -78,10 +83,10 @@ class MailchimpPopup extends Component {
   render() {
     return (
       <div className={`is-mailchimp-popup modal ${this.state.showing ? `is-active` : ``}`}>
-        <div className="modal-background" onClick={(e) => this.closeModal(e)}></div>
+        {/* <div className="modal-background" onClick={(e) => this.closeModal(e)}></div> */}
         <div className="modal-content">
           <div className="box">
-            <p className="has-text-centered">Sign up to get the newest blog posts delivered to you!</p>
+            <p className="is-size-3 has-text-centered">Sign up to get the newest blog posts delivered to you!</p>
             <form>
               <div className="field">
                 <p className={`has-text-centered ${this.state.response.result === 'error' ? `has-text-danger` : `has-text-success`}`}>{this.state.response.msg}</p>
@@ -90,6 +95,7 @@ class MailchimpPopup extends Component {
                 </div>
                 <div className="control">
                   <button className="button" onClick={e => this.onSubmit(e)}>Submit</button>
+                  <p className="opt-out has-text-centered" onClick={(e) => this.closeModal(e)}>No thanks, I'll keep checking back.</p>
                 </div>
               </div>
             </form>
