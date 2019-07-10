@@ -120,8 +120,11 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  image: `https://www.iamtimsmith.com${edge.node.frontmatter.featured_image}`,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
+                  enclosure: {
+                    'url': `https://www.iamtimsmith.com/${edge.node.frontmatter.featured_image.childImageSharp.fluid.src}`,
+                    'size': 1000,
+                  }
                 })
               })
             },
