@@ -2,6 +2,7 @@
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
+
   .portfolio-item {
     position: relative;
     max-width: 100%;
@@ -13,20 +14,28 @@
     font-family: $serif;
     text-decoration: none;
     background: #000;
+
     &:after {
       @include responsive;
     }
-    > div:nth-child(1) {
+
+    >div:nth-child(1) {
       width: 100%;
       text-align: center;
       opacity: 0;
       z-index: 1;
       font-weight: 700;
       transition: all 0.5s;
+
       p {
         margin: 0;
+
+        &.is-size-4 {
+          font-family: $serif;
+        }
       }
     }
+
     .gatsby-image-wrapper {
       position: absolute !important;
       top: 0;
@@ -37,6 +46,7 @@
       opacity: 1;
       transition: all 1s;
     }
+
     span {
       display: block;
       margin: 5px auto;
@@ -45,6 +55,7 @@
       width: 0;
       transition: all 0.75s ease;
     }
+
     img {
       position: absolute;
       height: 100%;
@@ -53,16 +64,20 @@
       z-index: 0;
       transition: all 1s !important;
     }
+
     &:hover div {
       opacity: 1;
     }
+
     &:hover span {
       width: 20%;
       background: white;
     }
+
     &:hover .gatsby-image-wrapper {
       opacity: 0.5;
     }
+
     &:hover img {
       opacity: 0.5;
       transform: scale(1.3, 1.3);
