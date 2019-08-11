@@ -168,6 +168,13 @@ module.exports = {
         endpoint: 'https://iamtimsmith.us16.list-manage.com/subscribe/post?u=a07cf4738b9ea78d4718b8f8a&amp;id=845beac7c2',
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        ssr: true,
+        minify: true
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
