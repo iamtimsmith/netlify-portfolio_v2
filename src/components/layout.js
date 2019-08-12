@@ -6,8 +6,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import Header from './header'
 import Footer from './footer'
-import 'bulma'
-import '../scss/app.scss'
+// import 'bulma'
+// import '../scss/app.scss'
 library.add(fab, fas)
 
 class Layout extends Component {
