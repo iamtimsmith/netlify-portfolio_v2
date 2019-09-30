@@ -16,9 +16,13 @@ $nord-lightteal: #8FBCBB !important;
 $nord-white: #D8DEE9 !important;
 
 /* Custom Styles for display */
-
-
-
+pre[class*='language-'] {
+  background-image: url('/codesnippet-buttons.png') !important;
+  background-position: 10px 0 !important;
+  background-size: auto 45px !important;
+  background-repeat: no-repeat !important;
+  padding-top: 50px !important;
+}
 
 /* End custom styles */
 
@@ -46,7 +50,7 @@ pre[class*='language-'] {
   line-height: 25px;
   letter-spacing: 0.5px;
   text-shadow: 0 1px $nord-background;
-  background: $nord-background;
+  background-color: $nord-background;
 }
 
 pre[class*='language-']::-moz-selection,
@@ -58,7 +62,7 @@ pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
   color: inherit;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Code blocks. */
@@ -70,7 +74,7 @@ pre[class*='language-'] {
 
 :not(pre)>code[class*='language-'],
 pre[class*='language-'] {
-  background: $nord-background;
+  background-color: $nord-background;
 }
 
 /* Inline code */
@@ -159,7 +163,7 @@ pre[class*='language-'] {
 }
 
 .token.regex {
-  background: $nord-background;
+  background-color: $nord-background;
 }
 
 .token.bold {
@@ -171,11 +175,11 @@ pre[class*='language-'] {
 }
 
 .token.inserted {
-  background: $nord-addition;
+  background-color: $nord-addition;
 }
 
 .token.deleted {
-  background: $nord-deletion;
+  background-color: $nord-deletion;
 }
 
 code.language-css .token.property,
@@ -204,14 +208,14 @@ code.language-css .token.selector>.token.pseudo-element {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  background: none;
+  background-color: none;
 }
 
 pre .line-highlight,
 pre .line-highlight.line-highlight,
 pre>code.line-highlight {
   margin-top: 36px;
-  background: linear-gradient(to right, rgba(179, 98, 255, 0.17), transparent);
+  background-color: linear-gradient(to right, rgba(179, 98, 255, 0.17), transparent);
 }
 
 pre .line-highlight:before,

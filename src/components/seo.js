@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import favicon from '../../content/images/favicon-white.png'
+// import favicon from '../../content/images/favicon-white.png'
 
 function SEO({ description, lang, meta, keywords, title, url, image }) {
   return (
@@ -15,7 +15,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
           : data.site.siteMetadata.description
         const imgUrl = image
           ? data.site.siteMetadata.siteUrl + image
-          : data.site.siteMetadata.siteUrl + data.file.childImageSharp.sizes.src
+          : data.site.siteMetadata.siteUrl + '/default.jpeg'
         const link = url
           ? data.site.siteMetadata.siteUrl + url
           : data.site.siteMetadata.siteUrl
@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, keywords, title, url, image }) {
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             link={[
               { rel: 'canonical', href: link },
-              { rel: 'shortcut icon', href: favicon },
+              { rel: 'shortcut icon', href: '/favicon-white.png' },
             ]}
             meta={[
               {
@@ -115,13 +115,6 @@ export default SEO
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
-    file(relativePath: { eq: "mountain.jpeg" }) {
-      childImageSharp {
-        sizes(maxWidth: 1920) {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
     site {
       siteMetadata {
         title

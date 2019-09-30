@@ -22,13 +22,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/content/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `posts`,
         path: `${__dirname}/content/blog`,
       },
@@ -56,7 +49,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#222222`,
         display: `minimal-ui`,
-        icon: `content/images/favicon-white.png`, // This path is relative to the root of the site.
+        icon: `static/favicon-white.png`, // This path is relative to the root of the site.
       },
     },
     {
