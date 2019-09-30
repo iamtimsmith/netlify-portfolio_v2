@@ -7,61 +7,70 @@ import SEO from '../components/seo'
 import Item from '../components/portfolioitems'
 import Contact from '../components/contactform'
 
-const IndexPage = ({ data }) => (
-  <Layout location="home">
-    <SEO title="Home" />
-    <section className="section hero is-large has-text-centered">
-      <Img sizes={data.heroImg.childImageSharp.sizes} />
-      <div className="text">
-        <h1 className="is-size-1">Freelance Web Developer.</h1>
-        <p className="is-size-3">Person.</p>
-        <AnchorLink
-          href="#contact"
-          className="button is-medium scroll"
-          data-speed="1000"
-        >
-          Hire Me!
-        </AnchorLink>
-      </div>
-    </section>
-
-    <section className="portfolio-items columns is-multiline">
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Item
-          key={node.frontmatter.title}
-          name={node.frontmatter.title}
-          tags={node.frontmatter.tags}
-          url={node.fields.slug}
-          img={node.frontmatter.thumbOne.childImageSharp.sizes}
-        />
-      ))}
-    </section>
-    <section className="section">
-      <div className="columns is-centered">
-        <div className="column is-6">
-          <Contact buttonText="Hire Me!" />
+const IndexPage = ({ data }) => {
+  const page = data.markdownRemark;
+  return (
+    <Layout location="home">
+      <SEO title="Home" />
+      <section className="section hero is-large has-text-centered">
+        <Img sizes={page.frontmatter.hero_image.childImageSharp.sizes} />
+        <div className="text">
+          <h1 className="is-size-1">{page.frontmatter.hero_headline}</h1>
+          <p className="is-size-3">{page.frontmatter.hero_subheadline}</p>
+          <AnchorLink
+            href={page.frontmatter.hero_cta_link}
+            className="button is-medium scroll"
+            data-speed="1000"
+          >
+            {page.frontmatter.hero_cta_text}
+          </AnchorLink>
         </div>
-      </div>
-    </section>
-  </Layout>
-)
+      </section>
+
+      <section className="portfolio-items columns is-multiline">
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Item
+            key={node.frontmatter.title}
+            name={node.frontmatter.title}
+            tags={node.frontmatter.tags}
+            url={node.fields.slug}
+            img={node.frontmatter.thumbOne.childImageSharp.sizes}
+          />
+        ))}
+      </section>
+      <section className="section">
+        <div className="columns is-centered">
+          <div className="column is-6">
+            <Contact buttonText="Hire Me!" />
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
 
 export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    heroImg: file(relativePath: { eq: "mountain.jpeg" }) {
-      childImageSharp {
-        sizes(maxWidth: 1920) {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
-    site {
-      siteMetadata {
+    markdownRemark(frontmatter: { title: { eq: "Home" } }) {
+      frontmatter {
+        title
         description
         keywords
+        hero_image {
+          childImageSharp {
+            sizes(maxWidth: 600) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
+        hero_headline
+        hero_subheadline
+        hero_cta_text
+        hero_cta_link
       }
+      html
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }

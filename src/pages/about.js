@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Contact from '../components/contactform'
-import Resume from './about/Resume.pdf'
 
 const AboutPage = ({ data }) => (
   <Layout>
@@ -26,9 +25,6 @@ const AboutPage = ({ data }) => (
             <div
               dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
             />
-            <a href={Resume} className="button" target="_blank" rel="noopener noreferrer">
-              My Resume
-            </a>
           </div>
           <div className="column">
             <Contact buttonText="Hire Me!" />

@@ -1,15 +1,17 @@
 .is-blog {
   .content {
-    margin-bottom:0;
+    margin-bottom: 0;
   }
 }
 
 #blog-post {
   margin-top: 55px;
   margin-bottom: 55px;
+
   .hero {
     max-height: 600px;
   }
+
   h1.is-size-1,
   h1,
   h2,
@@ -22,8 +24,10 @@
 
   #post-content {
     margin-bottom: 50px;
+
     h2 {
       font-size: 3.2rem !important;
+
       &:before {
         content: '#';
         font-family: $serif;
@@ -35,36 +39,51 @@
         top: 5px;
       }
     }
+
     h3 {
       margin-top: 40px;
       color: $grey;
       font-size: 2.4rem !important;
     }
+
     h4 {
       margin-top: 40px;
       color: $grey;
       font-size: 2rem !important;
     }
+
     video,
     img {
       display: block;
-      max-width: 100%;
+      max-width: 800px;
       margin: 3rem auto;
     }
+
     .gatsby-resp-image-wrapper {
-      max-width: 750px;
+      max-width: 800px;
       margin: 3rem auto;
       border-radius: 0.5rem;
       box-shadow: 0.5rem 0.5rem 1rem $grey;
       overflow: hidden;
+
       img {
         height: calc(100% + 5px) !important;
       }
     }
+
     .images-side-by-side {
       .gatsby-resp-image-wrapper {
         max-height: 400px !important;
       }
+    }
+
+    pre {
+      max-width: 1000px;
+      margin: 5rem auto !important;
+      border: 1px solid $dark !important;
+      border-radius: 0.5rem;
+      box-shadow: 0.5rem 0.5rem 1rem $grey;
+
     }
   }
 }

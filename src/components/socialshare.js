@@ -9,7 +9,7 @@ class SocialShare extends Component {
         {
           url: `https://www.facebook.com/sharer/sharer.php?u=${this.props.url}`,
           type: 'fab',
-          website: 'facebook',
+          website: 'facebook-f',
         },
         {
           url: `https://twitter.com/home?status=${this.props.url}`,
@@ -19,21 +19,21 @@ class SocialShare extends Component {
         {
           url: `https://www.linkedin.com/shareArticle?mini=true&url=${
             this.props.url
-          }`,
+            }`,
           type: 'fab',
           website: 'linkedin',
         },
         {
           url: `https://pinterest.com/pin/create/button/?url=${
             this.props.url
-          }&media=${this.props.image}&description=${this.props.title}`,
+            }&media=${this.props.image}&description=${this.props.title}`,
           type: 'fab',
           website: 'pinterest',
         },
         {
           url: `mailto:?&body=Check%20this%20article%20out!%0A%0A${
             this.props.url
-          }`,
+            }`,
           type: 'fas',
           website: 'envelope',
         },
