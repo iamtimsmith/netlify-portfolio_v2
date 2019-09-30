@@ -2,34 +2,43 @@
   z-index: 2;
   position: fixed;
   transition: all 0.3s;
+
   &.is-shareable {
     visibility: visible !important;
   }
+
   .columns {
     flex-direction: row;
+
     .column {
       height: 50px;
     }
   }
+
   @media (max-width: 1088px) {
     bottom: -200px;
     left: 0;
     right: 0;
+
     &.is-shareable {
       bottom: 7px;
     }
   }
+
   @media (min-width: 1089px) {
     top: 0;
     left: -200px;
     bottom: 0;
     display: flex;
     align-items: center;
+
     &.is-shareable {
       left: 7px;
     }
+
     .columns {
       flex-direction: column;
+
       .column {
         text-align: center;
         height: 60px;
@@ -37,46 +46,55 @@
     }
   }
 
-  .is-facebook {
+  .is-facebook-f {
     background: $facebook;
     border-color: $facebook;
     color: white;
+
     &:hover {
       background: $facebookDark;
       border-color: $facebookDark;
     }
   }
+
   .is-twitter {
     background: $twitter;
     border-color: $twitter;
     color: white;
+
     &:hover {
       background: $twitterDark;
       border-color: $twitterDark;
     }
   }
+
   .is-linkedin {
     background: $linkedin;
     border-color: $linkedin;
     color: white;
+
     &:hover {
       background: $linkedinDark;
       border-color: $linkedinDark;
     }
   }
+
   .is-pinterest {
     background: $pinterest;
     border-color: $pinterest;
     color: white;
+
     &:hover {
       background: $pinterestDark;
       border-color: $pinterestDark;
     }
   }
+
   .is-envelope {
     background: $email;
     border-color: $email;
     color: white;
+
     &:hover {
       background: $emailDark;
       border-color: $emailDark;

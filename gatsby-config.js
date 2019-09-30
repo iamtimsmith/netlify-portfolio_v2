@@ -1,12 +1,3 @@
-const {
-  NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://www.iamtimsmith.com',
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env
-const isNetlifyProduction = NETLIFY_ENV === 'production'
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
-
 module.exports = {
   siteMetadata: {
     title: `Tim Smith`,
@@ -32,28 +23,28 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/content/images`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/posts`,
+        path: `${__dirname}/content/blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects`,
+        path: `${__dirname}/content/work`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/content/pages`,
       },
     },
     {
@@ -65,7 +56,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#222222`,
         display: `minimal-ui`,
-        icon: `src/images/favicon-white.png`, // This path is relative to the root of the site.
+        icon: `content/images/favicon-white.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -83,7 +74,7 @@ module.exports = {
             options: {
               // If setting this to true, the parser won't handle and highlight inline
               // code used in markdown i.e. single backtick code like `this`.
-              noInlineHighlight: true,
+              noInlineHighlight: false,
             },
           },
           {

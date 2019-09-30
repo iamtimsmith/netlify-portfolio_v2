@@ -83,14 +83,23 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
+    // Get node type. If none can be found, default to page
     const type = getNode(node.parent).sourceInstanceName || 'pages'
     let value
-
+    // If the file is a post
     if (type == 'posts') {
-      value = '/blog' + createFilePath({ node, getNode })
-    } else if (type == 'projects') {
+      // Remove date from slug
+      let path = createFilePath({ node, getNode }).split('-');
+      path.splice(0, 3);
+      // Pass correct slug for path
+      value = '/blog/' + path.join('-')
+    }
+    // If the file is a project
+    else if (type == 'projects') {
       value = '/work' + createFilePath({ node, getNode })
-    } else {
+    }
+    // Otherwise, should be rendered as a page.
+    else {
       value = ''
     }
 

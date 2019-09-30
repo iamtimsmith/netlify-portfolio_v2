@@ -14,3 +14,7 @@ When I'm not building things for the web, I enjoy spending time with my wife and
 If you have an idea for a project you'd like to work on, just use the contact form on this page and you can reach me directly!
 
 [Click here for a list of stuff I'm using.](/uses)
+
+<a href='button' className="button" target="_blank" rel="noopener noreferrer">
+  My Resume
+</a>

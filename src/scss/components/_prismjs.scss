@@ -1,0 +1,222 @@
+/**
+ * Shades of Purple Theme for Prism.js
+ *
+ * @author Ahmad Awais <https://twitter.com/MrAhmadAwais/>
+ * @support Follow/tweet at https://twitter.com/MrAhmadAwais/
+ */
+
+$nord-addition: rgba(163, 190, 140, 0.5) !important;
+$nord-deletion: rgba(191, 97, 106, 0.5) !important;
+$nord-background: #2E3440 !important;
+$nord-green: #a3be8c !important;
+$nord-grey: #4C566A !important;
+$nord-lightblue: #81A1C1 !important;
+$nord-blue: #88C0D0 !important;
+$nord-lightteal: #8FBCBB !important;
+$nord-white: #D8DEE9 !important;
+
+/* Custom Styles for display */
+
+
+
+
+/* End custom styles */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: $nord-white;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: 400;
+  font-size: 14px !important;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px $nord-background;
+  background: $nord-background;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  color: inherit;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Code blocks. */
+pre[class*='language-'] {
+  padding: 2em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre)>code[class*='language-'],
+pre[class*='language-'] {
+  background: $nord-background;
+}
+
+/* Inline code */
+:not(pre)>code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+
+.token {
+  font-weight: 400;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: $nord-grey;
+}
+
+.token.delimiter,
+.token.keyword,
+.token.selector,
+.token.important,
+.token.atrule {
+  color: $nord-lightblue;
+}
+
+.token.operator,
+.token.attr-name {
+  color: $nord-lightteal;
+}
+
+.token.punctuation {
+  color: $nord-white;
+}
+
+.token.boolean {
+  color: $nord-deletion;
+}
+
+.token.tag,
+.token.tag .punctuation {
+  color: $nord-lightblue;
+}
+
+.token.doctype,
+.token.builtin {
+  color: $nord-lightteal;
+}
+
+.token.entity,
+.token.symbol {
+  color: $nord-lightblue;
+}
+
+.token.number {
+  color: $nord-green;
+}
+
+.token.property,
+.token.constant,
+.token.variable {
+  color: $nord-green;
+}
+
+.token.string,
+.token.char {
+  color: $nord-green;
+}
+
+.token.attr-value,
+.token.attr-value .punctuation {
+  color: $nord-green;
+}
+
+.token.attr-value .punctuation:first-child {
+  color: $nord-white;
+}
+
+.token.url {
+  color: $nord-lightblue;
+  text-decoration: underline;
+}
+
+.token.function {
+  color: $nord-blue;
+}
+
+.token.regex {
+  background: $nord-background;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.inserted {
+  background: $nord-addition;
+}
+
+.token.deleted {
+  background: $nord-deletion;
+}
+
+code.language-css .token.property,
+code.language-css .token.property+.token.punctuation {
+  color: $nord-white;
+}
+
+code.language-css .token.id {
+  color: $nord-lightteal;
+  font-weight: bold;
+}
+
+code.language-css .token.selector>.token.class,
+code.language-css .token.selector>.token.attribute,
+code.language-css .token.selector>.token.pseudo-class,
+code.language-css .token.selector>.token.pseudo-element {
+  color: $nord-lightteal;
+}
+
+.token.class-name {
+  color: $nord-lightteal;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: none;
+}
+
+pre .line-highlight,
+pre .line-highlight.line-highlight,
+pre>code.line-highlight {
+  margin-top: 36px;
+  background: linear-gradient(to right, rgba(179, 98, 255, 0.17), transparent);
+}
+
+pre .line-highlight:before,
+pre>code.line-highlight:before,
+pre .line-highlight[data-end]:after,
+pre>code.line-highlight[data-end]:after {
+  content: '';
+}
