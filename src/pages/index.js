@@ -60,7 +60,7 @@ export const pageQuery = graphql`
         keywords
         hero_image {
           childImageSharp {
-            sizes(maxWidth: 600) {
+            sizes(maxWidth: 1920) {
               ...GatsbyImageSharpSizes
             }
           }
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
             tags
             thumbOne {
               childImageSharp {
-                sizes(maxWidth: 1200) {
+                sizes(maxWidth: 600) {
                   ...GatsbyImageSharpSizes
                 }
               }
