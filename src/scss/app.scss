@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400|Raleway');
+@import 'breakpoint-sass';
+@import 'sass-rem';
+
 @import 'variables';
 @import 'mixins';
 @import 'keyframes';
@@ -16,6 +19,7 @@
 @import 'components/mailchimp';
 @import 'components/mailchimppopup';
 @import 'components/prismjs';
+@import 'components/recentposts';
 
 @import 'pages/home';
 @import 'pages/blog';

@@ -1,0 +1,39 @@
+.recent-posts {
+  padding: 0 rem(10px);
+
+  &__title {
+    font-size: rem(48px);
+    font-family: $serif;
+    margin-bottom: rem(20px) !important;
+  }
+
+  &__posts {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint($tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__post {
+    width: calc(100% / 3);
+    padding: rem(10px);
+    text-decoration: none !important;
+
+    .card {
+      position: relative;
+      top: 0;
+      transition: all 0.3s;
+
+      &:hover {
+        top: -5px;
+        box-shadow: 0 0 30px #bbb;
+      }
+    }
+
+    span {
+      font-size: rem(18px) !important;
+    }
+  }
+}
