@@ -2,8 +2,10 @@ $black: #222;
 $dark: #666666;
 $grey: #b1b1b1;
 $light: #eeeeee;
-$serif: 'Playfair Display', serif;
-$sans: 'Raleway', sans-serif;
+$serif: 'Playfair Display',
+serif;
+$sans: 'Raleway',
+sans-serif;
 $clear: rgba(0, 0, 0, 0);
 
 $facebook: #3b5998;
@@ -20,3 +22,10 @@ $email: #aaaaaa;
 $emailDark: #9e9e9e;
 
 $handheld: "max-width: 1024px";
+
+// Breakpoints
+$gap: 32px;
+$tablet: 769px;
+$desktop: 960px+(2 * $gap);
+$widescreen: 1152px+(2 * $gap);
+$fullhd: 1344px+(2 * $gap);

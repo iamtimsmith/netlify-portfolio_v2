@@ -6,7 +6,7 @@ import Share from '../components/socialshare'
 import SEO from '../components/seo'
 import MailChimp from '../components/mailchimp'
 import Popup from '../components/mailchimppopup'
-import 'prismjs/themes/prism-tomorrow.css'
+import RecentPosts from '../components/RecentPosts'
 
 class PostTemplate extends Component {
   render() {
@@ -53,6 +53,7 @@ class PostTemplate extends Component {
               title={post.frontmatter.title}
             />
           </section>
+          <RecentPosts currentPost={post.fields.slug} />
         </div>
         <Popup />
         <MailChimp />
