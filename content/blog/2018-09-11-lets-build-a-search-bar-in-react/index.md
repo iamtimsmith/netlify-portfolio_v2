@@ -22,13 +22,13 @@ Hear me out though! We are going to build a task app that also filters the list 
 
 To get started, we will be creating our directory and entering it using the command line. To do this, open up your terminal and navigate to the directory in which you want to put your project. Once there, use the following line of code to create the directory for our project and enter it.
 
-```bash
+```bash:title=terminal
 mkdir search-tasks && cd $_
 ```
 
 Now that we are in our project folder, we need to initialize our project with yarn or npm. I'll be using yarn for this project but the npm commands are pretty much the same.
 
-```bash
+```bash:title=terminal
 yarn init -y
 ```
 
@@ -36,13 +36,13 @@ We are going to just use the `-y` flag so it automatically configures things for
 
 Now that we have a `package.json` file, we should create our `index.html` and `app.js` files. You can use the line of code below in your terminal to create these two files at the same time.
 
-```bash
+```bash:title=terminal
 touch index.html app.js
 ```
 
 Next we need to open our `index.html` file for editing and put the code below inside:
 
-```html
+```html:title=index.html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,7 +64,7 @@ Next we need to open our `index.html` file for editing and put the code below in
 
 Next we need to install the necessary packages to our project. In this case it's going to be React, React DOM, Parcel, Babel-Preset-env, Babel-Preset-React, and Bulma. To add these to our project, you can use NPM or Yarn. I will provide code for both, so you can choose whichever you are more comfortable with.
 
-```bash
+```bash:title=terminal
 npm install react react-dom parcel babel-preset-env babel-preset-react bulma --save-dev
 
 or
@@ -87,13 +87,13 @@ NPM and Yarn are package managers that allow you to add prewritten code into you
 
 Before we can actually start building our React project, we need to add a `.babelrc` file to include the babel-presets we installed. First, create the file using the code:
 
-```bash
+```bash:title=terminal
 touch .babelrc && open $_
 ```
 
 Once inside the file, we will add the following code to include the installed presets.
 
-```javascript
+```js:title=.babelrc
 {
   "presets": ["env", "react"]
 }
@@ -103,7 +103,7 @@ Once inside the file, we will add the following code to include the installed pr
 
 Still with me? Great! The next step is to set up a component in our `app.js` file. We will be using state to manage our list, so we need to use a class component for this. First, let's import the necessary libraries to build our app.
 
-```jsx
+```jsx:title=app.js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import 'bulma/bulma'
@@ -111,7 +111,7 @@ import 'bulma/bulma'
 
 Then we can create an App component:
 
-```jsx
+```jsx:title=app.js
 class App extends Component {
   render() {
     return(
@@ -123,13 +123,13 @@ class App extends Component {
 
 Then we need to make sure that our component is rendering to the DOM. We will use React DOM for this.
 
-```jsx
+```jsx:title=app.js
 ReactDOM.render(<App />, document.getElementById('app'))
 ```
 
 Now we can add in our constructor and state. We will create a 'list' array in state. To start with, we will populate it with a few items so we can see our list:
 
-```jsx
+```jsx:title=app.js
 class App extends Component {
   constructor(props) {
     super(props);
@@ -147,7 +147,7 @@ class App extends Component {
 
 Awesome! Now that we have our list in the App component's state, lets display that list. I'm using Bulma for my styles, but you may be using something different. That's totally cool, you'll just need to adjust your classes accordingly.
 
-```jsx
+```jsx:title=app.js
 class App extends Component {
   ...
   render() {
@@ -182,7 +182,7 @@ If we go back to our terminal and type in `yarn start` or `npm run start`, we ca
 
 This will be pretty simple. First we need to add the code to render an input box and a submit button. Our complete code for the rendered component should look like this for now:
 
-```jsx
+```jsx:title=app.js
 <div className="content">
   <div className="container">
     <section className="section">
@@ -214,7 +214,7 @@ This will be pretty simple. First we need to add the code to render an input box
 
 Now that we have an input and button rendered, we need to make it do something. Otherwise our users won't be able to change the list at all. To do this, we need to add a function called `addItem()` to our component below the constructor but before the render method. We need this to run when we click our button. Upon click, it should take the text in the input and see if it's not empty. If it has text we will add it to the array in our state which will then update our rendered page. The following function will add the necessary functionality to our input:
 
-```jsx
+```jsx:title=app.js
 addItem(e) {
     // Prevent button click from submitting form
     e.preventDefault();
@@ -244,13 +244,13 @@ addItem(e) {
 
 We now have our function built but it doesn't know when to run or how to interperet the `this` keyword. We can tell react how to handle this with the following code in our constructor:
 
-```jsx
+```jsx:title=app.js
 this.addItem = this.addItem.bind(this)
 ```
 
 And we can add an onClick trigger to our button, so our button should look like this:
 
-```jsx
+```jsx:title=app.js
 <button className="button is-info" onClick={this.addItem}>
   Add Item
 </button>
@@ -266,7 +266,7 @@ Okay, so now our users can add items but what good does that do if they can't re
 
 Just like before, we'll be adding a function to handle this. The code below will allow our users to delete their list items when completed:
 
-```jsx
+```jsx:title=app.js
 removeItem(item) {
     // Put our list into an array
     const list = this.state.list.slice();
@@ -289,7 +289,7 @@ removeItem(item) {
 
 We also need to add this function to the constructor. Just like before, we can do this like so:
 
-```jsx
+```jsx:title=app.js
 this.removeItem = this.removeItem.bind(this)
 ```
 
@@ -297,7 +297,7 @@ this.removeItem = this.removeItem.bind(this)
 
 To make it easy for users to delete the item, we should add a delete button to the `<li>`. The code below will do that.
 
-```jsx
+```jsx:title=app.js
 ...
 <ul>
   {this.state.list.map(item => (
@@ -321,7 +321,7 @@ Whew! So far, so good.
 
 Next we are going to turn our list into a component with it's own state and methods. I'm just going to create the component within our app.js file to keep things simple, but you could also create this component in a separate file and import it. Below the App component, create a class component called List with the following code:
 
-```jsx
+```jsx:title=app.js
 class List extends React.Component {
   render() {
     return <div>...</div>
@@ -331,7 +331,7 @@ class List extends React.Component {
 
 The code we want to render is just our list, so go back up to our App component and grab the following code to paste into the render function for our List component:
 
-```jsx
+```jsx:title=app.js
 <ul>
   {this.state.list.map(item => (
     <li key={item}>
@@ -344,7 +344,7 @@ The code we want to render is just our list, so go back up to our App component 
 
 Replace that code in the App component with a call to our List component like so:
 
-```jsx
+```jsx:title=app.js
 <List items={this.state.list} delete={this.removeItem} />
 ```
 
@@ -354,7 +354,7 @@ Here, we are calling the List component and passing a few props in. The `items` 
 
 Before this will work as expected, we need to modify our List component a bit. First we need to add the constructor so we can receive props.
 
-```jsx
+```jsx:title=app.js
 class List extends React.Component {
     constructor(props) {
         super(props);
@@ -367,7 +367,7 @@ If we run the application with `npm run start` or `yarn start`, the application 
 
 We don't have a method called `removeItem` within this component, so clicking the button doesn't call anything. Fortunately, we had the foresight to pass that method into this component as a prop. To regain the delete functionality, we can just alter the code for that button to the following:
 
-```jsx
+```jsx:title=app.js
 <span className="delete" onClick={() => this.props.delete(item)} />
 ```
 
@@ -379,7 +379,7 @@ The first part of adding a search bar will be to create an array of our filtered
 
 First, we'll add state to our List component and give it an array called filtered. The code below illustrates this.
 
-```jsx
+```jsx:title=app.js
 class List extends React.Component {
   constructor(props) {
     super(props)
@@ -400,7 +400,7 @@ Lifecycle methods allow us to "hook" into a component at various points in it's 
 
 To add these lifecycle methods to our List component, add the following code below the constructor but before the render function:
 
-```jsx
+```jsx:title=app.js
 componentDidMount() {
   this.setState({
     filtered: this.props.items
@@ -424,7 +424,7 @@ What's the big deal? The big deal is that now we have a list we can manipulate w
 
 It seems to me that a good place to start with a search bar is...well...the search bar.Let's go ahead and create that. Inside of the div wrapper in our List component, lets add an input.
 
-```jsx
+```jsx:title=app.js
 <div>
   <input type="text" className="input" placeholder="Search..." />
   <ul>...</ul>
@@ -443,7 +443,7 @@ To start, we'll add a method called `handleChange` after our lifecycle methods. 
 
 We also need to add an if statement so that the `.filter()` function only runs if the input isn't empty. Otherwise and empty search bar won't display any tasks. So if the search bar is not empty, we want to run the `.filter()` function and see if the current item contains the search terms. If it does, then we will return that item to the newList array.
 
-```jsx
+```jsx:title=app.js
 handleChange(e) {
 		// Variable to hold the original version of the list
     let currentList = [];
@@ -484,13 +484,13 @@ handleChange(e) {
 
 We're so close! Before we can use the `handleChange()` method, we need to bind the `this` keyword to it. Inside of our constructor, after the state, add the following code to bind our `this` keyword for the method.
 
-```jsx
+```jsx:title=app.js
 this.handleChange = this.handleChange.bind(this)
 ```
 
 Finally, we can add an event handler to the input item to call the method whenever the content is changed.This last piece will be what actually makes the search function work. Add `onChange={this.handleChange}` to the input element to make it look like this:
 
-```jsx
+```jsx:title=app.js
 <input
   type="text"
   className="input"

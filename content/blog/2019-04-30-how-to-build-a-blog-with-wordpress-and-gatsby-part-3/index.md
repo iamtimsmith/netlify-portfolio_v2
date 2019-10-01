@@ -22,19 +22,88 @@ So far, we've talked about what themes and plugins to use for a WordPress back-e
 
 As you'll recall from the last post, we should create a page template before adding the `createPages` api to the gatsby-node.js file so it has something to call. To do this, we'll create a file in the pages directory called PageTemplate.js using the code below:
 
-![Create a file for the Page Template](./code1.png)
+```bash:title=terminal
+touch ./src/templates/Page.js
+```
 
 Just like with the blog post template, we can probably just use a [stateless functional component](/blog/class-components-vs-stateless-functional-components/) for this. Like before, we won't cover how to create a component in this article, but you can read about [creating a react js component here](/blog/how-to-create-a-component/).
 
 We will go ahead and start off with a generic template again and then we will fill it out later with the appropriate data. The code below will get a simple template created for us to use for pages for now:
 
-![Basic page template code](./code2.png)
+```jsx:title=src/templates/Page.js
+import React from "react"
+import Layout from "../components/layout"
+
+const PageTemplate = () => (
+  <Layout>
+    <h1>Page Template</h1>
+  </Layout>
+)
+export default PageTemplate
+```
 
 ## Adding pages to gatsby-node.js
 
 Awesome! Now that we have our page template created, we can add pages to the gatsby-node.js file pretty easily. First, we will import the template just like we did for the BlogPostTemplate. Then we will add the allWordpressPage piece to the graphql query. Finally, we will use the `createPage` api to create pages based on the information retrieved from the graphql query and use the Page template to build the pages automatically. Below is our finished gatsby-node.js file. See if you can spot the things I mentioned for the pages.
 
-![Finished gatsby-node.js file](./code3.png)
+```js:title=gatsby-node.js
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
+// You can delete this file if you're not using it
+const path = require(`path`)
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
+  const BlogPostTemplate = path.resolve("./src/templates/BlogPost.js")
+  const PageTemplate = path.resolve("./src/templates/Page.js")
+  const result = await graphql(`
+    {
+      allWordpressPost {
+        edges {
+          node {
+            slug
+            wordpress_id
+          }
+        }
+      }
+      allWordpressPage {
+        edges {
+          node {
+            slug
+            wordpress_id
+          }
+        }
+      }
+    }
+  `)
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  const BlogPosts = result.data.allWordpressPost.edges
+  BlogPosts.forEach(post => {
+    createPage({
+      path: `/post/${post.node.slug}`,
+      component: BlogPostTemplate,
+      context: {
+        id: post.node.wordpress_id,
+      },
+    })
+    const Pages = result.data.allWordpressPage.edges
+    Pages.forEach(page => {
+      createPage({
+        path: `/${page.node.slug}`,
+        component: PageTemplate,
+        context: {
+          id: page.node.wordpress_id,
+        },
+      })
+    })
+  })
+}
+```
 
 Just like before, we can test this to make sure the pages were created as expected by starting our development server and visiting [localhost:8000/stuff](http://localhost:8000/stuff) and getting a list of all of the available pages. Again, this is only available in a development environment since a live site will show a different 404 page. We should see an `/about` page and a `/sample-page` page in there. If so, our gatsby-node.js file worked and we can update the template to show the data we want.
 
@@ -46,13 +115,38 @@ Since we have our page routes set up, we can start adding to the template. This 
 
 The end result is a pretty simple component as shown below:
 
-![Finished Page Template](./code4.png)
+```js:title=src/templates/Page.js
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout.js"
+import SEO from "../components/seo"
+
+const PageTemplate = ({ data }) => (
+  <Layout>
+    <SEO
+      title={data.wordpressPage.title}
+      description={data.wordpressPage.excerpt}
+    />
+    <h1>{data.wordpressPage.title}</h1>
+    <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }} />
+  </Layout>
+)
+export default PageTemplate
+
+export const query = graphql`
+  query($id: Int!) {
+    wordpressPage(wordpress_id: { eq: $id }) {
+      title
+      excerpt
+      content
+    }
+  }
+`
+```
 
 I mentioned at the end of [part two](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-2) that configuring the gatsby-node.js file is probably the most difficult part of this whole thing. Since we worked our way through that already and understand how it works, setting up another content type was cake, right?
 
-<video autoplay muted loop width="400">
-  <source src="https://media.giphy.com/media/zcCGBRQshGdt6/giphy.mp4">
-</video>
+<video src="https://media.giphy.com/media/zcCGBRQshGdt6/giphy.mp4" autoplay muted loop></video>
 
 Now if we visit the about page at [http://localhost:8000/about](http://localhost:8000/about), we can see the data coming in from WordPress. If we inspect the page and look at the head, we can also see that the title and meta tags are being updated in the head because of the SEO component!
 
@@ -64,13 +158,101 @@ We can also see that the starter default comes with a few pages already in the `
 
 Since we want our blog to show up on the homepage, we can edit the file called `index.js` to do this. Let's take a look at this file before we make any changes:
 
-![Index.js file before we make changes](./code5.png)
+```jsx:title=src/pages/index.js
+import React from "react"
+import { Link } from "gatsby"
+import Layout from "../components/layout"
+import Image from "../components/image"
+import SEO from "../components/seo"
+
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <Image />
+    </div>
+    <Link to="/page-2/">Go to page 2</Link>
+  </Layout>
+)
+export default IndexPage
+```
 
 We are going to remove everything after the SEO tag but before the closing Layout tag and replace it with our own stuff. We can also use a query pretty similar to the one in the blog post template except for the content piece. We can just use the excerpt provided by the WordPress API.
 
 To keep things simple, we'll just create a list of recent blog posts with an image, title, author, date, and excerpt. Each of the items in this list should link to the individual blog post for readers. Below is the code to create this layout. It's pretty straightforward and looks very similar to our blog post template with the exception of the map function which iterates over the items in an array.
 
-![Our finished index.js file](./code6.png)
+```jsx:title=src/pages/index.js
+import React from "react"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const IndexPage = ({ data }) => (
+  <Layout>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <ul style={{ listStyle: "none" }}>
+      {data.allWordpressPost.edges.map(post => (
+        <li style={{ padding: "20px 0", borderBottom: "1px solid #ccc" }}>
+          <Link
+            to={`/post/${post.node.slug}`}
+            style={{ display: "flex", color: "black", textDecoration: "none" }}
+          >
+            <Img
+              sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
+              alt={post.node.title}
+              style={{ width: "25%", marginRight: 20 }}
+            />
+            <div style={{ width: "75%" }}>
+              <h3
+                dangerouslySetInnerHTML={{ __html: post.node.title }}
+                style={{ marginBottom: 0 }}
+              />
+              <p style={{ margin: 0, color: "grey" }}>
+                Written by {post.node.author.name} on {post.node.date}
+              </p>
+              <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+            </div>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </Layout>
+)
+export default IndexPage
+
+export const query = graphql`
+  query {
+    allWordpressPost {
+      edges {
+        node {
+          title
+          excerpt
+          slug
+          author {
+            name
+          }
+          date(formatString: "MMMM DD, YYYY")
+          acf {
+            feat_img {
+              localFile {
+                childImageSharp {
+                  sizes(maxWidth: 600) {
+                    ...GatsbyImageSharpSizes
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+```
 
 And here's what it looks like when we visit the homepage of our blog:
 
@@ -78,9 +260,7 @@ And here's what it looks like when we visit the homepage of our blog:
 
 It's looking pretty good so far. We're getting pretty close to being done, we just have a few more things to change and we're ready to start blogging!
 
-<video autoplay muted loop>
-  <source src="https://media.giphy.com/media/qLWdMYX1NYF2g/giphy.mp4">
-</video>
+<video src="https://media.giphy.com/media/qLWdMYX1NYF2g/giphy.mp4" autoplay muted loop></video>
 
 ## Changing the Header Component
 
@@ -90,7 +270,16 @@ One of the first things I notice about the blog pictured above is the header. It
 
 In the gatsby-config.js file, we can see a piece at the top called `siteMetaData` with a title, description, and author. This is where some basic information is kept about the project for the SEO component, but also for the site name.
 
-![siteMetaData available in the gatsby-config.js file](./code7.png)
+```js:title=gatsby-config.js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Default Starter`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
+  },
+  plugins: [ ... ],
+}
+```
 
 The title we're seeing in the header comes from the title listed here. We can change it to whatever we'd like our site to be called. Usually when building a WordPress site, I get all of my data for this from WordPress but in the case of a site using markdown or something different we may want to use the stuff located here.
 
@@ -102,11 +291,101 @@ Since we are building a blog using WordPress and want our users to have full con
 
 Using queries works a bit differently inside of components. Rather than just writing a query which drops data into our page or template, we have to use a new component called `StaticQuery` which is designed specifically for using queries inside of components.
 
-![Header component before modifications](./code8.png)
+```jsx:title=src/components/header.js
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
+
+const Header = ({ siteTitle }) => (
+  <header
+    style={{
+      background: `rebeccapurple`,
+      marginBottom: `1.45rem`,
+    }}
+  >
+    <div
+      style={{
+        margin: `0 auto`,
+        maxWidth: 960,
+        padding: `1.45rem 1.0875rem`,
+      }}
+    >
+      <h1 style={{ margin: 0 }}>
+        <Link
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </h1>
+    </div>
+  </header>
+)
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
+
+export default Header
+```
 
 If we take a quick look at the existing header component, we will see that a site-title is being passed in as a prop which is then used to display the site title from `gatsby-config.js` in the header. What we are going to do is use the `StaticQuery` component provided by gatsby and use a query prop to run our query and then a render prop to actually render out our component like we normally would. You can see below how we do this in code:
 
-![Header component after adding WordPress title](./code9.png)
+```jsx:title=src/components/header.js
+import { StaticQuery, graphql, Link } from "gatsby"
+import React from "react"
+
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        wordpressSiteMetadata {
+          name
+        }
+      }
+    `}
+    render={data => (
+      <header
+        style={{
+          background: `rebeccapurple`,
+          marginBottom: `1.45rem`,
+        }}
+      >
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `1.45rem 1.0875rem`,
+            display: `flex`,
+            justifyContent: `space-between`,
+            alignItems: `center`,
+          }}
+        >
+          <h1 style={{ margin: 0 }}>
+            <Link
+              to="/"
+              style={{
+                color: `white`,
+                textDecoration: `none`,
+              }}
+            >
+              {data.wordpressSiteMetadata.name}
+            </Link>
+          </h1>
+        </div>
+      </header>
+    )}
+  />
+)
+export default Header
+```
 
 The header component above looks a little different than it originally did, but as we start to dig into it a bit more we can see it hasn't changed much. We essentially just wrapped our header in the StaticQuery component and then ran our query inside of that component to give the header the necessary data. Simple, right?
 
@@ -118,7 +397,80 @@ Let's take it a step further and say our user wants a menu in the header that he
 
 When we were setting our gatsby-config.js file in the [second part of the series](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-2), we just stuck with the default routes provided in the gatsby-source-wordpress docs. The WP API Menus plugin creates a few new routes for those endpoints, so the first thing we need to do is add these endpoints to the gatsby-config.js file.
 
-![Gatsby-config.js after adding routes for menus](./code10.png)
+```js:title=gatsby-config.js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Default Starter`,
+    description: `Kick off your next, great Gatsby project with this 
+    default starter. This barebones starter ships with the main Gatsby 
+    configuration files you might need.`,
+    author: `@gatsbyjs`,
+  },
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        // I have created a dummy site for us to use with the plugins we discussed
+        baseUrl: "gatsbypress.iamtimsmith.com",
+        protocol: "https",
+        hostingWPCOM: false,
+        // We will be using some advanced custom fields
+        useACF: true,
+        acfOptionPageIds: [],
+        verboseOutput: false,
+        perPage: 100,
+        searchAndReplaceContentUrls: {
+          sourceUrl: "https://gatsbypress.iamtimsmith.com",
+          replacementUrl: "https://localhost:8000",
+        },
+        // Set how many simultaneous requests are sent at once.
+        concurrentRequests: 10,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+          "**/users",
+          "**/*/*/menus", // <== Menu api endpoint
+          "**/*/*/menu-locations", // <== Menu api endpoint
+        ],
+        excludedRoutes: [],
+        normalizer: function({ entities }) {
+          return entities
+        },
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // 'gatsby-plugin-offline',
+  ],
+}
+```
 
 If you look at the code above, you'll notice we have added two new routes to the gatsby-source-wordpress. These routes are created automatically by the plugin inside of WordPress without any additional configuration. Remember, after making changes to files outside of the src folder, we need to restart our development server by running `gatsby develop`. After restarting, we can visit [http://localhost:8000/\_\_\_graphql](http://localhost:8000/___graphql) and query for the menu information, which will like like the screenshot below.
 
@@ -126,7 +478,76 @@ If you look at the code above, you'll notice we have added two new routes to the
 
 The final step is to add this query into our static query and create the menu itself in the header component. We can just drop this in under the wordpressSiteMetadata piece. Once we have it added into the query, we can just use a `map()` function to iterate over the menu items and create it dynamically, allowing the user to update it through WordPress. Doing it this way does require us to specify which menu we want, so we need the name of the menu which is set in WordPress. In this case, our menu is called Main Menu so we will use that in our query.
 
-![Finished header component with main menu](./code11.png)
+```jsx:title=src/components/header.js
+import { StaticQuery, graphql, Link } from "gatsby"
+import React from "react"
+
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        wordpressSiteMetadata {
+          name
+        }
+        wordpressWpApiMenusMenusItems(name: { eq: "Main Menu" }) {
+          items {
+            title
+            object_slug
+          }
+        }
+      }
+    `}
+    render={data => (
+      <header
+        style={{
+          background: `rebeccapurple`,
+          marginBottom: `1.45rem`,
+        }}
+      >
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `1.45rem 1.0875rem`,
+            display: `flex`,
+            justifyContent: `space-between`,
+            alignItems: `center`,
+          }}
+        >
+          <h1 style={{ margin: 0 }}>
+            <Link
+              to="/"
+              style={{
+                color: `white`,
+                textDecoration: `none`,
+              }}
+            >
+              {data.wordpressSiteMetadata.name}
+            </Link>
+          </h1>
+          <ul style={{ listStyle: `none`, display: `flex`, margin: 0 }}>
+            {data.wordpressWpApiMenusMenusItems.items.map(item => (
+              <li key={item.object_slug} style={{ margin: `0 10px` }}>
+                <Link
+                  to={`/${item.object_slug}`}
+                  style={{
+                    color: `white`,
+                    textDecoration: `none`,
+                    fontFamily: `sans-serif`,
+                  }}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </header>
+    )}
+  />
+)
+export default Header
+```
 
 That's a good looking component! Let's see what it looks like when we visit the site:
 

@@ -32,7 +32,7 @@ It also takes advantage of multicore processing and caching to help speed up bui
 
 The first step in any project is creating the directory that will house our files. To do this, navigate to the folder that will contain our project folder and use the line of code below in our terminal.
 
-```shell
+```bash:title=terminal
 mkdir parcel-setup && $_
 ```
 
@@ -40,12 +40,8 @@ mkdir parcel-setup && $_
 
 Now that we have our project directory, we should initialize NPM or Yarn to create a package.json file. I will be providing the code for both, but you can just follow the one you prefer. To initialize our project, use the code below:
 
-```shell
+```bash:title=terminal
 npm init -y
-
-or
-
-yarn init -y
 ```
 
 The init command initializes the project and the `-y` flag goes with the default setup. We could also do this without the `-y` flag and manually set up our package.json file.
@@ -54,19 +50,19 @@ The init command initializes the project and the `-y` flag goes with the default
 
 It's always a good idea to use git in our projects. Git is a version control tool that allows us to take a "snapshot" of code and save it locally or on a site like [Github](https://github.com/). To add git to our project, we need to initialize it with the following command:
 
-```shell
+```bash:title=terminal
 git init
 ```
 
 Once we have git added, we should add a .gitignore file. The point of this file is to tell our computer to ignore the files or directories listed when making a commit, or snapshot. The line of code below will create the file and open it for us to edit.
 
-```shell
+```bash:title=terminal
 touch .gitignore && open $_
 ```
 
 Once our file is open, we need to add the files and folders we don't want added. In this case, it's just going to be our node_modules folder, which is where our dependencies are stored. Our .gitignore file should look like this:
 
-```javascript
+```js:title=.gitignore
 node_modules
 ```
 
@@ -76,13 +72,13 @@ We're about halfway done. Pretty fast, right?
 
 To create our index.html file, we can go back to the terminal and use the following line of code:
 
-```shell
+```bash:title=terminal
 touch index.html
 ```
 
 We can now open this file in our text editor. We will fill it with the following code. (Hint: If you're using a text editor with Emmet, you can type in `html:5` and hit tab. It should do most of the work for you!)
 
-```html
+```html:title=index.html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -103,12 +99,8 @@ We can now open this file in our text editor. We will fill it with the following
 
 The next step in setting up our project is to install the dependencies for our project. As before, I'm providing code for NPM and Yarn, so just use whichever you are using in your project.
 
-```bash
+```bash:title=terminal
 npm install react react-dom parcel babel-preset-env babel-preset-react --save-dev
-
-or
-
-yarn add react react-dom parcel babel-preset-env babel-preset-react
 ```
 
 Once our packages have finished installing we can finish getting our project set up!
@@ -117,13 +109,13 @@ Once our packages have finished installing we can finish getting our project set
 
 To actually create our app, we will put it in an app.js file, so can you guess what's next? Yep! We need to create and open the file.
 
-```shell
+```bash:title=terminal
 touch app.js && open $_
 ```
 
 Inside our app.js file, we will create a React component and use React DOM to render it. If you're unsure about how to create a React component, you should read [this article for a quick overview](https://www.iamtimsmith.com/blog/how-to-create-a-component). Below is the code we need to create a React app in our app.js file:
 
-```javascript
+```jsx:title=app.js
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -146,13 +138,13 @@ Great! The top of our file is importing the dependencies we need for this file. 
 
 We're almost done! Since React uses ES6+ JavaScript, we need to set up a .babelrc file to tell it how to compile our code. Babel basically takes the most modern syntax (ES6, ES7, etc) and turns it into code that all browsers can read whether they support ES6+ or not. Pretty cool, right? Let's create our .babelrc file!
 
-```shell
+```bash:title=terminal
 touch .babelrc && open $_
 ```
 
 Inside of our file, we will put the following code. This is a pretty basic setup, but it will get the job done for our project today.
 
-```javascript
+```js:title=.babelrc
 {
   "presets": ["env", "react"]
 }
@@ -164,13 +156,13 @@ Awesome! Just one more step and we're done!
 
 The final step before we run our app is to add some script commands to our package.json file. Lets get it open.
 
-```shell
+```bash:title=terminal
 open package.json
 ```
 
 It should look like this:
 
-```javascript
+```json:title=package.json
 {
   "name": "parcel-setup",
   "version": "1.0.0",
@@ -190,7 +182,7 @@ It should look like this:
 
 We're going to add the following code. It says that when we type `npm run start` or `yarn start`, it should use Parcel to build our application and serve the index.html file.
 
-```javascript
+```js:title=package.json
 "scripts": {
     "start": "parcel index.html"
 },
@@ -198,7 +190,7 @@ We're going to add the following code. It says that when we type `npm run start`
 
 Our complete package.json file should look like this:
 
-```javascript
+```js:title=package.json
 {
   "name": "parcel-setup",
   "version": "1.0.0",
@@ -221,12 +213,8 @@ Our complete package.json file should look like this:
 
 Our Parcel setup is now complete! To build our application, go back to your terminal and run the command below:
 
-```shell
+```bash:title=terminal
 npm run start
-
-or
-
-yarn start
 ```
 
 Your terminal now says `Server running at http://localhost:1234`. Let's open up our browser and go to [http://localhost:1234](http://localhost:1234) to see our project.

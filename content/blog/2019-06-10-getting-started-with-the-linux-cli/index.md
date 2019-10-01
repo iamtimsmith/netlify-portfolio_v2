@@ -14,9 +14,7 @@ I recently attended a talk which compared the Linux command line to magic in Har
 
 I bring this up because the command line can be very intimidating to people who are unfamiliar with it, but after learning a few simple commands it will change your life. I find myself using the command line for just about everything I can because it's faster and easier in a lot of cases than using the GUI, or Graphical User Interface.
 
-<video autoplay loop muted>
-  <source src="https://media.giphy.com/media/NhBH9RHZdpk4g/giphy.mp4">
-</video>
+<video src="https://media.giphy.com/media/NhBH9RHZdpk4g/giphy.mp4" autoplay loop muted></video>
 
 ## What is the Command Line Interface?
 
@@ -36,27 +34,48 @@ Here's a list of common commands and a bit about how to use them. I will not cov
 ### Find your location
 Pwd (short for Print Working Directory) will show you where you're at in your computer. This command doesn't actually "do" anything other than give you your current location.
 
-![Print Working Directory, or pwd](./pwd.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ pwd
+/Users/timsmith/desktop/styles
+```
 
 ### See everything in the folder
 
 Another useful command to have up your sleeve is `ls` which is short for list. By typing `ls` and hitting enter, you will see an output of all of the files and directories in your working folder. This is very useful to see what's there and figure out how things are organized.
 
-![To list items in a directory, use the ls command](./ls.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ ls
+Variables.js  components/  library/
+```
 
 ### Navigate to somewhere else
 Short for "Change Directory", cd lets you move around your computers directories quickly and easily. You can move one directory at a time or several, depending on what you want to do. If you look at the terminal code below, you can see the first line is `cd ..`. The two periods tell the computer to go up one directory, so we're going from styles to desktop. The next line tells the computer to change directory into the styles folder (which is located on the desktop).
 
 The third line is a handy tool if you don't know what paths are available in the current directory you're changing into. In the code I'm in the styles directory, so I type `cd` and hit the tab key a couple of times and it prints out all of the available files and directories in the styles folder for me to use. The final line just shows how you can navigate from the desktop directory all the way to the components directory (inside of styles) with just one line. Pretty cool, right?
 
-![Change Directory, or cd](./cd.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ pwd
+
+Tims-MacBook-Pro:desktop timsmith$ cd styles
+
+Tims-MacBook-Pro:styles timsmith$ cd
+Variables.js  components/  library/
+
+Tims-MacBook-Pro:desktop timsmith$ cd styles/components
+```
 
 ### Create a new folder
 Mkdir is short for "make directory" which, you guessed it, makes a new directory. This command is super useful when creating multiple or nested directories. In the example below, the first line is making a new directory called directory1. First, tell the command line you want to make a directory, then list the directory names you want to create separated by spaces. If you need spaces in your directory names, simply wrap the directory name in quotations.
 
 The next line in the example creates two directories called directory2 and directory3. Finally, the third line is creating a folder called directory4 with a subfolder called sub1.
 
-![Make Directory, or mkdir](./mkdir.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ mkdir directory1
+
+Tims-MacBook-Pro:styles timsmith$ mkdir directory2 directory3
+
+Tims-MacBook-Pro:styles timsmith$ mkdir directory4 directory4/sub1
+```
 
 If we looked at our current directory, we should now see the following structure in addition to what was already there:
 
@@ -73,7 +92,13 @@ Along the same lines of mkdir is touch, although the purpose of this command may
 
 The example below shows a file called file1.txt being created in the current directory, a file called file2.txt being created in directory1, and two more files being created called file3.txt and file4.txt. The format of the command should look pretty familiar.
 
-![Touch makes a new file](./touch.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ touch file1.txt
+
+Tims-MacBook-Pro:styles timsmith$ touch directory1/file2.txt
+
+Tims-MacBook-Pro:styles timsmith$ touch file3.txt file4.txt
+```
 
 After adding the files above, my working directory structure looks something like this:
 
@@ -90,7 +115,13 @@ After adding the files above, my working directory structure looks something lik
 ### Delete a file or folder
 Okay, so I've covered how to create folders and files. What if I want to remove a file? Can I do that from the command line too? You bet! To remove a file, you will use the `rm` command followed by the name of the files you want to remove, separated by a space. If you need to remove a folder, the command is the exact same except you have to add an `-r` flag before the folder names which tells the terminal to execute the command recursively. The examples below demonstrate each of these:
 
-![Remove a file or folder with rm](./rm.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ rm file4.txt
+
+Tims-MacBook-Pro:styles timsmith$ rm file3.txt file1.txt
+
+Tims-MacBook-Pro:styles timsmith$ rm -r directory2
+```
 
 After removing these files and folders, my current directory looks like this:
 
@@ -103,7 +134,11 @@ After removing these files and folders, my current directory looks like this:
 ### Copy a file or folder to a new location
 The next command I want to show you is the copy command. It's another short one since you just type `cp` followed by the location of the file you want to copy and then the location you'd like to copy it to. Copying directories requires the `-r` flag just like the `rm` command, which says it should be done recursively. The example below demonstrates copying a file from the current directory into another directory as well as copying a directory into a directory. It should be noted, the file name for the location you're copying to does not need to match the existing file name. You can call it whatever you want the new file to be.
 
-![Copying a file with cp](./cp.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ cp directory1/file2.txt directory3/file3.txt
+
+Tims-MacBook-Pro:styles timsmith$ cp -r directory4/sub1 directory3/sub1
+```
 
 My directory structure now looks like this:
 
@@ -118,7 +153,11 @@ My directory structure now looks like this:
 ### Move a file or folder
 There are different cases where you'd want to move the file instead of simply copying it. You could just copy the file to the new location and use `rm` to get rid of the old one, but that's kind of a pain. Fortunately we have the move command which does just that. Just like `cp`, you can use `mv` to move a file to a different location on your computer. You can also use this command to move folders without any additional flags. The format for this command is exactly the same as `cp` too. The example below shows how to move a file and how to move a folder.
 
-![Move a file with the mv command](./mv.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ mv directory1/file2.txt directory4/file1.txt
+
+Tims-MacBook-Pro:styles timsmith$ mv directory4/sub1 directory1/sub1
+```
 
 The structure for my directory now looks like this:
 
@@ -145,7 +184,10 @@ The example below contains the grep command, the aforementioned flags, and then 
 
 The results appear directly below the grep command and you can see that based on the flags I've used, we get back the file name (`./directory4/file1.txt:`) followed by the line number (1:). After the line number is the results for the text search, which includes the 5 characters before and after our search term.
 
-![Grep can be used to search for text](./grep.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ grep -Rnaio .....demonstration..... .
+./directory4/file1.txt:1: for demonstration purp
+```
 
 ## Making things even easier
 
@@ -153,19 +195,30 @@ While these commands don't require too much time or energy, it can be tedious to
 
 To do this, navigate to your home folder. The following command will get you there:
 
-![Use cd ~ to get back to your home folder](./cd_home.png)
+```bash:title=terminal
+Tims-MacBook-Pro:styles timsmith$ cd ~
+
+Tims-MacBook-Pro:~ timsmith$
+```
 
  Once inside the home folder, run the following command to open the `.bashrc` file in an editor. If the file doesn't exist, you may need to create it using the `touch` command from above.
 
- ![Open .bashrc in your favorite editor](./open_bashrc.png)
+ ```bash:title=terminal
+ Tims-MacBook-Pro:~ timsmith$ open .bashrc
+ ```
 
  The `.bashrc` file may or may not be empty. Either way, you can add things to the end of it which will affect the terminal as well as create shortcuts or "aliases". Today we will just cover how to create an alias. The one I use most is for the grep command so I don't have to remember the flags. Add the text below to your `.bashrc` file and save. Close your terminal and reopen it to try out the new command.
 
- ![Add the search alias to the .bashrc file](./search.png)
+ ```bash:title=.bashrc
+ alias search="grep -Rnaio"
+ ```
 
  Now instead of typing out the grep command with all of those flags, you can just write `search` and the rest of the grep command. I'll use the same search as before but with the new alias:
 
- ![Using the new search command](./search_results.png)
+ ```bash:title=terminal
+ Tims-MacBook-Pro:styles timsmith$ search .....demonstration..... .
+./directory4/file1.txt:1: for demonstration purp
+```
 
  As you can see, using the new `search` command returns the same results as the grep command because we've created this alias. Aliases can be created for any text or command which makes things easier. I've created aliases for shells, directories I frequently go into, and more. The goal is to make your life easier be creating simple names for the things you do all the time.
 

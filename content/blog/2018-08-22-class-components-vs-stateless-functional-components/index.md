@@ -17,7 +17,7 @@ A class component is a component that takes advantage of [ES6 classes](https://d
 
 These things can be useful when we are storing or maniplating data within our component. Cases such as these will be our primary use cases for class components. I have provided an example of a class component which will render "Hello World" below using state:
 
-```
+```jsx:title=helloworld.js
 class HelloWorld extends React.Component {
   constructor(props) {
     super(props);
@@ -45,7 +45,7 @@ There are two ways to create a stateless functional component. Both are similar 
 
 If we are putting all of our components in a single file, then this should be how we create stateless functional components. The ability choose how succinctly we want to create our functional components comes into play when we have a different file for each component. The code below illustrates how we can create a functional component within a variable and export it for use in another area of our app.
 
-```
+```jsx:title=helloworld.js
 const HelloWorld = (props) => (
   <div>
     <p>{ props.greeting }</p>
@@ -62,7 +62,7 @@ export default HelloWorld;
 
 When we have a stateless functional component in a file by itself, we don't need to name the component. I know, this saves us, like, 10 characters but hey I'll take what I can get. We can simply create the function and export it like the code below.
 
-```
+```jsx:title=helloworld.js
 export default (props) => (
   <div>
     <p>{ props.greeting }</p>

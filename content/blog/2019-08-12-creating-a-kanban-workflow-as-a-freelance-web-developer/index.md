@@ -18,9 +18,7 @@ Kanban, which is japanese for "sign", is a workflow which allows you to categori
 
 I know what you're thinking... what does this have to do with my freelance projects? The kanban method has been used by many groups of people in many different forms since it's creation. It is commonly used in the software development world as a part of the Agile methodology. At it's most basic, it's a set of columns with "cards" or "items" in them which represent different tasks which need to be accomplished.
 
-<video muted loop autoplay>
-  <source src="https://media.giphy.com/media/l0MYSqNU3hr8MUq0o/giphy.mp4">
-</video>
+<video src="https://media.giphy.com/media/l0MYSqNU3hr8MUq0o/giphy.mp4" muted loop autoplay></video>
 
 ## What tools can you use?
 
@@ -96,9 +94,7 @@ As a freelancer, I really don't use sprints. It's still a part-time job for me s
 
 In a larger team environment or at an enterprise company, I would definitely recommend using something like Agile or Scrum to organize the project. Not only does it make things simple to assign to people, it encourages communication and efficiency. Typically as a team works together for a long time, communication gets very fluid and effective.
 
-<video muted loop autoplay>
-  <source src="https://media.giphy.com/media/l0HlQngl0Eja36dlS/giphy.mp4">
-</video>
+<video src="https://media.giphy.com/media/l0HlQngl0Eja36dlS/giphy.mp4" muted loop autoplay></video>
 
 ## Conclusion
 
