@@ -1,20 +1,25 @@
 .is-home {
   #navbar {
     transition: all 0.25s;
+
     a {
       transition: all 0.25s;
     }
+
     &.clear {
       background: rgba(0, 0, 0, 0);
+
       .navbar-brand {
         visibility: hidden;
         opacity: 0;
       }
+
       a {
         color: $black;
       }
     }
   }
+
   .hero {
     color: $black;
     justify-content: center;
@@ -27,6 +32,7 @@
     -webkit-animation: fadeIn 0.5s linear 1 forwards;
     -moz-animation: fadeIn 0.5s linear 1 forwards;
     -o-animation: fadeIn 0.5s linear 1 forwards;
+
     .gatsby-image-wrapper {
       position: absolute !important;
       top: 0;
@@ -37,6 +43,7 @@
       right: 0;
       z-index: -1;
     }
+
     .is-size-1 {
       font-family: $serif;
       font-weight: 700;
@@ -48,6 +55,7 @@
       -moz-animation: onLoad 1s linear 0.5s 1 forwards;
       -o-animation: onLoad 1s linear 0.5s 1 forwards;
     }
+
     .is-size-3 {
       position: relative;
       top: 20px;
@@ -57,6 +65,7 @@
       -moz-animation: onLoad 1s linear 1s 1 forwards;
       -o-animation: onLoad 1s linear 1s 1 forwards;
     }
+
     .button {
       margin-top: 15px;
       position: relative;
@@ -68,15 +77,20 @@
       -webkit-animation: onLoad 1s linear 1.75s 1 forwards;
       -moz-animation: onLoad 1s linear 1.75s 1 forwards;
       -o-animation: onLoad 1s linear 1.75s 1 forwards;
+      background: radial-gradient(rgba(white, 0.3) 0%, transparent 80%);
+      box-shadow: 0 0 20px rgba(white, 0.1);
+
       &:hover {
         color: white;
         background: $black;
       }
     }
   }
+
   .portfolio-items {
     margin: 0 !important;
   }
+
   @for $i from 1 through 100 {
     .portfolio-item:nth-child(#{$i}) {
       $delay: $i * 0.5s;
@@ -89,15 +103,19 @@
       -o-animation: onLoad 1s linear $delay 1 forwards;
     }
   }
+
   @media (max-width: 1087px) {
     .clear {
       background: $black !important;
+
       .navbar-brand {
         visibility: visible !important;
         opacity: 1 !important;
+
         a {
           color: white !important;
         }
+
         &.hidden {
           opacity: 1 !important;
         }
