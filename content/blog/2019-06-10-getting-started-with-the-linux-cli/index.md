@@ -14,7 +14,7 @@ I recently attended a talk which compared the Linux command line to magic in Har
 
 I bring this up because the command line can be very intimidating to people who are unfamiliar with it, but after learning a few simple commands it will change your life. I find myself using the command line for just about everything I can because it's faster and easier in a lot of cases than using the GUI, or Graphical User Interface.
 
-<video src="https://media.giphy.com/media/NhBH9RHZdpk4g/giphy.mp4" autoplay loop muted></video>
+<video src="https://media.giphy.com/media/NhBH9RHZdpk4g/giphy.mp4" playsinline autoplay loop muted></video>
 
 ## What is the Command Line Interface?
 

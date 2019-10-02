@@ -122,7 +122,7 @@ Date:   Thu Jun 27 22:05:58 2019 -0500
 
 Upon running the command above, you should see some output that looks like the output below. It gives some basic information like a unique ID, the author, the date and time of the commit, and the commit message. As you add more commits, you will see more than just one. To exit the log, just type "q" and it will take you back to the normal editor.
 
-<video src="https://media.giphy.com/media/kRmglZUDvDG/giphy.mp4" autoplay loop muted></video>
+<video src="https://media.giphy.com/media/kRmglZUDvDG/giphy.mp4" playsinline autoplay loop muted></video>
 
 ## Creating different versions
 
@@ -165,7 +165,7 @@ $ git branch sample-branch -D
 
 The command above starts with "git branch" followed by the name of the branch you want to delete. The "-D" flag at the end is that tells git you want to delete the noted branch. Once a branch is deleted, you can reuse the branch name if desired.
 
-<video src="https://media.giphy.com/media/zlLydol7ndM7C/giphy.mp4" autoplay loop muted></video>
+<video src="https://media.giphy.com/media/zlLydol7ndM7C/giphy.mp4" playsinline autoplay loop muted></video>
 
 ## Working with remote repositories
 

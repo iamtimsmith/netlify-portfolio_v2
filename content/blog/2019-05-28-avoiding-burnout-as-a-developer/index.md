@@ -18,7 +18,7 @@ Burn out is like a race car barreling down the track as they see a turn coming. 
 
 Unfortunately, a lot of people don't realize they're approaching this point until it's too late and they've hit the wall. To make things worse, it hasn't been a very talked about issue until recently so many people are still unaware of this situation, meaning that they don't even know to watch out for it.
 
-<video src="https://media.giphy.com/media/4TMqcN59kg3Yc/giphy.mp4" muted autoplay loop></video>
+<video src="https://media.giphy.com/media/4TMqcN59kg3Yc/giphy.mp4" muted playsinline autoplay loop></video>
 
 Time, energy, and even willpower is limited and even the most disciplined person can reach the limits at times. It is when we feel ourselvers approachimg those limits and decide to keep going that we reach the point of exhaustion and deprivation. Fortunately, there are ways to see this coming, prepare for it, and even prevent it.
 
@@ -44,7 +44,7 @@ If we aren't honest with ourselves, we won't be able tell whether we should slow
 
 Sometimes I feel like I'm not doing enough. I feel like I'm falling behind in my industry. I feel like a failure. I can almost guarantee that I'm not the only one who feels this way at times either. Our industry is a tough one to keep up with because it changes so rapidly and there is a pressure to always be developing. Just know that you aren't failing. You are doing enough. You are doing a good job. It's okay to take a break.
 
-<video src="https://media.giphy.com/media/xT0GqFIpuorgUtGLOE/giphy.mp4" autoplay muted loop></video>
+<video src="https://media.giphy.com/media/xT0GqFIpuorgUtGLOE/giphy.mp4" playsinline autoplay muted loop></video>
 
 ## What to do when you reach that point
 

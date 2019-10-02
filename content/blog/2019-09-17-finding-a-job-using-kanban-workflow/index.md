@@ -14,7 +14,7 @@ In the programming field, there are lots of jobs available on a local and global
 
 I discussed in a previous blog post what kanban is and how it can be applied to projects in a freelance setting. In this post I'll be discussing some of my ideas about how it can be used to make the process of finding a job much easier.
 
-<video src="https://media.giphy.com/media/r056JQBFkE8QE/giphy.mp4" autoplay loop muted></video>
+<video src="https://media.giphy.com/media/r056JQBFkE8QE/giphy.mp4" playsinline autoplay loop muted></video>
 
 ## What tools can be used for a kanban workflow?
 

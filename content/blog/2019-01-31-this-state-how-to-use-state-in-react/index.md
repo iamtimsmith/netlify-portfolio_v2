@@ -77,7 +77,7 @@ In the Pizza component above, you can see that we have a state which includes a 
 
 I know what you're thinking. _Super Cool, Tim. Now what?_
 
-<video src="https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy.mp4" width="300" autoplay loop muted></video>
+<video src="https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy.mp4" width="300" playsinline autoplay loop muted></video>
 
 I'm glad you asked. That brings us to the next section:
 
@@ -96,7 +96,7 @@ The code above would be output in the browser like this:
 <p>Pepperoni</p>
 ```
 
-<video src="https://media.giphy.com/media/d2Z9QYzA2aidiWn6/giphy.mp4" autoplay loop muted></video>
+<video src="https://media.giphy.com/media/d2Z9QYzA2aidiWn6/giphy.mp4" playsinline autoplay loop muted></video>
 
 ## How do we change the state?
 
@@ -143,7 +143,7 @@ If we assume this function will be fired when a button is clicked, then each tim
 
 This allows users to modify data on a page in real time, which is awesome. We can also pass our state into a child component as props. This brings us to our next topic which is changing parent state from a child component.
 
-<video src="https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.mp4" autoplay loop muted></video>
+<video src="https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.mp4" playsinline autoplay loop muted></video>
 
 ## Changing Parent State from Child Component
 
