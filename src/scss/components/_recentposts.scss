@@ -17,9 +17,13 @@
   }
 
   &__post {
-    width: calc(100% / 3);
+    width: 100%;
     padding: rem(10px);
     text-decoration: none !important;
+
+    @include breakpoint($tablet) {
+      width: calc(100% / 3);
+    }
 
     .card {
       position: relative;

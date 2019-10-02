@@ -55,8 +55,12 @@
     video,
     img {
       display: block;
-      max-width: 800px;
+      max-width: 100%;
       margin: 3rem auto;
+
+      @include breakpoint($tablet) {
+        max-width: 800px;
+      }
     }
 
     .gatsby-resp-image-wrapper {
