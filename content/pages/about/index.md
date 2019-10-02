@@ -1,6 +1,6 @@
 ---
 title: About
-profile_pic: ./tim.jpg
+profile_pic: ./timsmith.jpg
 keywords: 'react js, node js, laravel, wordpress, php, express js, web development'
 description: "My name is Tim Smith and I'm a full stack developer who uses PHP, Node js, React js, Laravel, and WordPress to build websites and apps."
 ---
