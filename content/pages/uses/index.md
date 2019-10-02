@@ -8,7 +8,7 @@ My set up changes every so often, but I'll try to keep an up-to-date list of the
 
 ### Hardware
 
-- **[2018 Macbook Air](https://www.apple.com/macbook-air/)**: This computer is my workhorse. I do most of my work here.
+- **[2019 Macbook Pro](https://www.apple.com/macbook-pro/)**: This computer is my workhorse. I do most of my work here.
 - **[2017 iMac](https://www.apple.com/imac/)**: This is used in larger scale projects or when I need more screen real estate.
 - **[WASD V2 87 Key](http://www.wasdkeyboards.com/index.php/products/mechanical-keyboard/wasd-v3-87-key-custom-mechanical-keyboard.html)**: This mechanical keyboard with CherryMX Browns is my go-to keyboard when using a monitor.
 - **[Apple Magic Mouse 2](https://www.apple.com/shop/product/MLA02LL/A/magic-mouse-2-silver?fnode=56)**: I never leave home without this bluetooth mouse.
