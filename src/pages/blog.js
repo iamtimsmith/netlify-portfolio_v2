@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Summary from '../components/postsummary'
+import Summary from '../components/BlogSummary'
 import SEO from '../components/seo'
 import Mailchimp from '../components/mailchimp'
 import Popup from '../components/mailchimppopup'
@@ -80,6 +80,7 @@ export default class Blog extends React.Component {
                 <div className="column is-4 posts" key={node.id}>
                   <Summary
                     title={node.frontmatter.title}
+                    description={node.frontmatter.description}
                     excerpt={node.excerpt}
                     path={node.fields.slug}
                     tags={node.frontmatter.tags.split(' ')}
@@ -123,6 +124,7 @@ export const query = graphql`
                 }
               }
             }
+            description
             tags
           }
         }

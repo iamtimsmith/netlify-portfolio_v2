@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import PostSummary from './postsummary';
+import Summary from './BlogSummary';
 
 export default ({ currentPost = "" }) => (
   <StaticQuery
@@ -22,6 +22,7 @@ export default ({ currentPost = "" }) => (
                     }
                   }
                 }
+                description
                 tags
               }
               fields {
@@ -43,11 +44,11 @@ export default ({ currentPost = "" }) => (
           <p className="recent-posts__title">More Posts</p>
           <div className="recent-posts__posts">
             {posts.map(({ node }) => (
-              <PostSummary
-                className='recent-posts__post'
+              <Summary
                 path={node.fields.slug}
                 thumb={node.frontmatter.featured_image.childImageSharp.sizes}
                 title={node.frontmatter.title}
+                description={node.frontmatter.description}
                 tags={node.frontmatter.tags.split(' ')} />
             ))}
           </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Summary from '../components/postsummary'
+import Summary from '../components/BlogSummary'
 
 const NotFoundPage = ({ data }) => (
   <Layout location="404">
@@ -56,6 +56,7 @@ export const query = graphql`
                 }
               }
             }
+            description
             tags
           }
         }

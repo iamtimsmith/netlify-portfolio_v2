@@ -1,0 +1,57 @@
+.post-card {
+  text-decoration: none !important;
+  width: 100%;
+
+  @include breakpoint($tablet) {
+    width: calc(100% / 3);
+  }
+
+  &__container {
+    border-radius: rem(3px);
+    overflow: hidden;
+    margin: rem(10px);
+    position: relative;
+    top: 0;
+    transition: all 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 rem(20px) $light;
+      top: rem(-5px);
+    }
+  }
+
+  &__image {
+    height: rem(230px);
+
+    .gatsby-image-wrapper {
+      max-width: none;
+      height: 100%;
+      width: auto;
+      max-height: rem(230px);
+    }
+  }
+
+  &__content {
+    padding: rem(20px) rem(10px);
+  }
+
+  &__title {
+    font-family: $serif;
+    font-weight: normal !important;
+    margin: 0 !important;
+  }
+
+  &__description {
+    font-size: rem(16px);
+    color: rgba($black, 0.5);
+    padding: rem(10px) rem(5px);
+  }
+
+  &__tag {
+    background: $light;
+    padding: rem(3px) rem(5px);
+    border-radius: rem(3px);
+    font-size: rem(12.5px);
+    margin: rem(3px) rem(5px);
+  }
+}

@@ -1,61 +1,81 @@
 html {
-  font-size: 10px;
+  @include rem-baseline;
+
   body {
     font-size: 1.9rem;
     font-family: $sans;
+
     .is-page {
-      margin-top: 65px;
+      margin-top: rem(90px);
     }
+
     .content {
       a {
         color: $black;
         text-decoration: underline;
       }
     }
+
     h1,
     .is-size-1 {
-      font-size: 4.8rem !important;
+      font-size: rem(48px) !important;
+      font-weight: normal;
     }
+
     h2,
     .is-size-2 {
-      font-size: 4rem !important;
+      font-size: rem(40px) !important;
+      font-weight: normal;
     }
+
     h3,
     .is-size-3 {
-      font-size: 3.2rem !important;
+      font-size: rem(32px) !important;
+      font-weight: normal;
     }
+
     h4,
     .is-size-4 {
-      font-size: 2.4rem !important;
+      font-size: rem(24px) !important;
+      font-weight: normal;
     }
+
     h5,
     .is-size-5 {
-      font-size: 2rem !important;
+      font-size: rem(20px) !important;
+      font-weight: normal;
     }
+
     h6,
     .is-size-6 {
-      font-size: 1.6rem !important;
+      font-size: rem(16px) !important;
+      font-weight: normal;
     }
+
     p {
-      font-size: 1.9rem;
+      font-size: rem(19px);
       font-family: $sans;
     }
+
     button,
     .button {
-      border: 2px solid $black;
+      border: rem(2px) solid $black;
       background: $clear;
       border-radius: 0;
       transition: all 0.25s;
-      font-size: 1.6rem;
+      font-size: rem(16px);
+
       &:hover {
-        border: 2px solid $black;
+        border: rem(2px) solid $black;
         background: $black;
         color: white;
       }
     }
+
     .is-12 {
       width: 100%;
     }
+
     input:focus,
     button:focus,
     textarea:focus,

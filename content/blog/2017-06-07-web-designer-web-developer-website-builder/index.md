@@ -1,5 +1,6 @@
 ---
 title: 'Web Designer? Web Developer? Website Builder?'
+description: Building a website can be a pretty overwhelming task. This post will cover the difference between Web Designers, Web Developers, and website builders.
 date: '2017-06-07'
 tags: '#misc'
 featured_image: ./featured_image.jpeg

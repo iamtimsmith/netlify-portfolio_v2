@@ -1,5 +1,6 @@
 ---
 title: 'Parcel.js: Who says bundling needs to be difficult?'
+description: I'm going to show you how to set up a project using Parcel for building a React app. It only takes about 5 minutes to get up and running (even less once you've done it a couple of time)!
 date: '2018-08-31'
 path: parcel-js-who-says-bundling-needs-to-be-difficult
 tags: '#reactjs #javascript'
