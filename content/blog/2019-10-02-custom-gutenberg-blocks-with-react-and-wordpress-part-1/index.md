@@ -32,3 +32,71 @@ Pretty much all of the tutorials I have seen about block creation address doing 
 
 When I was searching the other day, I couldn't find any tutorials that explained how to set up custom blocks as a part of a theme. I believe there are some benefits to having the blocks in a theme rather than a plugin though, including (but not limited to) less dependencies to manage, keeping proprietary code for blocks specific to a website private, and not having to worry about a user accidentally disabling the plugin and breaking things.
 
+<video src="https://media.giphy.com/media/3KCOFfdqmptLi/giphy.mp4" autoplay loop muted playsinline width="400"></video>
+
+## Custom Gutenberg block theme setup
+
+When I'm building a new WordPress site, I tend to use the [Underscores](https://underscores.me) theme which is made by Automattic. It's a starter theme with very minimal styling. Although it can be downloaded with Sass structures in place, there is not a bundling tool included. I will be using Gulp to allow me to write jsx in my custom blocks. Before you can start developing the custom blocks, you need to add some code to the theme to handle it. 
+
+### Blocks directory for custom blocks
+
+To help keep things organized, I like to place all of my custom blocks into a directory in the root of my theme called `blocks`. This directory can be called whatever you like, but I'd recommed naming it something that is easily recognizable as custom blocks. In my case, the following command will create the directory:
+
+```bash:title=terminal
+$ mkdir blocks
+```
+
+Now that my blocks directory has been created, I need to create a php file inside which will enqueue my blocks and register my custom block types. I usually give mine the appropriate name of `blocks.php` though, again, you can call this whatever you like. The following command will create the file in my blocks directory and open it in the default code editor:
+
+```bash:title=terminal
+$ touch blocks/blocks.php && open $_
+```
+
+### Register custom block types
+
+The first thing you need to do in your blocks.php file (after the opening php tags) is create a function which will take care of adding the block scripts as well as registering the custom block type. I'll take this step-by-step so it's easy to follow. The empty function should look like this:
+```php:title=blocks/blocks.php
+<?php
+
+/**
+ * Enqueue scripts for custom blocks
+ */
+function custom_block_scripts() {
+  // Do something...
+}
+add_action('enqueue_block_assets', 'custom_block_scripts');
+```
+
+After creating the function, you'll use a hook to call the function. Since adding Gutenberg to WordPress core, a new hook has been added called `enqueue_block_assets` which exists exactly for this purpose. 
+
+```php:title=blocks/blocks.php
+<?php
+
+/**
+ * Enqueue scripts for custom blocks
+ */
+function custom_block_scripts() {
+  // Add custom Gutenberg block scripts
+  wp_enqueue_script(
+    'custom-block-scripts', 
+    get_template_directory_uri() . '/dist/js/blocks.js', 
+    array(
+      'wp-blocks', 
+      'wp-components', 
+      'wp-element', 
+      'wp-i18n', 
+      'wp-editor'
+    ), 
+    '1.0.0', 
+    true);
+
+  // Register custom block types
+  register_block_type(
+    'iamtimsmith/blocks', 
+    array(
+      'editor_script' => 'custom-block-scripts',
+    )
+  );
+}
+add_action('enqueue_block_assets', 'custom_block_scripts');
+```
