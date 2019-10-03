@@ -1,3 +1,38 @@
+@mixin button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: rem(2px) solid $black;
+  cursor: pointer;
+  display: block;
+  padding: rem(10px) rem(15px);
+  transition: all 0.25s;
+
+  &:hover {
+    background: $black;
+    color: white;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 rem(10px);
+
+  @include breakpoint($desktop) {
+    max-width: rem(960px);
+  }
+
+  @include breakpoint($widescreen) {
+    max-width: rem(1152px);
+  }
+
+  @include breakpoint($fullhd) {
+    max-width: rem(1344px);
+  }
+}
+
 @mixin responsive {
   content: '';
   display: block;

@@ -16,7 +16,7 @@
 @import 'components/socialshare';
 @import 'components/BlogSummary';
 @import 'components/contactform';
-@import 'components/mailchimp';
+@import 'components/MailChimp';
 @import 'components/mailchimppopup';
 @import 'components/prismjs';
 @import 'components/recentposts';
@@ -25,5 +25,7 @@
 @import 'pages/blog';
 @import 'pages/about';
 @import 'pages/404';
+@import 'pages/work';
+
 @import 'templates/workpost';
 @import 'templates/blogpost';

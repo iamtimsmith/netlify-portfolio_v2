@@ -5,7 +5,7 @@ import Item from '../components/portfolioitems'
 import SEO from '../components/seo'
 
 export default ({ data }) => (
-  <Layout>
+  <Layout location='work'>
     <SEO title="Work" url="/work" />
     <section className="portfolio-items has-margin-top columns is-multiline">
       {data.allMarkdownRemark.edges.map(({ node }) => (

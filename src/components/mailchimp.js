@@ -36,18 +36,14 @@ class MailchimpSignup extends Component {
 
   render() {
     return (
-      <section className={`section is-mailchimp ${Object.entries(this.state.response).length === 0 && this.state.response.constructor === Object ? `not-submitted` : `is-submitted`}`}>
-        <div className="container">
-          <h4>Sign up to get the newest blog posts delivered to you!</h4>
-          <form>
-            <div className="field">
-              <p className={`has-text-${this.state.response.result}`}>{this.state.response.msg}</p>
-              <div className="control">
-                <input type="text" className="input" name="email" placeholder="kevin.malone@dundermifflin.com" onChange={this.onChange} />
-              </div>
-              <div className="control">
-                <button className="button" onClick={e => this.onSubmit(e)}>Submit</button>
-              </div>
+      <section className='mailchimp'>
+        <div className='mailchimp__container'>
+          <p className='mailchimp__title'>Sign up to get the newest blog posts delivered to you!</p>
+          <form className={`mailchimp__form-${Object.entries(this.state.response).length === 0 && this.state.response.constructor === Object ? `unsubmitted` : `submitted`}`}>
+            <div className='mailchimp__fields'>
+              <p className='mailchimp__message'>{this.state.response.msg}</p>
+              <input className="mailchimp__input" type="text" name="email" placeholder="kevin.malone@dundermifflin.com" onChange={this.onChange} />
+              <button className="mailchimp__button" onClick={e => this.onSubmit(e)}>Submit</button>
             </div>
           </form>
         </div>
