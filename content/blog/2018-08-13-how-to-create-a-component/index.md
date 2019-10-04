@@ -1,6 +1,6 @@
 ---
 title: 'React: How to Create a Component'
-description: Components are an essential part of any React application. In this post, we'll be learning how to create components to do whatever we want.
+description: "Components are an essential part of any React application. In this post, we'll be learning how to create components to do whatever we want."
 date: '2018-08-13'
 path: how-to-create-a-component
 tags: '#reactjs #javascript'

@@ -49,7 +49,8 @@ export default ({ currentPost = "" }) => (
                 thumb={node.frontmatter.featured_image.childImageSharp.sizes}
                 title={node.frontmatter.title}
                 description={node.frontmatter.description}
-                tags={node.frontmatter.tags.split(' ')} />
+                tags={node.frontmatter.tags.split(' ')}
+                key={node.fields.slug} />
             ))}
           </div>
         </div>

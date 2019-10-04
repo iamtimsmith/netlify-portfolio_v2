@@ -1,6 +1,6 @@
 ---
-title: Let's build a search bar in React!
-description: We are going to build a task app that also filters the list based on a search query in real time. Sound complicated? It's not as complicated as you may think, so let's dig in!
+title: "Let's build a search bar in React!"
+description: "We are going to build a task app that also filters the list based on a search query in real time. Sound complicated? It's not as complicated as you may think, so let's dig in!"
 date: '2018-09-11'
 path: lets-build-a-search-bar-in-react
 tags: '#reactjs #javascript'

@@ -1,6 +1,6 @@
 ---
 title: 'React: Class Components vs. Stateless Functional Components'
-description: In this article, I'll explain the differences between class components and stateless functional components as well as when and why to use the different types.
+description: "In this article, I'll explain the differences between class components and stateless functional components as well as when and why to use the different types."
 date: '2018-08-22'
 tags: '#reactjs #javascript'
 featured_image: ./featured_image.jpg
