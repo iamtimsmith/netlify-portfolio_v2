@@ -77,7 +77,7 @@ export default class Blog extends React.Component {
             </form>
             <div className="columns is-multiline">
               {this.state.posts.map(({ node }) => (
-                <div className="column is-4 posts" key={node.id}>
+                <div className="column is-4 posts" key={node.fields.slug}>
                   <Summary
                     title={node.frontmatter.title}
                     description={node.frontmatter.description}
