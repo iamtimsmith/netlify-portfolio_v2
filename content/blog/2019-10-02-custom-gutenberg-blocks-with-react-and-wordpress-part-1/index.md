@@ -1,6 +1,6 @@
 ---
 title: 'Creating Custom Gutenberg Blocks with React and WordPress - Part 1'
-date: '2019-10-02'
+date: '2019-10-05'
 tags: '#wordpress, #react'
 featured_image: ./featured_image.jpg
 keywords: 'wordpress, react, wordpress and react, gutenberg, custom gutenberg block'
@@ -9,6 +9,8 @@ published: true
 ---
 
 As of WordPress 5.0, Gutenberg comes built-in. In this post, I'll give you the basics of what Gutenberg is, why it's awesome, and how to set up your environment to start creating your own custom Gutenberg blocks. While at least some knowledge of React will be useful, it is not totally required.
+
+Before getting into building custom gutenberg blocks, I think it will be helpful to know what gutenberg is. It may also be useful to understand the history of the editor and why WordPress added it to their core codebase. Without further adieu, let's get into it!
 
 ## What is Gutenberg?
 
@@ -52,7 +54,7 @@ Now that my blocks directory has been created, I need to create a php file insid
 $ touch blocks/blocks.php && open $_
 ```
 
-### Register custom block types
+### Create a function to register custom gutenberg blocks
 
 The first thing you need to do in your blocks.php file (after the opening php tags) is create a function which will take care of adding the block scripts as well as registering the custom block type. I'll take this step-by-step so it's easy to follow. The empty function should look like this:
 ```php:title=blocks/blocks.php
@@ -68,6 +70,67 @@ add_action('enqueue_block_assets', 'custom_block_scripts');
 ```
 
 After creating the function, you'll use a hook to call the function. Since adding Gutenberg to WordPress core, a new hook has been added called `enqueue_block_assets` which exists exactly for this purpose. 
+
+### Enqueue the scripts and styles for the custom blocks
+
+The next thing you need to do is include the scripts for the custom blocks you're creating. This can be done using `wp_enqueue_script()` just like you'd do in a custom theme. This should go inside the `custom_block_scripts()` function like so:
+
+```php:title=blocks/blocks.php
+<?php
+
+/**
+ * Enqueue scripts for custom blocks
+ */
+function custom_block_scripts() {
+  // Add custom Gutenberg block scripts
+  wp_enqueue_script(
+    'custom-block-scripts', 
+    get_template_directory_uri() . '/dist/js/blocks.js', 
+    array(
+      'wp-blocks', 
+      'wp-components', 
+      'wp-element', 
+      'wp-i18n', 
+      'wp-editor'
+    ), 
+    '1.0.0', 
+    true);
+}
+add_action('enqueue_block_assets', 'custom_block_scripts');
+```
+
+In the code above, you may notice that I have listed an array of dependencies. This is required for any WordPress components you want to use in your blocks. The ones I have listed here are the ones I find myself using most often. A full list of [packages that are available can be found here](https://github.com/WordPress/gutenberg/tree/master/packages). At a minimum, you need `wp-blocks` to register a block. The rest of the `wp_enqueue_script()` function should look pretty familiar if you've done theme development before. In case you haven't, here's a quick breakdown of the arguments:
+
+```php:title=wp_enqueue_script
+<?php
+
+wp_enqueue_script( $nickname, $location, $dependencies, $version, $in_footer );
+```
+
+### Register the actual custom block types
+
+Now that you have the scripts added, you need to use `register_block_type()` to tell WordPress what to do with the code. It should be noted that the `$args` array will use the nickname you chose in the previous step to identify the script or styles you want to use. Again, WordPress added a custom function to do this called `register_block_type()` with the following arguments:
+
+```php:title=register_block_type
+<?php
+
+register_block_type( $namespace, $args );
+```
+
+Based on the way you have set up the blocks so far, this is how your `register_block_type()` function will look:
+
+```php:title=register_block_type
+<?php
+
+register_block_type(
+  'iamtimsmith/blocks', 
+  array(
+    'editor_script' => 'custom-block-scripts', // The script you enqueued earlier
+  )
+);
+```
+
+The code above should go in the same `custom_block_scripts()` function where you are enqueuing your scripts. After you have set this up, your custom function should look like this:
 
 ```php:title=blocks/blocks.php
 <?php
@@ -100,3 +163,28 @@ function custom_block_scripts() {
 }
 add_action('enqueue_block_assets', 'custom_block_scripts');
 ```
+
+### Telling functions.php about the custom blocks
+
+The final step for registering blocks in your theme is to add a call to the `functions.php` file. This will simply tell your theme that the file exists in the blocks directory and the content should be pulled in. While this step is relatively easy, it is also required for this to work. If you are running into issues with your custom blocks not showing up at all, I'd double check and make sure you added the call to your `functions.php` file. Adding the code below will tell your theme about the registered custom blocks:
+
+```php:title=functions.php
+/**
+ * Add custom blocks for gutenberg
+ */
+require get_template_directory() . '/blocks/blocks.php';
+```
+
+Although it doesn't matter where in your `functions.php` file you place the code, I tend to put it at the bottom. Especially if you're using the underscores theme, it helps to keep your code separated from the default theme code.
+
+<div style="max-width:400px; margin: 0 auto;">
+
+![You have taken your first step into a larger world](./benkenobi.jpg)
+
+</div>
+
+## Wrapping Up
+
+That's as much as I'm going to cover in this article. You have now registered the namespace and scripts where your custom blocks will live. In the next post in the series, I'll be going over a gulp setup which allows you to use JSX when building your custom blocks. Using JSX makes blocks easier to read and can make your life easier as a developer. If you're not familiar with gulp, I'll teach you some basics to get your custom blocks up and running and provide you with a jumping off point to add more optimizations.
+
+Have thoughts or questions? You can reach me on Twitter at [@iam_timsmith](https://www.twitter.com/iam_timsmith).
