@@ -7,7 +7,7 @@ class Navbar extends Component {
     super(props);
     this.state = {
       active: false,
-      clear: false
+      clear: this.props.location === 'home'
     }
     this.toggleActive = this.toggleActive.bind(this);
   }
@@ -23,16 +23,12 @@ class Navbar extends Component {
 
   componentDidMount() {
     const home = this.props.location === 'home';
-
-    // Set state initially for home
-    this.setState({ clear: home });
     // On scroll for home, change state
     window.onscroll = () => {
       if (home) {
         let top = window.pageYOffset;
-        let clear = top < 551;
         this.setState({
-          clear
+          clear: top < 551
         })
       }
     }
