@@ -9,15 +9,48 @@ html {
 
 body {
   font-family: $sans;
-  font-size: 1.9rem;
+  font-size: rem(19px);
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
 }
 
+// Headings
+@for $i from 1 to 6 {
+  $size: 48px - ($i * 8px);
 
+  h#{$i} {
+    font-family: $serif;
+    font-size: rem($size)
+  }
+}
 
+input {
+  border: rem(1px) solid $black;
+  border-radius: 0;
+  font: inherit;
+  margin: 10px 0;
+  padding: 7.5px;
+  width: 100%;
 
+  &:focus {
+    outline: none !important;
+  }
+}
+
+textarea {
+  @extend input;
+  height: rem(150px);
+  resize: none;
+}
+
+input[type='submit'],
+button {
+  @include button;
+  padding: rem(5px) rem(10px);
+}
+
+/////////////////////
 .pre-title {
   padding: 0.5rem 1rem 0;
   color: $dark;
@@ -56,50 +89,6 @@ blockquote {
 
   &-body {
     border: none;
-  }
-}
-
-input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 7.5px;
-  border: 1px solid $black;
-  border-radius: 0;
-  font: inherit;
-
-  &:focus {
-    outline: none !important;
-  }
-}
-
-input[type='submit'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 30%;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid $black;
-  background: white;
-  cursor: pointer;
-  transition: all 0.25s;
-
-  &:hover {
-    background: $black;
-    color: white;
-  }
-}
-
-textarea {
-  width: 100%;
-  margin: 10px 0;
-  padding: 7.5px;
-  height: 150px;
-  border: 1px solid $black;
-  font: inherit;
-
-  &:focus {
-    outline: none !important;
   }
 }
 
