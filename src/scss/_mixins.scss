@@ -33,6 +33,14 @@
   }
 }
 
+@mixin cover($p: absolute, $t: 0, $r: 0, $b: 0, $l: 0) {
+  position: $p;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+}
+
 @mixin responsive {
   content: '';
   display: block;

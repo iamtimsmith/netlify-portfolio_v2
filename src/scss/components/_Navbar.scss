@@ -1,0 +1,168 @@
+.header {
+  @include cover(fixed, 0, 0, auto, 0);
+  background: $black;
+  transition: background 0.3s;
+  z-index: 5;
+
+  &__container {
+    @include container;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: rem(15px) rem(10px);
+  }
+
+  &__logo {
+    color: white;
+    font-family: $serif;
+    font-size: rem(32px);
+
+    &-active {
+      @extend .header__logo;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include breakpoint($tablet) {
+      display: flex;
+    }
+
+    &-link {
+      color: white;
+      padding: rem(10px);
+
+      &:hover {
+        color: rgba(white, 0.8);
+      }
+    }
+  }
+
+  &__toggle {
+    background: transparent;
+    border-color: transparent;
+    position: relative;
+    z-index: 6;
+
+    &:hover,
+    &:focus,
+    &:active {
+      @extend .header__toggle;
+    }
+
+    @include breakpoint($tablet) {
+      display: none;
+    }
+
+    &-bars {
+      background: white;
+      content: '';
+      display: block;
+      height: rem(2px);
+      transition: all 0.5s;
+      width: rem(30px);
+
+      &:before {
+        @extend .header__toggle-bars;
+        bottom: rem(9px);
+        position: relative;
+      }
+
+      &:after {
+        @extend .header__toggle-bars;
+        position: relative;
+        top: rem(7px);
+      }
+    }
+
+    &-active {
+      @extend .header__toggle;
+
+      &:hover,
+      &:focus,
+      &:active {
+        @extend .header__toggle;
+      }
+
+      .header__toggle-bars {
+        background: transparent;
+
+        &:before {
+          background: white;
+          top: rem(-1px);
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          background: white;
+          top: rem(-2px);
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__offcanvas {
+    @include cover(fixed, 0, auto, 0, rem(-100px));
+    align-items: center;
+    background: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: rem(80px) rem(20px) rem(10px);
+    text-align: center;
+    transition: all 0.5s;
+    width: rem(100px);
+    z-index: 5;
+
+    &-active {
+      @extend .header__offcanvas;
+      @include cover(fixed, 0, 0, 0, 0);
+      width: 100%;
+    }
+
+    &-menu {
+      &-link {
+        color: white;
+        font-size: rem(36px);
+        line-height: rem(72px);
+      }
+    }
+
+    &-social {
+      display: flex;
+      justify-content: space-around;
+      max-width: rem(600px);
+      width: 100%;
+
+      &-link {
+        color: white;
+        font-size: rem(40px);
+      }
+    }
+  }
+
+  &-clear {
+    @extend .header;
+
+    @include breakpoint($tablet) {
+      @include cover(absolute, 0, 0, auto, 0);
+      background: transparent;
+      transition: none;
+
+      .header__logo {
+        visibility: hidden;
+      }
+
+      .header__menu-link {
+        color: $black;
+      }
+    }
+  }
+}

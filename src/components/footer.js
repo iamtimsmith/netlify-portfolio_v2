@@ -1,34 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import SocialIcons from './socialicons'
-import Navigation from './navigation'
+import { MainMenu, SocialMenu } from './Menus'
 
-const Footer = ({ navigation, social }) => (
+const Footer = ({ menu, social }) => (
   <footer className="footer">
-    <div className="container">
-      <div className="columns">
-        <div className="column is-6 is-offset-3">
-          <SocialIcons size="2.5" social={social} />
-        </div>
-      </div>
-      <Navigation
-        navClass="columns is-centered"
-        itemClass="column is-narrow"
-        showHome={true}
-        nav={navigation}
-      />
+    <div className="footer__container">
+      <MainMenu
+        className='footer__menu'
+        menu={menu} />
+      <SocialMenu
+        className='footer__social'
+        social={social} />
     </div>
   </footer>
 )
-
-Footer.propTypes = {
-  navigation: PropTypes.array,
-  social: PropTypes.array,
-}
-
-Footer.defaultProps = {
-  navigation: [],
-  social: [],
-}
 
 export default Footer
