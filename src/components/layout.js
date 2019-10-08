@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import Header from './header'
-import Footer from './footer'
+import Navbar from './Navbar'
+import Footer from './Footer'
 import 'bulma'
 import '../scss/app.scss'
 library.add(fab, fas)
@@ -29,21 +29,7 @@ class Layout extends Component {
         { icon: 'github', href: 'https://github.com/iamtimsmith' },
         { icon: 'dev', href: 'https://dev.to/iam_timsmith' },
       ],
-    }
-  }
-
-  componentDidMount() {
-    window.onscroll = () => {
-      var top = window.pageYOffset
-      var navbar = document.querySelector('.is-home .navbar')
-      if (this.props.location === 'home') {
-        if (top < 550) {
-          navbar.classList.add('clear')
-        } else {
-          navbar.classList.remove('clear')
-        }
-      }
-    }
+    };
   }
 
   render() {
@@ -60,14 +46,16 @@ class Layout extends Component {
         `}
         render={data => (
           <div className={`is-${this.props.location}`}>
-            <Header
+            <Navbar
               siteTitle={data.site.siteMetadata.title}
-              navigation={this.state.siteNav}
+              menu={this.state.siteNav}
               social={this.state.socialMedia}
+              onScroll={this.onScroll}
+              location={this.props.location}
             />
             <div className="content">{this.props.children}</div>
             <Footer
-              navigation={this.state.siteNav}
+              menu={this.state.siteNav}
               social={this.state.socialMedia}
             />
           </div>
