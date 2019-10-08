@@ -1,3 +1,23 @@
+html {
+  font-size: $rem-baseline;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $sans;
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+
+
 .pre-title {
   padding: 0.5rem 1rem 0;
   color: $dark;

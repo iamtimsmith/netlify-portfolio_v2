@@ -16,6 +16,7 @@
     color: white;
     font-family: $serif;
     font-size: rem(32px);
+    text-decoration: none;
 
     &-active {
       @extend .header__logo;
@@ -28,6 +29,8 @@
 
   &__menu {
     display: none;
+    list-style: none;
+    margin: 0;
 
     @include breakpoint($tablet) {
       display: flex;
@@ -36,6 +39,8 @@
     &-link {
       color: white;
       padding: rem(10px);
+      text-decoration: none;
+      transition: color 0.3s;
 
       &:hover {
         color: rgba(white, 0.8);
@@ -128,16 +133,20 @@
     }
 
     &-menu {
+      list-style: none;
+
       &-link {
         color: white;
         font-size: rem(36px);
         line-height: rem(72px);
+        text-decoration: none;
       }
     }
 
     &-social {
       display: flex;
       justify-content: space-around;
+      list-style: none;
       max-width: rem(600px);
       width: 100%;
 
