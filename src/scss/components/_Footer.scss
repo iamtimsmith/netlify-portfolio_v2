@@ -17,6 +17,11 @@
       color: white;
       font-size: rem(30px);
       margin: 0 rem(15px);
+      transition: color 0.3s;
+
+      &:hover {
+        color: rgba(white, 0.5);
+      }
     }
   }
 
@@ -30,6 +35,11 @@
       color: white;
       margin: 0 rem(15px);
       text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: rgba(white, 0.5);
+      }
     }
   }
 }
