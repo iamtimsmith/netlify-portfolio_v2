@@ -50,7 +50,6 @@ class Layout extends Component {
               siteTitle={data.site.siteMetadata.title}
               menu={this.state.siteNav}
               social={this.state.socialMedia}
-              onScroll={this.onScroll}
               location={this.props.location}
             />
             <div className="content">{this.props.children}</div>

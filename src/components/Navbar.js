@@ -22,12 +22,13 @@ class Navbar extends Component {
   }
 
   componentDidMount() {
-    const { location } = this.props;
-    if (location === 'home') {
-      // Set state initially for home
-      this.setState({ clear: true });
-      // On scroll for home, change state
-      window.onscroll = () => {
+    const home = this.props.location === 'home';
+
+    // Set state initially for home
+    this.setState({ clear: home });
+    // On scroll for home, change state
+    window.onscroll = () => {
+      if (home) {
         let top = window.pageYOffset;
         let clear = top < 551;
         this.setState({
