@@ -1,20 +1,35 @@
 .footer {
   background: $black;
-  ul {
+  padding: rem(60px) rem(15px) rem(30px);
+
+  &__container {
+    @include container;
+  }
+
+  &__social {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px 0;
-    li {
-      margin-top: 0 !important;
-      &.is-narrow {
-        padding: 0;
-        text-align: center;
-      }
-      a {
-        color: white;
-        margin: 0 15px;
-      }
+    list-style: none;
+    margin-bottom: rem(40px);
+
+    &-link {
+      color: white;
+      font-size: rem(30px);
+      margin: 0 rem(15px);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+
+    &-link {
+      color: white;
+      margin: 0 rem(15px);
+      text-decoration: none;
     }
   }
 }
