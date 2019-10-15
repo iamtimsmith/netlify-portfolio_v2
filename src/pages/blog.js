@@ -3,8 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Summary from '../components/BlogSummary'
 import SEO from '../components/seo'
-import Mailchimp from '../components/mailchimp'
-import Popup from '../components/mailchimppopup'
+import { MailchimpSignup, MailchimpPopup } from '../components/Mailchimp'
 
 export default class Blog extends React.Component {
   constructor(props) {
@@ -93,8 +92,8 @@ export default class Blog extends React.Component {
             </div>
           </section>
         </div>
-        <Popup />
-        <Mailchimp />
+        <MailchimpPopup />
+        <MailchimpSignup />
       </Layout>
     )
   }

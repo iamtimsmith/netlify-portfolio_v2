@@ -1,0 +1,98 @@
+.mailchimp {
+  background: rgba($grey, 0.3);
+  padding: rem(15px) 0;
+  text-align: center;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-family: $serif;
+    font-size: rem(22px);
+    margin-bottom: rem(10px) !important;
+  }
+
+  &__fields {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__message {
+    color: green !important;
+    margin-bottom: 0 !important;
+    width: 100%;
+  }
+
+  &__input {
+    font-size: rem(18px) !important;
+    margin-right: rem(10px);
+    width: rem(300px);
+  }
+
+  &__button {
+    @include button;
+  }
+}
+
+.mailchimp-popup {
+  @include cover(fixed);
+  align-items: center;
+  background: $black;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .5s;
+  visibility: hidden;
+  z-index: 10;
+
+  &-active {
+    @extend .mailchimp-popup;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    color: $dark;
+
+    svg {
+      @include cover(absolute, rem(20px), rem(20px), auto, auto);
+
+      &:nth-child(1) {
+        transform: rotate(5deg);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(95deg);
+      }
+    }
+  }
+
+  &__container {
+    max-width: rem(600px);
+    padding: rem(30px) rem(50px);
+    text-align: center;
+  }
+
+  &__title {
+    color: $light;
+    font-family: $serif;
+    font-size: rem(28px);
+    margin-bottom: rem(20px);
+  }
+
+  &__button {
+    @include button($light, $black);
+    margin: rem(15px) auto rem(30px);
+
+  }
+
+  &__cancel {
+    color: $dark;
+    cursor: pointer;
+    font-size: rem(14px);
+    text-decoration: underline;
+  }
+}

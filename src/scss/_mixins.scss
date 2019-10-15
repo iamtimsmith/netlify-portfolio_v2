@@ -1,17 +1,18 @@
-@mixin button {
+@mixin button($primaryColor: $black, $secondaryColor: $light) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: transparent;
-  border: rem(2px) solid $black;
+  border: rem(2px) solid $primaryColor;
+  color: $primaryColor;
   cursor: pointer;
   display: block;
   padding: rem(10px) rem(15px);
   transition: all 0.25s;
 
   &:hover {
-    background: $black;
-    color: white;
+    background: $primaryColor;
+    color: $secondaryColor;
   }
 }
 

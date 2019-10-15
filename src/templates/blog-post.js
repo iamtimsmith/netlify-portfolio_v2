@@ -4,8 +4,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import Share from '../components/socialshare'
 import SEO from '../components/seo'
-import MailChimp from '../components/mailchimp'
-import Popup from '../components/mailchimppopup'
+import { MailchimpSignup, MailchimpPopup } from '../components/Mailchimp'
 import RecentPosts from '../components/RecentPosts'
 
 class PostTemplate extends Component {
@@ -46,7 +45,7 @@ class PostTemplate extends Component {
               />
             </div>
             <Share
-              url={`https://www.iamtimsmith.com/${post.fields.slug}`}
+              url={`https://www.iamtimsmith.com/${ post.fields.slug }`}
               image={`https://www.iamtimsmith.com/${
                 post.frontmatter.featured_image.childImageSharp.sizes.src
                 }`}
@@ -55,8 +54,8 @@ class PostTemplate extends Component {
           </section>
           <RecentPosts currentPost={post.fields.slug} />
         </div>
-        <Popup />
-        <MailChimp />
+        <MailchimpPopup />
+        <MailchimpSignup />
       </Layout>
     )
   }
