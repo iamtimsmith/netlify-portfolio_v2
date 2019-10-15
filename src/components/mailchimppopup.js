@@ -22,7 +22,8 @@ class MailchimpPopup extends Component {
         // If it's not set, show modal after 20 seconds
         this.setState({
           showing: true
-        })
+        });
+        document.querySelector('html').classList.add('is-clipped');
       }
     }, 5000);
 
