@@ -19,11 +19,11 @@ class MailchimpPopup extends Component {
       const cookie = document.cookie;
       // Check to see if cookie is set
       if (!cookie.includes('signedup')) {
-        document.querySelector('html').classList.add('is-clipped');
         // If it's not set, show modal after 20 seconds
         this.setState({
           showing: true
-        })
+        });
+        document.querySelector('html').classList.add('is-clipped');
       }
     }, 5000);
 
@@ -41,7 +41,7 @@ class MailchimpPopup extends Component {
     let date = new Date();
     let expire = new Date();
     expire.setDate(date.getDate() + 30);
-    document.cookie = `signedup=yep; expires=${expire}; path=/`;
+    document.cookie = `signedup=yep; expires=${ expire }; path=/`;
     document.querySelector('html').classList.remove('is-clipped');
     this.setState({
       showing: false
@@ -64,7 +64,7 @@ class MailchimpPopup extends Component {
           let date = new Date();
           let expire = new Date();
           expire.setDate(date.getDate() + 1000);
-          document.cookie = `signedup=yep; expires=${expire}; path=/`;
+          document.cookie = `signedup=yep; expires=${ expire }; path=/`;
           document.querySelector('html').classList.remove('is-clipped');
           setTimeout(() => {
             this.setState({
@@ -82,14 +82,14 @@ class MailchimpPopup extends Component {
 
   render() {
     return (
-      <div className={`is-mailchimp-popup modal ${this.state.showing ? `is-active` : ``}`}>
+      <div className={`is-mailchimp-popup modal ${ this.state.showing ? `is-active` : `` }`}>
         {/* <div className="modal-background" onClick={(e) => this.closeModal(e)}></div> */}
         <div className="modal-content">
           <div className="box">
             <p className="is-size-3 has-text-centered">Sign up to get the newest blog posts delivered to you!</p>
             <form>
               <div className="field">
-                <p className={`has-text-centered ${this.state.response.result === 'error' ? `has-text-danger` : `has-text-success`}`}>{this.state.response.msg}</p>
+                <p className={`has-text-centered ${ this.state.response.result === 'error' ? `has-text-danger` : `has-text-success` }`}>{this.state.response.msg}</p>
                 <div className="control">
                   <input type="email" className="input" name="email" placeholder="kevin.malone@dundermifflin.com" onChange={this.onChange} />
                 </div>
