@@ -15,10 +15,10 @@
   }
 }
 
-@mixin container {
-  width: 100%;
-  margin: 0 auto;
+@mixin container($margin: 0) {
+  margin: $margin auto;
   padding: 0 rem(10px);
+  width: 100%;
 
   @include breakpoint($desktop) {
     max-width: rem(960px);

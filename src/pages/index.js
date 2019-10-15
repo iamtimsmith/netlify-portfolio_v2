@@ -5,7 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Item from '../components/portfolioitems'
-import Contact from '../components/contactform'
+import { ContactForm } from '../components/Forms'
 
 const IndexPage = ({ data }) => {
   const page = data.markdownRemark;
@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
       <section className="section">
         <div className="columns is-centered">
           <div className="column is-6">
-            <Contact buttonText="Hire Me!" />
+            <ContactForm />
           </div>
         </div>
       </section>

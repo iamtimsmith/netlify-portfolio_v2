@@ -45,7 +45,7 @@ class Layout extends Component {
           }
         `}
         render={data => (
-          <div className={`is-${this.props.location}`}>
+          <div className={`is-${ this.props.location }`}>
             <Navbar
               siteTitle={data.site.siteMetadata.title}
               menu={this.state.siteNav}

@@ -1,0 +1,41 @@
+.contact-form {
+  max-width: rem(600px);
+  margin: 0 auto;
+
+  &__hidden {
+    display: none;
+  }
+
+  &__response {
+    color: transparent;
+    margin-bottom: 0;
+    text-align: center;
+    transition: color 0.3s;
+
+    &-success {
+      @extend .contact-form__response;
+      color: green;
+    }
+
+    &-error {
+      @extend .contact-form__response;
+      color: red;
+    }
+  }
+
+  .is-home & {
+    padding: rem(50px) 0 rem(100px);
+
+    &__submit {
+      width: 30%;
+      margin: rem(10px) auto;
+    }
+  }
+
+  .about & {
+    &__submit {
+      width: 30%;
+      margin: rem(10px) auto;
+    }
+  }
+}
