@@ -1,9 +1,14 @@
 html {
+  background: white;
   font-size: $rem-baseline;
+  overflow-x: hidden;
+  overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
