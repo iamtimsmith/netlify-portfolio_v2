@@ -44,7 +44,7 @@ Now that you have initialized a project, installed the Gulp library into your pr
 
 The first thing I'll talk about is combining your JavaScript files into one so WordPress only has to pull in one file for all of your blocks. You could definitely just put all of your custom blocks into one file, but in my opinion this would get really long and wicked messy if you're building out several blocks for your theme. Instead, I like to put each custom block into it's own directory which can hold the block code, any styles for the block, and even testing if you wanted.
 
-In [this article about Gulp](/gulp-basics-modern-frontend-workflow), I mentioned a library called `gulp-concat` to perform this operation. Today I'll be using a different library which offers similar functionality with the addition of some tools we'll use to handle our JavaScript. First we'll install the library:
+In [this article about Gulp](/blog/gulp-basics-modern-frontend-workflow), I mentioned a library called `gulp-concat` to perform this operation. Today I'll be using a different library which offers similar functionality with the addition of some tools we'll use to handle our JavaScript. First we'll install the library:
 
 ```bash:title=Terminal
 $ npm install --save-dev gulp-concat-util
