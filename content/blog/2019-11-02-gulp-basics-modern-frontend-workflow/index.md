@@ -275,6 +275,68 @@ task('watch', function (done) {
 });
 ```
 
+## The completed gulpfile
+
+If you're just interested in using the Gulpfile from this tutorial, the code for the whole file can be found below:
+
+```js:title=gulpfile.js
+const { task, series, src, dest, watch } = require('gulp');
+const sass = require('gulp-sass');
+const cssnano = require('gulp-cssnano');
+const rename = require('gulp-rename');
+const autoprefixer = require('gulp-autoprefixer');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
+
+
+task('styles', function (done) {
+  src('scss/styles.scss')
+    .pipe(sass())
+    .pipe(dest('dist/css'));
+  done();
+});
+
+task('minify', function (done) {
+  src('dist/css/styles.css')
+    .pipe(autoprefixer({
+      "overrideBrowserslist": [
+        "> 1%",
+        "last 2 versions",
+        "ie >= 11"
+      ]
+    }))
+    .pipe(cssnano())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest('dist/css'));
+
+  done();
+});
+
+task('javascript', function() {
+  return src('js/**/*.js')
+  .pipe(babel({
+    presets: ['@babel/env']
+  }))
+  .pipe(dest('dist/js'));
+});
+
+task('uglify', function() {
+  return src('dist/js/scripts.js')
+  .pipe(uglify())
+  .pipe(rename({ suffix: '.min' }))
+  .pipe(dest('dist'));
+})
+
+task('watch', function (done) {
+  watch('scss/**/*.scss', series('styles', 'minify'));
+  watch('js/**/*.js', series('javascript', 'uglify));
+  done();
+});
+
+task('default', series('styles', 'minify', 'javascript', 'uglify'));
+```
+
 ## Wrapping Up
 
 As you can see, Gulp is a powerful tool which can greatly improve your workflow. It empowers you to use the most modern technologies without sacrificing cross-browser compatibility. The only limit of using Gulp in your project is your imagination.
