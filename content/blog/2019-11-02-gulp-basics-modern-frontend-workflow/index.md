@@ -4,7 +4,7 @@ date: '2019-11-02'
 tags: '#workflow'
 featured_image: ./featured_image.jpg
 keywords: 'gulp.js, gulp workflow, gulp basics, frontend workflow'
-description: "I'll explain how to use JSX when building out custom Gutenberg blocks with react and WordPress."
+description: "Today I'll be teaching you some basics of a build tool called Gulp, what Gulp is used for, and how to use it when setting up a front-end for your project."
 published: true
 ---
 
