@@ -138,7 +138,7 @@ export class MailchimpPopup extends Component {
     const { showing } = this.state;
     return (
       <div className={`mailchimp-popup${ showing ? '-active' : '' }`}>
-        <button className="mailchimp-popup__close" onClick={(e) => this.closeModal(e, false)}>
+        <button className="mailchimp-popup__close" onClick={(e) => this.closeModal(e, true)}>
           <FontAwesomeIcon icon={['fas', 'slash']} />
           <FontAwesomeIcon icon={['fas', 'slash']} />
         </button>
@@ -156,7 +156,7 @@ export class MailchimpPopup extends Component {
               onClick={e => this.onSubmit(e)} >Submit</button>
             <p
               className="mailchimp-popup__cancel"
-              onClick={(e) => this.closeModal(e)}>No thanks, I'll keep checking back.</p>
+              onClick={(e) => this.closeModal(e, true)}>No thanks, I'll keep checking back.</p>
           </form>
         </div>
       </div >
