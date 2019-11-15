@@ -7,7 +7,7 @@ export default ({ currentPost = "" }) => (
     query={graphql`
       query {
         allMarkdownRemark(
-          filter:{fields:{type:{eq:"posts"}}},
+          filter:{fields:{type:{eq:"posts"}}, frontmatter:{published:{eq:true}}},
           limit:4,
           sort: {fields:frontmatter___date, order: DESC}
         ) {
