@@ -1,8 +1,7 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Summary from '../components/BlogSummary'
+import RecentPosts from '../components/RecentPosts';
 
 const NotFoundPage = ({ data }) => (
   <Layout location="404">
@@ -14,53 +13,8 @@ const NotFoundPage = ({ data }) => (
         blog posts that might interest you though...
       </p>
     </section>
-    <section className="section container">
-      <div className="columns">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="column is-4 posts" key={node.id}>
-            <Summary
-              title={node.frontmatter.title}
-              excerpt={node.excerpt}
-              path={node.fields.slug}
-              tags={node.frontmatter.tags.split(' ')}
-              thumb={node.frontmatter.featured_image.childImageSharp.sizes}
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+    <RecentPosts />
   </Layout>
 )
 
 export default NotFoundPage
-
-export const query = graphql`
-  query NotFoundQuery {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { type: { eq: "posts" } } }
-      limit: 3
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            featured_image {
-              childImageSharp {
-                sizes(maxWidth: 400) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
-            description
-            tags
-          }
-        }
-      }
-    }
-  }
-`
