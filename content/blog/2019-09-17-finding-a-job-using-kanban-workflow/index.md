@@ -1,7 +1,7 @@
 ---
 title: 'Finding a Job While Using a Kanban Workflow'
 date: '2019-09-17'
-tags: '#misc'
+tags: '#workflow'
 featured_image: ./featured_image.png
 keywords: 'workflow, kanban, finding a job, job search, application process'
 description: "In this post, I'll teach you how using a kanban workflow when finding a job can help keep you organized throughout the application process."

@@ -1,7 +1,7 @@
 ---
 title: 'Creating A Kanban Workflow As A Freelance Web Developer'
 date: '2019-08-12'
-tags: '#misc'
+tags: '#workflow'
 featured_image: ./featured_image.jpg
 keywords: 'workflow, kanban, freelance, freelance web developer, project management'
 description: "As a freelance developer, it can be hard to keep projects organized. In this post I'll talk about what Kanban is, tools you can use, and how it can help you."

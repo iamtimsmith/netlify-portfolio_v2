@@ -1,7 +1,7 @@
 ---
 title: 'Take Snapshots of Your Project with Git'
 date: '2019-06-25'
-tags: '#misc'
+tags: '#workflow'
 featured_image: ./featured_image.jpg
 keywords: 'git, command line, command line interface, cli, terminal, version control, git for beginners, learning git, what is git'
 description: "Git is a tool which allows you to take \"snapshots\" of your project. I'm going to show you how to get started with git so you can improve your worklow."
