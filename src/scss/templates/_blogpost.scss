@@ -53,27 +53,34 @@
       font-size: 2rem !important;
     }
 
-    video,
-    img {
+    blockquote {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      * {
+        font-family: $serif;
+      }
+    }
+
+    figure {
+      margin: 3rem auto;
       display: block;
       max-width: 100%;
-      margin: 3rem auto;
 
       @include breakpoint($tablet) {
         max-width: 800px;
       }
-    }
 
-    .gatsby-resp-image-wrapper {
-      max-width: 800px;
-      margin: 3rem auto;
-      border-radius: 0.5rem;
-      box-shadow: 0.5rem 0.5rem 1rem $grey;
-      overflow: hidden;
+      .gatsby-resp-image-wrapper {
+        margin-bottom:10px;
+        border-radius: 0.5rem;
+        box-shadow: 0.5rem 0.5rem 1rem $grey;
+        overflow: hidden;
+      }
 
-      img {
-        height: calc(100% + 5px) !important;
-        margin: 0;
+      figcaption {
+        color: $grey;
+        font-size: 1.6rem;
       }
     }
 
@@ -102,7 +109,7 @@
       min-height: 600px;
       max-width: 1000px;
       display: block;
-      margin: 0 auto;
+      margin: rem(30px) auto;
     }
   }
 }

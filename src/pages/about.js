@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { ContactForm } from '../components/Forms'
@@ -10,22 +11,21 @@ const AboutPage = ({ data }) => (
     <SEO
       title="About"
       url="/about"
-      description={data.markdownRemark.frontmatter.description}
-      keywords={data.markdownRemark.frontmatter.keywords} />
+      description={data.mdx.frontmatter.description}
+      keywords={data.mdx.frontmatter.keywords} />
 
     <div className="about">
       <figure className="about__image">
         <Img
           sizes={
-            data.markdownRemark.frontmatter.profile_pic.childImageSharp.sizes
+            data.mdx.frontmatter.profile_pic.childImageSharp.sizes
           }
           alt="Tim Smith"
         />
       </figure>
-      <div
-        className='about__text'
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      />
+      <div className="about__text">
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </div>
       <div className="about__form">
         <ContactForm />
       </div>
@@ -36,7 +36,7 @@ export default AboutPage
 
 export const query = graphql`
   query {
-    markdownRemark(frontmatter: { title: { eq: "About" } }) {
+    mdx(frontmatter: { title: { eq: "About" } }) {
       frontmatter {
         title
         description
@@ -49,7 +49,7 @@ export const query = graphql`
           }
         }
       }
-      html
+      body
     }
   }
 `

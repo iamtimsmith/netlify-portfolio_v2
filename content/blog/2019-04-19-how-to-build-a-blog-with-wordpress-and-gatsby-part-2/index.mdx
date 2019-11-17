@@ -7,18 +7,15 @@ keywords: 'react js, reactjs, javascript, wordpress, wordpress plugins, gatsbyjs
 description: 'In the last post, we covered setting up WordPress for use with Gatsby. Today we will cover how to pull the data from WordPress into Gatsby and build pages.'
 published: true
 ---
+import {Figure} from '../../../src/components/Utilities.js';
 
-<article class="message">
-  <div class="message-body">
-    Note: This is part two in a series of posts about Gatsby.js and WordPress. You can find <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1">Part One here</a>, and <a href="/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3">Part Three here</a>.
-  </div>
-</article>
+> Note: This is part three in a series of posts about Gatsby.js and WordPress. You can find [Part One here](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1) and [Part Three here](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-3).
 
 In the last post, we covered setting up [WordPress for use with Gatsby](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1). Today we will cover how to pull the data from WordPress into Gatsby and build pages.
 
 I have set up a wordpress site for us to use with the plugins mentioned in the last post as well as some dummy content for us to use. If you're curious, my favorite lorem generator is [Fillerama](http://fillerama.io/) which offers random content from Futurama, Monty Python, Star Wars, and more. This is where the content came from.
 
-<video src="https://media.giphy.com/media/sDcfxFDozb3bO/giphy.mp4" playsinline autoplay muted loop></video>
+<Figure src="https://media.giphy.com/media/sDcfxFDozb3bO/giphy.mp4" caption="Shut up and take my money!" />
 
 ## Gatsby js Starter
 
@@ -108,7 +105,7 @@ You can see there are several dependencies installed right off the bat. I'll jus
 
 Whew! That was a mouthful.
 
-<video src="https://media.giphy.com/media/eb3WAhXzlUAFi/giphy.mp4" playsinline autoplay muted loop width="400"></video>
+<Figure src="https://media.giphy.com/media/eb3WAhXzlUAFi/giphy.mp4" caption="Get on with it already!" width="400" />
 
 ### Running the Site
 
@@ -258,7 +255,7 @@ Now let's talk about `gatsby-node.js` a bit more. Let's start off by discussing 
 
 Gatsby-node.js allows us to pull in a template file, then query our data using graphql. Then we can loop through the appropriate data and programmatically create a page for each piece of data, in our case blog posts and pages. This template will be universal so all blog posts or pages look the same. We can also use different templates for different content types so our pages and blog posts don't have to look the same.
 
-<video src="https://media.giphy.com/media/t3Mzdx0SA3Eis/giphy.mp4" playsinline autoplay muted loop></video>
+<Figure src="https://media.giphy.com/media/t3Mzdx0SA3Eis/giphy.mp4" caption="Yesss!" />
 
 The code below pulls in the data for blog posts from wordpress and creates a page for each one using the createPage API provided by gatsby js. It is also much easier to pull in templates in this file using the path package, so I installed it using `yarn add path`.
 
@@ -381,7 +378,7 @@ Here's what our completed Blog Post looks like after we update the template:
 
 We're about half-way done with the actual Gatsby js build. In this post we covered how to import blog posts from WordPress into our Gatsby js application and create pages automatically for each post. Honestly, this is the hardest part about making sites in Gatsby. If you're still keeping up, great job! If you're struggling, don't be too hard on yourself. This stuff is hard. If you need to, you can reach out to me on twitter [@iam_timsmith](https://www.twitter.com/iam_timsmith) and I'll be happy to help you.
 
-<video src="https://media.giphy.com/media/g9582DNuQppxC/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/g9582DNuQppxC/giphy.mp4" caption="Obligatory Great Gatsby gif" />
 
 The code for this tutorial can be found [here](https://github.com/iamtimsmith/building-a-blog-with-wordpress-and-gatsby)
 

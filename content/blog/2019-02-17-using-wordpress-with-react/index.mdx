@@ -7,6 +7,7 @@ keywords: 'react js, reactjs, javascript, wordpress, wordpress api, headless wor
 description: 'In this article, we will cover how to use WordPress as a headless CMS by leveraging the WordPress API and React js when building a project.'
 published: true
 ---
+import {Figure} from '../../../src/components/Utilities.js';
 
 In this article, we will cover how to use WordPress as a headless CMS by leveraging the WordPress API and React js when building a project.
 
@@ -22,7 +23,7 @@ By default, Wordpress uses themes and templates to provide a front-end for our W
 
 First, it can create sites that aren't particularly performant. While PHP is a versatile language, there are better solutions for building out UIs for our users. Second, Wordpress powers something like one-third of the internet. Because of this, hackers like to try to get into Wordpress sites to access sensitive data. Having a separate front-end prevents users or hackers from knowing it is a Wordpress site at all.
 
-<video src="https://media.giphy.com/media/DBfYJqH5AokgM/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/DBfYJqH5AokgM/giphy.mp4" caption="I hate this hacker crap!" />
 
 ### Okay, so how do I use a React js to do this?
 
@@ -38,7 +39,7 @@ By simply adding `/wp-json/wp/v2/posts` to the end of the url, we will see a JSO
 
 We can [try out different options](https://developer.wordpress.org/rest-api/reference/) like `posts`, `pages`, `users`, and more. Go ahead and play around to see what data you can find. This will allow us to decide what we want to use and what we don't.
 
-<video src="https://media.giphy.com/media/3diE2vbIarCXWXaN15/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/3diE2vbIarCXWXaN15/giphy.mp4" caption="Decisions Decisions" />
 
 ## Our React js Starter App
 
@@ -358,7 +359,7 @@ The last step for our Wordpress and React js blog is to add import statements to
 
 You may notice some issues with load speed or a _glitchy_ sort of feeling where the screen is blank for a second before showing the content. This is because the content is being rendered after the component is mounted so there is a small delay. In addition, search engine crawlers have a hard time reading the content on sites like this because it is loaded via javascript after the page is rendered. There are a few popular ways to handle these issues:
 
-<video src="https://media.giphy.com/media/g9582DNuQppxC/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/g9582DNuQppxC/giphy.mp4" caption="You could use Gatsby.js" />
 
 ### Gatsby.js, a Static Site Generator
 
@@ -366,7 +367,7 @@ You may notice some issues with load speed or a _glitchy_ sort of feeling where 
 
 Because the files for our application are being served statically, they can be very fast as the content is all created beforehand rather than as the page is rendering. This can be a bit tricky since we have to figure out a way to trigger a build when we update the content. [Netlify](https://www.netlify.com/) is my go-to service for this as it's very easy to use and when you push to a certain git branch it will rebuild the Gatsby js project.
 
-<video src="https://media.giphy.com/media/1gUWdf8Z8HCxpM8cUR/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/1gUWdf8Z8HCxpM8cUR/giphy.mp4" caption="Or Next.js" />
 
 ### Next.js, Server-Side Rendered React js
 

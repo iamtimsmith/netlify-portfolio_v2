@@ -7,6 +7,7 @@ keywords: 'gulp.js, gulp workflow, gulp basics, frontend workflow'
 description: "Today I'll be teaching you some basics of a build tool called Gulp, what Gulp is used for, and how to use it when setting up a front-end for your project."
 published: true
 ---
+import {Figure} from '../../../src/components/Utilities.js';
 
 With front-end tools evolving as rapidly as they do, it can be hard to know how to use things while maintaining compatibility with various browsers. Fortunately, there is a handy JavaScript library called Gulp which can make your life easier when building front-ends with just about any tool you choose.
 
@@ -182,7 +183,7 @@ Let's take a look at this code. You may notice that I went ahead and reused the 
 
 This is amazing for someone like me who hates having to support IE 11, but that's a discussion for another time...
 
-<video src="https://media.giphy.com/media/MrFNWzMrSgVFK/giphy.mp4" autoplay loop muted playsinline></video>
+<Figure src="https://media.giphy.com/media/MrFNWzMrSgVFK/giphy.mp4" caption="Here lies IE11..." />
 
 ## Using Babel for JavaScript
 
@@ -244,7 +245,7 @@ What this addition to the `javascript` task does is combines all of the JS files
 
 The last thing I will talk about today is minifying JavaScript. I don't always do this since it can cause problems in the JS code sometimes, but just in case you want to and you're curious I'll drop so knowledge.
 
-<video src="https://media.giphy.com/media/lRRjGTRlFwmQYFmmpU/giphy.mp4" autoplay muted loop playsinline></video>
+<Figure src="https://media.giphy.com/media/lRRjGTRlFwmQYFmmpU/giphy.mp4" caption="The more you know!" />
 
 To minify your Javascript code, you can use a plugin called `gulp-uglify`. If I'm being honest, this one is my favorite plugin name, but I digress. The following command will add the library as a dependency:
 

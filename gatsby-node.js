@@ -13,7 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           sort: { fields: [frontmatter___date], order: DESC }
           filter: { frontmatter: { published: { eq: true } } }
         ) {
@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Blog Posts
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMdx.edges
     posts.forEach((post, index) => {
       let work = []
       let blog = []
@@ -82,7 +82,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
     // Get node type. If none can be found, default to page
     const type = getNode(node.parent).sourceInstanceName || 'pages'
     let value
