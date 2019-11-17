@@ -6,7 +6,7 @@ export default ({ currentPost = "" }) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
+        allMdx(
           filter:{fields:{type:{eq:"posts"}}, frontmatter:{published:{eq:true}}},
           limit:4,
           sort: {fields:frontmatter___date, order: DESC}
@@ -34,7 +34,7 @@ export default ({ currentPost = "" }) => (
       }
     `}
     render={data => {
-      const posts = data.allMarkdownRemark.edges.filter(({ node }) => node.fields.slug !== currentPost);
+      const posts = data.allMdx.edges.filter(({ node }) => node.fields.slug !== currentPost);
       if (posts.length > 3) {
         posts.pop();
       }

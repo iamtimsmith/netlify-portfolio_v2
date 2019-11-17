@@ -7,14 +7,8 @@ keywords: 'mern stack, mern stack tutorial, react js, express js, express js nod
 description: 'In this MERN stack tutorial, we will build a simple blog using React js, Node js, Express js, and Mongodb to add to our Full-Stack Developer toolkit.'
 published: true
 ---
+import {Figure} from '../../../src/components/Utilities.js';
 
-<div class="message is-dark">
-  <div class="message-body">
-
-Note: The code for this tutorial can be found [here](https://github.com/iamtimsmith/simple-mern-app).
-
-  </div>
-</div>
 
 In this MERN stack tutorial, we will build a simple blog using React js, Node js, Express js, and Mongodb to add to our Full-Stack Developer toolkit.
 
@@ -33,7 +27,7 @@ Although there are many different stacks out there to consider, some have become
 
 Today we will be looking at the MERN stack which is almost the same as MEAN except we will replace Angular js with React js. This will allow us to use MongoDB for our database, Nodejs and Express js for our server and routes, and React js to create a front-end for the user to interact with.
 
-<video src="https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/tO5ddHjpXB6lG/giphy.mp4" caption="I don't know" />
 
 ## How do we build with it?
 
@@ -59,7 +53,7 @@ Hopefully that cleared things up a little and if it didn't, forget I ever mentio
 
 While I'm not going to get into how to build it step by step in this article (that will be a separate article), I would like to go over different pieces that can be/are commonly used in this stack. I went through several tutorials which explained how to set up a server but not necessarily why those libraries are used to do so.
 
-<video src="https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/5wFkqt6A8R4qAqGIFQ/giphy.mp4" caption="I need to know details!" />
 
 Once we create our `app.js` file, we will have to install some packages. Here are some common packages I've used in my Express js projects before which might be helpful to you.
 
@@ -184,7 +178,7 @@ Adding the `client` folder to the `.gitignore` file will ensure that it is not b
 
 How your full stack app is designed will be totally up to you, I just feel that things can stay a bit more organized by maintaining separate repos for front and back ends.
 
-<video src="https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy.mp4"  width="300" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/cIWnDtConYRFPxmmah/giphy.mp4" caption="David is organizing"  width="300" />
 
 ### Creating Our React js Front-End
 
@@ -285,3 +279,5 @@ There are plenty of other solutions out there, but these are the two that I have
 ## Final Thoughts On MERN Stack
 
 I hope that this article has helped to clear up some confusion about how this stack works. It is simply using MongoDB, Express js, and Node js to create a server which provides API endpoints that our React js application can make calls to for data. Now that you have a better understanding, go build awesome things!
+
+> Note: The code for this tutorial can be found [here](https://github.com/iamtimsmith/simple-mern-app).

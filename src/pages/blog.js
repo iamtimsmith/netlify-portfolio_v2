@@ -9,7 +9,7 @@ export default class Blog extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      query: this.props.data.allMarkdownRemark.edges,
+      query: this.props.data.allMdx.edges,
       posts: [],
     }
     this.searchPosts = this.searchPosts.bind(this)
@@ -17,13 +17,13 @@ export default class Blog extends React.Component {
 
   componentDidMount() {
     this.setState({
-      posts: this.props.data.allMarkdownRemark.edges,
+      posts: this.props.data.allMdx.edges,
     })
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      posts: nextProps.data.allMarkdownRemark.edges,
+      posts: nextProps.data.allMdx.edges,
     })
   }
 
@@ -31,7 +31,7 @@ export default class Blog extends React.Component {
     let currentList = []
     let newList = []
     if (e.target.value !== '') {
-      currentList = this.props.data.allMarkdownRemark.edges
+      currentList = this.props.data.allMdx.edges
       newList = currentList.filter(({ node }) => {
         const lcTitle = node.frontmatter.title.toLowerCase()
         const lcTags = node.frontmatter.tags.toLowerCase()
@@ -43,7 +43,7 @@ export default class Blog extends React.Component {
         return bool
       })
     } else {
-      newList = this.props.data.allMarkdownRemark.edges
+      newList = this.props.data.allMdx.edges
     }
     this.setState({
       posts: newList,
@@ -101,7 +101,7 @@ export default class Blog extends React.Component {
 
 export const query = graphql`
   query blogQuery {
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fields: { type: { eq: "posts" } }

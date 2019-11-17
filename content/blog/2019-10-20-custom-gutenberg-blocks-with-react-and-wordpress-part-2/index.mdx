@@ -7,6 +7,7 @@ keywords: 'wordpress, react, wordpress and react, gutenberg, custom gutenberg bl
 description: "I'll explain how to use JSX when building out custom Gutenberg blocks with react and WordPress."
 published: true
 ---
+import {Figure} from '../../../src/components/Utilities.js';
 
 In the [last post about custom Gutenberg blocks with React and WordPress](/blog/custom-gutenberg-blocks-with-react-and-wordpress-part-1), I talked about registering custom blocks in WordPress as well as why you may want to use Gutenberg with custom blocks. While you can use plain old React to create your custom blocks, it is easier to read your code using a tool like JSX.
 
@@ -16,7 +17,7 @@ In this post I'll explain how and why you should use Gulp to improve your workfl
 
 In a nutshell, Gulp is a build tool which allows you to use to coolest new stuff without sacrficing compatibility. I'm not going to talk a ton about what Gulp is, but if you're curious you [learn more about it in this blog post](/gulp-basics-modern-frontend-workflow). For the purposes of this article, I will be keeping it VERY simple. It will basically be the absolute bare minimum you will need to build custom blocks.
 
-<video src="https://media.giphy.com/media/5vUTS3pfJAwAv2yUNM/giphy.mp4" width="300" autoplay loop muted playsinline></video>
+<Figure src="https://media.giphy.com/media/5vUTS3pfJAwAv2yUNM/giphy.mp4" caption="NPH: Doing the bare minimum." width="300"/>
 
 ## Setting Up Gulp and a gulpfile
 

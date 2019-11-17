@@ -7,6 +7,7 @@ keywords: 'react js, react, react tutorial, prop, react state'
 description: "If you're anything like me, the concept of state was confusing at first. In this tutorial, we'll learn how to use state and props in a react js application."
 published: true
 ---
+import {Figure, Iframe} from '../../../src/components/Utilities.js';
 
 If you're anything like me, the concept of state was confusing at first. In this tutorial, we'll learn how to use state and props in a react js application.
 
@@ -77,7 +78,7 @@ In the Pizza component above, you can see that we have a state which includes a 
 
 I know what you're thinking. _Super Cool, Tim. Now what?_
 
-<video src="https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy.mp4" width="300" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy.mp4" caption="What now?" width="300" />
 
 I'm glad you asked. That brings us to the next section:
 
@@ -96,7 +97,7 @@ The code above would be output in the browser like this:
 <p>Pepperoni</p>
 ```
 
-<video src="https://media.giphy.com/media/d2Z9QYzA2aidiWn6/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/d2Z9QYzA2aidiWn6/giphy.mp4" caption="Awesome!" />
 
 ## How do we change the state?
 
@@ -143,7 +144,7 @@ If we assume this function will be fired when a button is clicked, then each tim
 
 This allows users to modify data on a page in real time, which is awesome. We can also pass our state into a child component as props. This brings us to our next topic which is changing parent state from a child component.
 
-<video src="https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.mp4" playsinline autoplay loop muted></video>
+<Figure src="https://media.giphy.com/media/3owzW5c1tPq63MPmWk/giphy.mp4" caption="Figuring it out" />
 
 ## Changing Parent State from Child Component
 
@@ -258,7 +259,6 @@ Working with state is an essential skill to have in react js. It makes our lives
 In this post, we talked about what state is, how to create state, how to change state, and how to manipulate state from a child component. This should be enough information for us to control the data within our components in most cases. Now go forth and build cool stuff!
 
 <br/>
-<iframe height="600" style="width: 100%;" scrolling="no" title="xMqdjV" src="//codepen.io/iamtimsmith/embed/xMqdjV/?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/iamtimsmith/pen/xMqdjV/'>xMqdjV</a> by Tim Smith
-  (<a href='https://codepen.io/iamtimsmith'>@iamtimsmith</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+
+<Iframe src="//codepen.io/iamtimsmith/embed/xMqdjV/?height=265&theme-id=dark&default-tab=result" title="xMqdjV" height="600" />
+

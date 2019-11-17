@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
 import Share from '../components/socialshare'
 import SEO from '../components/seo'
@@ -9,7 +10,7 @@ import RecentPosts from '../components/RecentPosts'
 
 class PostTemplate extends Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.mdx
     return (
       <Layout location="blog" slug={post.fields.slug}>
         <SEO
@@ -39,10 +40,9 @@ class PostTemplate extends Component {
 
               <hr />
               <br />
-              <div
-                id="post-content"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
+              <div id="post-content">
+                <MDXRenderer>{post.body}</MDXRenderer>
+              </div>
             </div>
             <Share
               url={`https://www.iamtimsmith.com/${ post.fields.slug }`}
@@ -65,8 +65,8 @@ export default PostTemplate
 
 export const query = graphql`
   query BlogQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       excerpt(pruneLength: 160)
       fields {
         slug

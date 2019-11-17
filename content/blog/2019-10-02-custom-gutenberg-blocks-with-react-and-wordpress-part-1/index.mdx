@@ -7,6 +7,7 @@ keywords: 'wordpress, react, wordpress and react, gutenberg, custom gutenberg bl
 description: "I'll show you how to create custom Gutenberg blocks using WordPress and React. This post will cover the basics and a simple setup to start developing."
 published: true
 ---
+import {Figure} from '../../../src/components/Utilities.js';
 
 As of WordPress 5.0, Gutenberg comes built-in. In this post, I'll give you the basics of what Gutenberg is, why it's awesome, and how to set up your environment to start creating your own custom Gutenberg blocks. While at least some knowledge of React will be useful, it is not totally required.
 
@@ -16,7 +17,7 @@ Before getting into building custom gutenberg blocks, I think it will be helpful
 
 Before WordPress 5.0, users were able to edit their content using a WYSIWYG (which stands for "What You See Is What You Get) editor. This allowed content creators to write blog posts and static pages with no coding skills. At the same time, it also severely limited what they could do with their site. The theme would control what the header and footer looked like, but for any sort of custom layout, a developer would have to create a custom template and hardcode stuff in (bad) or do a bunch of crazy stuff to make things more changeable for the user (also bad).
 
-<video src="https://media.giphy.com/media/xkmQfH1TB0dLW/giphy.mp4" autoplay loop muted playsinline></video>
+<Figure src="https://media.giphy.com/media/xkmQfH1TB0dLW/giphy.mp4" caption="Not quite a printing press..." />
 
 In 2011, the Advanced Custom Fields plugin was released which made a lot of these things easier. It allows developers to create custom fields for a given content type (post or page) and then render them in a template with minimal code. It makes custom templates for a home page or other special pages much easier to change for both developers and end-users. This has been my go-to for years now and it's been a great experience. I've even used it when [creating sites with WordPress and Gatsby](/blog/how-to-build-a-blog-with-wordpress-and-gatsby-part-1)!
 
@@ -34,7 +35,7 @@ Pretty much all of the tutorials I have seen about block creation address doing 
 
 When I was searching the other day, I couldn't find any tutorials that explained how to set up custom blocks as a part of a theme. I believe there are some benefits to having the blocks in a theme rather than a plugin though, including (but not limited to) less dependencies to manage, keeping proprietary code for blocks specific to a website private, and not having to worry about a user accidentally disabling the plugin and breaking things.
 
-<video src="https://media.giphy.com/media/3KCOFfdqmptLi/giphy.mp4" autoplay loop muted playsinline width="400"></video>
+<Figure src="https://media.giphy.com/media/3KCOFfdqmptLi/giphy.mp4" caption="Ollivander is suspicious." width="400" />
 
 ## Custom Gutenberg block theme setup
 
@@ -177,11 +178,8 @@ require get_template_directory() . '/blocks/blocks.php';
 
 Although it doesn't matter where in your `functions.php` file you place the code, I tend to put it at the bottom. Especially if you're using the underscores theme, it helps to keep your code separated from the default theme code.
 
-<div style="max-width:400px; margin: 0 auto;">
 
-![You have taken your first step into a larger world](./benkenobi.jpg)
-
-</div>
+![Listen to Obi-wan!](./benkenobi.jpg)
 
 ## Wrapping Up
 

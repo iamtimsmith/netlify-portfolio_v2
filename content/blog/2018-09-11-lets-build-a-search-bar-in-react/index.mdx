@@ -9,6 +9,8 @@ keywords: 'react.js, react.js tutorial, javascript, search'
 published: true
 ---
 
+import {Figure, Iframe} from '../../../src/components/Utilities.js';
+
 I know, I know...another task app...
 
 Hear me out though! We are going to build a task app that also filters the list based on a search query in real time. Sound complicated? It's not as complicated as you may think, so let's dig in!
@@ -59,7 +61,7 @@ Next we need to open our `index.html` file for editing and put the code below in
 </html>
 ```
 
-<img src="https://thepracticaldev.s3.amazonaws.com/i/d7j7e1fshxeaaxe1j9qo.jpeg" alt="Add packages to our project">
+<Figure type="image" src="https://thepracticaldev.s3.amazonaws.com/i/d7j7e1fshxeaaxe1j9qo.jpeg" caption="Add packages to our project" />
 
 ### Add packages to our project
 
@@ -259,7 +261,7 @@ And we can add an onClick trigger to our button, so our button should look like 
 
 We can test our application by using `yarn start` or `npm run start` and going to `localhost:1234` in our browser. Our app now allows us to add an item to the list! Pretty cool!
 
-<img src="https://media.giphy.com/media/vohOR29F78sGk/giphy.gif" alt="Add a delete button" />
+<Figure type="gif" src="https://media.giphy.com/media/vohOR29F78sGk/giphy.mp4" caption="Add a delete button" />
 
 ### Adding a Delete button
 
@@ -417,7 +419,8 @@ componentWillReceiveProps(nextProps) {
 
 Now if we change the `.map()` function we're using for our list to map over the `filtered` list instead of the `items` list being passed in through props, we should see the same thing on the front end.
 
-<img src="https://media1.tenor.com/images/0abd7b24a1f28196cbde3c081aae20dd/tenor.gif" alt="Whoop-dee-doo"/>
+
+<Figure type="gif" src="https://media.tenor.com/videos/1c0f33f884ddedac7cacd0d5def58234/mp4" caption="Whoop-dee-doo"/>
 
 What's the big deal? The big deal is that now we have a list we can manipulate without altering the original list. All we have to do is modify our `filter` state and the items being displayed will also reflect that, but we haven't lost the original list by doing this.
 
@@ -438,7 +441,7 @@ Cool! Now we have a search bar. If only it actually worked...
 
 We have a nice looking search bar, but it doesn't really do anything other than look pretty. Maybe this is good enough, but I think there is more to life than just being really, really, ridiculously goodlooking. Let's add the "brains".
 
-<img src="https://media1.tenor.com/images/acfdeea24b2907dc5aab376551b69b22/tenor.gif?itemid=3547407" alt="Really Really Ridiculously Good Looking" />
+<Figure type="gif" src="https://media.tenor.com/videos/481c9d9f53f8551e2c68598f847fd9a7/mp4" caption="Really Really Ridiculously Good Looking" />
 
 To start, we'll add a method called `handleChange` after our lifecycle methods. We will be passing in `e` as an argument which will stand for event. Inside of the method, we'll create two variables which will hold the original task list being passed in as props as well as the filtered list before it's passed into state.
 
@@ -506,5 +509,4 @@ Running the application should now allow you to create, delete, and search tasks
 
 Was this helpful for you? If you run into any problems, let me know and I will get this tutorial updated. I have also added the codepen with the full code below so you can play around with it or compare code.
 
-<iframe height='462' scrolling='no' title='Searchbar in React' src='//codepen.io/iamtimsmith/embed/zJPzwN/?height=462&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/iamtimsmith/pen/zJPzwN/'>Searchbar in React</a> by Tim Smith (<a href='https://codepen.io/iamtimsmith'>@iamtimsmith</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+<Iframe src="//codepen.io/iamtimsmith/embed/zJPzwN/?height=462&theme-id=0&default-tab=result&embed-version=2" height="462" />

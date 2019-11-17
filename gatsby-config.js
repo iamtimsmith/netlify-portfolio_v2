@@ -81,6 +81,36 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+            options: {
+              className: 'pre-title',
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              // If setting this to true, the parser won't handle and highlight inline
+              // code used in markdown i.e. single backtick code like `this`.
+              noInlineHighlight: true,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false,
+              showCaptions: true
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
