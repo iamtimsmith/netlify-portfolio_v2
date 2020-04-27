@@ -7,7 +7,7 @@ priority: '7'
 fullPage: ./frontpage.png
 thumbOne: ./mockup1.jpg
 thumbTwo: ./mockup2.jpg
-url: 'https://www.ihca.com'
+url: 'https://www.ihca.org'
 keywords: 'wordpress, php, scss, jquery'
 published: true
 ---
