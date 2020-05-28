@@ -76,7 +76,7 @@ export class MailchimpPopup extends Component {
         this.setState({
           showing: true
         });
-        document.querySelector('html').classList.add('is-clipped');
+        // document.querySelector('html').classList.add('is-clipped');
       }
     }, 5000);
 

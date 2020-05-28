@@ -50,7 +50,7 @@
 
   &-active {
     @extend .mailchimp-popup;
-    opacity: 1;
+    opacity: 0.95;
     visibility: visible;
   }
 
