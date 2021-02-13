@@ -33,7 +33,7 @@
     "gatsby-transformer-sharp": "^2.2.20",
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "prop-types": "^15.6.2",
     "react": "^16.10.2",
     "react-anchor-link-smooth-scroll": "^1.0.11",
