@@ -49,7 +49,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#222222`,
         display: `minimal-ui`,
-        icon: `static/favicon-white.png`, // This path is relative to the root of the site.
+        // icon: `static/favicon-white.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -106,9 +106,9 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                   enclosure: {
-                    'url': `https://www.iamtimsmith.com/${edge.node.frontmatter.featured_image.childImageSharp.fluid.src}`,
-                    'size': 1000,
-                  }
+                    url: `https://www.iamtimsmith.com/${edge.node.frontmatter.featured_image.childImageSharp.fluid.src}`,
+                    size: 1000,
+                  },
                 })
               })
             },
@@ -149,7 +149,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: 'https://iamtimsmith.us16.list-manage.com/subscribe/post?u=a07cf4738b9ea78d4718b8f8a&amp;id=845beac7c2',
+        endpoint:
+          'https://iamtimsmith.us16.list-manage.com/subscribe/post?u=a07cf4738b9ea78d4718b8f8a&amp;id=845beac7c2',
       },
     },
     `gatsby-plugin-sass`,
