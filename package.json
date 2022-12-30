@@ -12,7 +12,7 @@
     "add": "^2.0.6",
     "breakpoint-sass": "^2.7.1",
     "bulma": "^0.7.2",
-    "gatsby": "^2.15.29",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-catch-links": "^2.1.12",
     "gatsby-plugin-feed": "^2.3.15",
